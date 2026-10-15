@@ -1,0 +1,14 @@
+ExtendWeaponDescBox by Vesly (FE8), ported to FE6 by FECK. The R button's help box grows from 3 rows to
+5, so a weapon's description gets 3 lines. Text rows 4 and 5 use two more text handles after the game's three
+(HelpTextHandles+0x38 and +0x40) and the OBJ tiles after the box's (+0x1800 to +0x27FF from its VRAM).
+
+Unlike the FE8 patch, rows 4 and 5 are only taken when a box needs them and they fit in OBJ VRAM: a box of 3 rows
+or fewer leaves the tiles after it alone, and a taller box with no room is cut to 3 rows with its extra lines
+dropped, as the unpatched game does. The game's addresses come from the game's .inc file.
+
+The stat screen loads the help box at the default 0x6013000 too, but it draws its page title, page arrows,
+page number and portrait frame with the OBJ tiles after that box (0x6014800 on), so rows 4 and 5 there drew over
+the page title. StatScreenHelpGfx (hooked in the stat screen's help setup) loads its box at 0x6011000 instead:
+tiles 0x80 to 0x1BF with rows 4 and 5, which no page of the stat screen uses (the map's unit sprites are there,
+and the stat screen hides the map). Checked in BizHawk 2.11.1 on all three pages, and that the map's sprites
+are whole after the stat screen closes.

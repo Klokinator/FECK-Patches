@@ -1,0 +1,10 @@
+.equ Text_Init, 0x08005B08
+.equ ClearTextRow, 0x08005B2C
+.equ FindProc, 0x08004584
+.equ BreakProcLoop, 0x0800457C
+.equ EasingValue, 0x08013508
+.equ HelpBoxProc, 0x08D8A5D8
+.equ HelpBoxProc2, 0x08D8AF84
+.equ ScrollNextChar, 0x08083557
+.equ ScrollDone, 0x08083561
+.equ LoadDialogueBoxGfx, 0x08082F74

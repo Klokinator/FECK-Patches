@@ -1,0 +1,18 @@
+NAME=ExtendWeaponDescBox 20261015 武器の説明欄を1行から3行に拡張する (FE6)
+TYPE=EA
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:0x70F90=0x50 0x2B
+EA=Installer.event
+
+AUTHOR=Vesly (FE8), ported to FE6 by FECK https://feuniverse.us/t/veslys-asm/12011/76
+INFO=武器の説明欄をバニラの1行から、最大3行にまで拡張します。(FE8版のFE6移植)
+
+NAME.en=ExtendWeaponDescBox 20261015 Extends weapon description from 1 line to 3 lines (FE6)
+INFO.en=Expands the weapon description field from vanilla's 1 line to a maximum of 3 lines (the help box grows from 3 rows to 5). A port of Vesly's FE8 patch.\r\nThe two extra rows use the OBJ tiles after the box's, and only when a description needs them and they fit; otherwise the box stays at 3 rows, as in the unpatched game.
+On the stat screen the help box's graphics move to OBJ tiles 0x80 to 0x1BF, because the stat screen draws its page title and arrows with the tiles after the default box.
+
+VERSION=20261015
+REQUIRES=
+ALLOC_SIZE_HINT=440

@@ -1,0 +1,75 @@
+// ExtendWeaponDescBox for FE7U: Vesly's FE8 patch, ported by FECK. See Notes.txt.
+// The .dmp files are the .s files assembled (arm-none-eabi-as -mthumb, then objcopy -O binary); the game's
+// addresses are in Addresses.inc.
+
+#include "EAstdlib.event"
+
+#ifndef callHackNew
+	#define callHackNew(offset) "BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN (offset|0x1)"
+#endif
+
+ALIGN 4
+InitWepDescTextHandles:
+#incbin "InitWepDescTextHandles.dmp"
+
+ALIGN 4
+YPosDescBox:
+#incbin "YPosDescBox.dmp"
+
+ALIGN 4
+ClearHelpBoxRows:
+#incbin "ClearHelpBoxRows.dmp"
+
+ALIGN 4
+InitProcTextHandles:
+#incbin "InitProcTextHandles.dmp"
+
+ALIGN 4
+HelpTextNewLine:
+#incbin "HelpTextNewLine.dmp"
+
+ALIGN 4
+StatScreenHelpGfx:
+#incbin "StatScreenHelpGfx.dmp"
+
+PUSH
+
+// LoadDialogueBoxGfx: text handles for rows 4 and 5.
+ORG $82570
+callHackNew(InitWepDescTextHandles)
+PROTECT $82570 $82570+12
+
+// The help box's y never above the screen.
+ORG $817AC
+callHackNew(YPosDescBox)
+PROTECT $817AC $817AC+12
+
+// ClearHelpBoxText: rows 4 and 5 cleared when the box takes them.
+ORG $82DA6
+SHORT $46C0
+callHackNew(ClearHelpBoxRows)
+SHORT $46C0 $46C0 $46C0
+PROTECT $82DA6 $82DA6+20
+
+// The help text proc's start: the text handles of rows 4 and 5.
+ORG $82CE4
+callHackNew(InitProcTextHandles)
+PROTECT $82CE4 $82CE4+12
+
+// HelpBoxTextScroll's new line: ends the text on a row with no text handle.
+ORG $82B30
+BYTE $00 $4A $10 $47; POIN (HelpTextNewLine|0x1)
+PROTECT $82B30 $82B30+8
+
+// DisplayHelpBoxObj: at most 5 rows (0x50 px) instead of 3.
+ORG $82668
+BYTE $50
+ORG $8266C
+BYTE $50
+
+// The stat screen's help: its box's graphics at 0x6011000, clear of the stat screen's own sprites.
+ORG $814F8
+callHackNew(StatScreenHelpGfx)
+PROTECT $814F8 $814F8+12
+
+POP
