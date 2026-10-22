@@ -2,7 +2,6 @@
 
 #include "EAstdlib.event"
 #include "Extensions/Hack Installation.txt"
-#endif
 /*
 This hack just plays a sound effect when you select a unit
 It's intended to be used with custom samples to get characters to say things when selected, like in echoes
