@@ -5,7 +5,7 @@ NAME.en=FE6-Droppable Items
 TYPE=EA
 TAG=#ENGINE
 EA=FE6-Droppable Items EA.txt
-PATCHED_IF:0x16878=0x25 0x1c
+PATCHED_IF:0x30AA4=0x00 0x4B 0x18 0x47
 
 AUTHOR=Orignal:Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/76
 

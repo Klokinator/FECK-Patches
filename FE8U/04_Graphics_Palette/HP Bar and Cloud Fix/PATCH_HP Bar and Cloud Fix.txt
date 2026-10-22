@@ -2,7 +2,7 @@ NAME=HP Bar and Cloud Fix; 雲の画像を小さくして、HPBarとの競合を
 NAME.en=HP Bar and Cloud Fix; Fix the cloudy graphic so it doesn't overlap with the hp bars
 NAME.zh=HP Bar and Cloud Fix; Fix the cloudy graphic so it doesn't overlap with the hp bars
 
-PATCHED_IF:0x30AEC=0x08 0x22
+PATCHED_IF:0x30AFC=0x00 0x03 0x01 0x06
 
 TYPE=EA
 TAG=#ENGINE

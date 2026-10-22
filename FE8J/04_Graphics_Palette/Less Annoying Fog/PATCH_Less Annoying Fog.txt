@@ -7,7 +7,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x1D14E=0xC0 0x46
+PATCHED_IF:0x1A5A4=0x00 0x4B 0x18 0x47
 
 EA=Less Annoying Fog Installer.event
 AUTHOR=Leonarth https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/4 Transport:7743

@@ -6,7 +6,7 @@ NAME.en=SummonEXP: When summoned monster defeats an enemy, the summoner gains EX
 EA=Summon.event
 
 //既に適応されたかどうか
-PATCHED_IF:0x2BA04=0x00 0x4B
+PATCHED_IF:0x2BA04=0x00 0x4B 0x18 0x47
 
 INFO=召喚されたモンスターが、敵を倒すと召喚士が経験値を得るようになります。\r\nこれは召喚士をより使いやすくするパッチです。
 
