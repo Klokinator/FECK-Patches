@@ -1,5 +1,6 @@
 NAME=戦闘床地形と戦闘背景のリストを拡張する(Install)
 NAME.en=Expand the list of battle floor terrain and battle BG(Install)
+AUTHOR=7743
 NAME.zh=Expand the list of battle floor terrain and battle BG(Install)
 
 TYPE=EA

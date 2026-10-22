@@ -1,5 +1,6 @@
 NAME=ファイアとエルファイアのパレットを動的に変更する(HitBG Palette)
 NAME.en=Dynamically Change the Fire and ElFire palette.(HitBG Palette)
+AUTHOR=7743
 NAME.zh=Dynamically Change the Fire and ElFire palette.(HitBG Palette)
 INFO=EffectID:0x16 "ファイア"とEffectID:0x17 "エルファイア"のエフェクトの色を変更します。\r\n
 INFO.en=The Fire And ElFire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x16 and EffectID: 0x17 Change the color of the "Fire" and "ElFire" flame effect.

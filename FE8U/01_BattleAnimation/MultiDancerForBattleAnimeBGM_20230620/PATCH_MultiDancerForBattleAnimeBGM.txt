@@ -1,5 +1,6 @@
 NAME=戦闘アニメでの踊り子のBGMを複数設定する 20230620(Editor)
 NAME.en=Setting battle BGM of a many dancer in battle animetion 20230620(Editor)
+AUTHOR=7743
 
 
 IF:0x727FC=0x00 0x4B

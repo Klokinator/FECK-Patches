@@ -33,6 +33,7 @@ W6:SONG=ChangeBGM
 
 HINT=ソング 音楽 Song Music
 NAME.en=Flexible change of Arena BGM(Editor)
+AUTHOR=7743
 INFO.en=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.\r\nThe list is searched from the top, and if none of them match, the default arena BGM is played.\r\n
 
 NAME.zh=Flexible change of Arena BGM(Editor)

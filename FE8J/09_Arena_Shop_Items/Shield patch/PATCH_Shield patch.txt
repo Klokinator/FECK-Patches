@@ -1,6 +1,7 @@
 NAME=盾パッチ
 NAME.zh=盾补丁
 NAME.en=Shield patch
+AUTHOR=Orignal: aera ,Fixed: 7743
 
 TYPE=BIN
 TAG=#ENGINE

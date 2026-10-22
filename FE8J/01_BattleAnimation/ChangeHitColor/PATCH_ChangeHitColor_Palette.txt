@@ -1,5 +1,6 @@
 NAME=ヒットモーションの青いパレットを動的に変更する(PaletteList)
 NAME.en=Dynamically change the blue palette of normal hit motion.(PaletteList)
+AUTHOR=7743
 NAME.zh=Dynamically change the blue palette of normal hit motion.(PaletteList)
 INFO=使用する武器や、使用者によって、通常の攻撃が命中した時の命中モーションのパレットを動的に変更します。
 INFO.en=The normal hit palette is dynamically changed depending on the weapon used and the user.

@@ -1,5 +1,6 @@
 NAME=召喚されたユニットが所持する武器を詳細に設定できるようにする(Editor)
 NAME.en=Allows detailed setting of weapons held by summoned units(Editor)
+AUTHOR=7743
 
 INFO=召喚されたユニットが所持する武器を詳細に設定できるようにします。\r\n召喚者のレベルごとに設定したり、レア武器を設定できます。\r\nもし指定レベル以下だったら、武器を所持させます。\r\nまた、レア武器の設定ができます。
 

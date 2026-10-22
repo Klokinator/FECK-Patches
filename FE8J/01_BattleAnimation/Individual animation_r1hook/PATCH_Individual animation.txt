@@ -1,6 +1,7 @@
 ﻿NAME=(古)個別アニメ(r1でフックするバージョン)
 NAME.zh=(旧)个人动画(Version to be hooked on r1)
 NAME.en=(Old)Individual animation patch(custom animation)(Version to be hooked on r1)
+AUTHOR=7743
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT

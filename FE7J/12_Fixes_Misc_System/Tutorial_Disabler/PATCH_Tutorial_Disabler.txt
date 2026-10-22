@@ -1,6 +1,7 @@
 
 NAME=チュートリアルを無効にする(Tutorial Disabler)
 NAME.en=Tutorial Disabler
+AUTHOR=7743
 
 //既に適応されたかどうか
 PATCHED_IF:0x2e3c6=0x07 0xE0

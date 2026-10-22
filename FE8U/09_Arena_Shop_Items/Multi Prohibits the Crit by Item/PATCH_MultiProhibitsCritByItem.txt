@@ -1,5 +1,6 @@
 NAME=常に必殺を禁止する武器を複数設定できるようにする(Editor)
 NAME.en=Define Multiple Prohibits the Crit By Item(Editor)
+AUTHOR=7743
 
 INFO=必殺を出さない武器を複数設定できるようにします。
 

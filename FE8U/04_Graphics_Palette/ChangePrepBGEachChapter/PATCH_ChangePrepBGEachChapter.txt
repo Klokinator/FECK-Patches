@@ -1,5 +1,6 @@
 NAME=進撃準備の背景を章ごとに変更する(Editor)
 NAME.en=Change Preparations background for each chapter(Editor)
+AUTHOR=7743
 
 INFO=新規に画像をImportするときは、アドレス、PALETTEに0かFFFFFFFFを設定した後で、Importしてください。\r\nそうしないと、既存の画像を上書き変更します。\r\nパレットは2段(32色)必要で、パレット1は通常の背景ように、パレット2は辞書や設定画面の一番の字幕の黒帯に利用される暗い背景になります。
 

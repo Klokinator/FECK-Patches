@@ -11,6 +11,7 @@ ON2:0x08F412=0x01 0x28 0x03 0xD0
 INFO=マップ上でユニットにカーソルを当てたときに、ユニットウィンドウにパネルと吹き出しを同時に表示します。\r\n(装備アイテムをポップアップ表示するパッチと一緒に利用してください)\r\nただし、現在は、パネルと吹き出しが重なってしまう問題点があります。
 
 NAME.en=Simultaneously display a panel and a balloon in the unit window
+AUTHOR=aera
 INFO.en=When placing the cursor on the unit on the map, the panel and the balloon are displayed simultaneously in the unit window.\r\n(Please use it with a patch that pops up equipment items)\r\nHowever, there is a problem that the panel and the balloon overlap at present.
 COMBO.en=Default|OFF|Display at the same time|ONN|Display at the same time(FE8N)|ON2
 NAME.zh=在人物窗口中同时显示面板和气球

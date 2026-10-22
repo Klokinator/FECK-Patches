@@ -1,5 +1,6 @@
 NAME=敵を操作できるようにする(デバッグ用)
 NAME.en=Enable to control the enemy (for debugging)
+AUTHOR=circleseverywhere https://feuniverse.us/t/control-enemy-npc-units-fe8/1897
 
 //アドレスパッチとして実装します
 TYPE=ADDR

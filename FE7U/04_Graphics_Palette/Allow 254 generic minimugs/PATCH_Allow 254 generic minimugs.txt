@@ -1,5 +1,6 @@
 NAME=一般兵の顔画像を最大254個まで拡張する
 NAME.en=Allow 254 generic minimugs
+AUTHOR=Gryz,7743 https://feuniverse.us/t/allowing-for-more-than-0x06-generic-minimugs/1085/9
 
 IF:0x007598=0x00 0xB5 0xFF 0x21 0x08 0x40 0xC0 0x00
 

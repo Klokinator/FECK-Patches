@@ -1,5 +1,6 @@
 NAME=追撃禁止武器を複数設定できるようにする.(Editor)
 NAME.en=Define Multiple Weapons That Cannot Double Attack(Editor)
+AUTHOR=7743
 
 INFO=追撃を出さない武器を複数設定できるようにします。
 

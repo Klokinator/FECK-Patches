@@ -1,6 +1,7 @@
 NAME=(旧)個別アニメ(Install)
 NAME.zh=(旧)个人动画补丁(Install)
 NAME.en=(Old)Character Custom Animation Table Installer
+AUTHOR=7743
 
 TYPE=BIN
 TAG=#ENGINE

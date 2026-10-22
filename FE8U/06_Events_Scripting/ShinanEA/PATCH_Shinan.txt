@@ -1,6 +1,7 @@
 ﻿
 NAME=指南イベント@EA(Editor)
 NAME.en=Guide Event(Shinan)@EA(Editor)
+AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/shinan
 
 IF:$FGREP4 Shinan.dmp=0x00 0xB5 0x26 0x20
 

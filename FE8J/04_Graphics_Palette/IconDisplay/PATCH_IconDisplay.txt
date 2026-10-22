@@ -1,5 +1,6 @@
 NAME=ユニットにアイコンを表示する(editor)
 NAME.en=Icon Display(editor)
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/50 https://github.com/Veslyquix/ASM/tree/main/IconDisplay
 NAME.zh=Icon Display(editor)
 INFO=特定の条件にマッチしたユニットに、アイコンを表示します。詳細はFEUの作者の解説記事を確認してください。\r\nTileのコンボボックスは、ダメージを受けているユニットがいるとHPバーを表示(HPBars Patch)をインストールしていること前提で説明を書いています。
 INFO.en=Display icons on units that match certain criteria. For more information, check the FEU author's explanatory article.\r\nThe Tile combo box is written assuming that the HPBars Patch is installed.

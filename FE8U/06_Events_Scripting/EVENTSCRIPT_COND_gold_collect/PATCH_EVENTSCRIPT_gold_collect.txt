@@ -1,5 +1,6 @@
 NAME=所持金を減らす(イベント命令)
 NAME.en=Add Event: Lose Gold
+AUTHOR=怪盗パッチ 7743
 NAME.zh=事件命令_所持金没收(Add Event)
 
 TYPE=BIN

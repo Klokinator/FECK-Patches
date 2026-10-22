@@ -24,6 +24,7 @@ B0:UNIT=Player faction army leader
 
 
 NAME.en=Set army commander by chapter (editor)
+AUTHOR=SageMatthis/EgalLau37
 INFO.en=Specify which character should be the faction leader for each chapter.  The character must be in the party; otherwise, the game may softlock.
 NAME.zh=Set army commander by chapter (editor)
 INFO.zh=Specify which character should be the faction leader for each chapter.  The character must be in the party; otherwise, the game may softlock.

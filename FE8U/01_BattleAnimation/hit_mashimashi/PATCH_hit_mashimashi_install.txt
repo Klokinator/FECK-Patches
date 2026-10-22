@@ -1,5 +1,6 @@
 NAME=敵の命中率を底上げする(Install)
 NAME.en=Increase Enemy's hit rate(Install)
+AUTHOR=7743
 
 TYPE=EA
 EA=hit_mashimashi_installer.event

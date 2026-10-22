@@ -1,5 +1,6 @@
 NAME=移動しないAIだったら移動範囲を表示しない By 7743
 NAME.en=Null Move Display By 7743
+AUTHOR=7743
 NAME.zh=Null Move Display By 7743
 
 INFO=ボスなどの移動しないAIの場合は、敵の移動範囲を表示しません。\r\n以下のAIが設定されている、敵またはNPCの移動範囲を表示しません。\r\nAI1=0x03, AI2=0x03\r\nAI1=0x06, AI2=0x03\r\nAI2=0x03, AI4=0x20\r\nこれは7743が独自に実装したバージョンです。既に同種のパッチが入っている場合はインストールしないでください。\r\n

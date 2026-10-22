@@ -1,5 +1,6 @@
 NAME=リザイアのパレットを動的に変更する(Editor)
 NAME.en=Dynamically Change the resire palette.(Editor)
+AUTHOR=7743
 NAME.zh=Dynamically Change the resire palette.(Editor)
 INFO=リストにないものはディフォルトの挙動を行います。\r\n\r\n使用する武器や、使用者によって、リザイアのパレットを動的に変更します。
 INFO.en=Those not on the list behave by default.\r\nThe Resire(Nosferatu) palette is dynamically changed depending on the weapon used and the user.

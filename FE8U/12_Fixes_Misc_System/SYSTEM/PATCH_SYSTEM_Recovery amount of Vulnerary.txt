@@ -1,5 +1,6 @@
 NAME=きずぐすりの回復量
 NAME.en=Vulnerary Heal Amount
+AUTHOR=7743
 NAME.zh=系统_伤药的回复量
 
 //アドレスパッチとして実装します

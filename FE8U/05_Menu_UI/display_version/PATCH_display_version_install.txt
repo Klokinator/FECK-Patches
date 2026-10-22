@@ -1,5 +1,6 @@
 NAME=タイトル画面にビルド時間を表示する(Install)
 NAME.en=Display build time on title screen(Install)
+AUTHOR=7743
 
 INFO=タイトル画面にビルド時間を表示します。\r\nビルド時間はupsを作るたびに自動的に更新されます。
 

@@ -1,5 +1,6 @@
 NAME=進撃準備の右上の画像を変更する(Editor)
 NAME.en=Change image in upper right of the preparations(Editor)
+AUTHOR=7743
 
 INFO=進撃準備の右上に表示されている、"Chapter NN","Tower NN","Ruins NN","Extra Map"の定義を自由に変更でるようにします。
 

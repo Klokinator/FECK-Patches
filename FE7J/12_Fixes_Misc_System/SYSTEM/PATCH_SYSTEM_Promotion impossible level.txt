@@ -1,6 +1,7 @@
 
 NAME=CC不可レベル
 NAME.en=Minimum Promotion Level
+AUTHOR=7743
 
 
 

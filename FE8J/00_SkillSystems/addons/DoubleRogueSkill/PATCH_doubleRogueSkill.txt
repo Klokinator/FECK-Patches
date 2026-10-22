@@ -1,5 +1,6 @@
 ﻿NAME=複数の「かぎ開け」スキルパッチ(Editor)
 NAME.en=Multiple Classes with Lock Pick(Editor)
+AUTHOR=kao Transport:7743 https://feuniverse.us/t/two-classes-able-to-use-the-pick-skill-rogues-skill/3348
 
 INFO=複数クラスでの「かぎ開け」スキルを実装します
 INFO.en=Allows the Lock Pick skill to be assigned to multiple classes.

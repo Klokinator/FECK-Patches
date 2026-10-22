@@ -27,6 +27,7 @@ W4:FLAG=Flag(0x00=ANY)
 W6=00
 
 NAME.en=Change to have multiple main characters selected by auto cursor 20200302(Editor)
+AUTHOR=7743
 INFO.en=Change so that you can set multiple heroes selected by auto cursor.
 NAME.zh=更改为使用自动光标选择多个英雄 20200302(Editor)
 INFO.zh=进行更改，以便您可以设置由自动光标选择的多个英雄。

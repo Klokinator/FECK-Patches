@@ -1,5 +1,6 @@
 NAME=CC時に画面下に表示される説明文を変更する(Editor)
 NAME.en=Change the description at bottom of screen during Promotion(Editor)
+AUTHOR=7743
 NAME.zh=Change the description at bottom of screen during Promotion(Editor)
 
 IF:0xCCE3C=0x00 0x4B 0x18 0x47

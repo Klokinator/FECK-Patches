@@ -23,6 +23,7 @@ LISTNAME=$B0:MAP
 B0:MAP=MAPID
 
 NAME.en=Disables the Prep store for a particular map (Editor)
+AUTHOR=7743
 INFO.en=Disable Prep armory shops on certain maps.
 NAME.zh=禁用特定图的“攻击准备”存储（Editor）
 INFO.zh=在某些地图上禁用高级盔甲商店

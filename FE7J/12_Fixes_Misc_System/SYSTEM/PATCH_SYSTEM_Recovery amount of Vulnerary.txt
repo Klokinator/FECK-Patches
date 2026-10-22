@@ -1,6 +1,7 @@
 
 NAME=きずぐすりの回復量
 NAME.en=Vulnerary Heal Amount
+AUTHOR=7743
 
 //アドレスパッチとして実装します
 TYPE=ADDR

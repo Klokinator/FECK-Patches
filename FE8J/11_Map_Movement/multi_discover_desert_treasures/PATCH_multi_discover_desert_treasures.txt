@@ -1,5 +1,6 @@
 NAME=砂漠の財宝を発見できるクラスを複数定義する(Editor)
 NAME.en=Define multiple classes that can discover desert treasures(Editor)
+AUTHOR=7743
 
 INFO=砂漠の財宝を確実に発見できるクラスを複数登録できるようにします。\r\nディフォルトは、盗賊とローグだけですが、他のクラスを追加することができるようにします。
 

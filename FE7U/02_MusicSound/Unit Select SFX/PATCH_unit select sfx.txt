@@ -1,5 +1,6 @@
 NAME=ユニットを選択した時に音声を再生する
 NAME.en=Unit Select SFX Editor
+AUTHOR=Orignal:Leonarth Remodeling:7743 https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693
 
 IF:0x18140=0x00 0x4B 0x18 0x47
 

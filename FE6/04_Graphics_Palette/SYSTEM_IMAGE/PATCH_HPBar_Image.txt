@@ -1,4 +1,5 @@
 NAME=HPBar_Image
+AUTHOR=アインズ・ウール・ゴウン
 
 TYPE=IMAGE
 

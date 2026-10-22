@@ -1,5 +1,6 @@
 NAME=HPBars_with_warnings Cache(cutoff that the ! shows up)
 NAME.en=HPBars_with_warnings Cache(cutoff that the ! shows up)
+AUTHOR=Circles with additions by Tequila
 NAME.zh=HPBars_with_warnings Cache(cutoff that the ! shows up)
 
 TYPE=ADDR
