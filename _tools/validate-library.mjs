@@ -7,6 +7,7 @@
 //   WARN   nodetect  an installable patch (TYPE EA/BIN) with no PATCHED_IF
 //   WARN   meta      missing NAME.en / INFO.en / AUTHOR / TAG / TYPE
 //   WARN   empty     a PATCH file with no content at all (nothing to install or detect)
+//   WARN   contained a PATCHED_IF lying wholly inside another patch's PATCHED_IF of the same game (same bytes there), so it reads as installed whenever the other is
 //   WARN   duplicate two patches of one game share the same PATCHED_IF address and bytes
 // Exit code 1 when any ERROR is found. Folders _removed-upstream and _older versions are counted but not warned on.
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
@@ -53,6 +54,7 @@ const issues = [];
 const add = (level, kind, file, msg) => issues.push({ level, kind, file: relative(root, file), msg });
 
 const sigs = new Map();
+const sigList = [];
 let total = 0;
 let installable = 0;
 let detectable = 0;
@@ -127,11 +129,23 @@ for (const file of walk(root)) {
       const k = `${game}|${addr}|${bytes.join(",")}${negated ? "|not" : ""}`;
       if (!sigs.has(k)) sigs.set(k, []);
       sigs.get(k).push(file);
+      if (!negated) sigList.push({ game, addr, bytes, file });
     }
   }
 }
 for (const [k, files] of sigs) {
   if (files.length > 1) for (const f of files) add("warn", "duplicate", f, `shares PATCHED_IF ${k.split("|")[0]} 0x${Number(k.split("|")[1]).toString(16)} with ${files.length - 1} other(s)`);
+}
+for (const a of sigList) {
+  for (const b of sigList) {
+    if (a === b || a.game !== b.game || a.file === b.file) continue;
+    if (a.addr < b.addr || a.addr + a.bytes.length > b.addr + b.bytes.length) continue;
+    if (a.bytes.length === b.bytes.length) continue; // equal signatures are reported as duplicates
+    if (a.bytes.every((x, i) => b.bytes[a.addr - b.addr + i] === x)) {
+      add("warn", "contained", a.file, `PATCHED_IF 0x${a.addr.toString(16)} (${a.bytes.length} bytes) lies inside that of ${relative(root, b.file)}`);
+      break;
+    }
+  }
 }
 
 const count = (kind, level) => issues.filter((i) => i.kind === kind && (!level || i.level === level)).length;
@@ -140,7 +154,7 @@ if (asJson) {
   console.log(JSON.stringify({ total, installable, detectable, issues }, null, 1));
 } else {
   console.log(`patches: ${total}; installable (EA/BIN): ${installable}; with PATCHED_IF: ${detectable}; ROMs found: ${Object.keys(roms).join(",") || "none"}`);
-  for (const kind of ["payload", "payloadsig", "vanilla", "empty", "weak", "nodetect", "meta", "duplicate"]) {
+  for (const kind of ["payload", "payloadsig", "vanilla", "contained", "empty", "weak", "nodetect", "meta", "duplicate"]) {
     console.log(`${kind.padEnd(10)} ${count(kind, "error") + count(kind, "warn") + count(kind, "info")} (${count(kind, "error")} error, ${count(kind, "warn")} warn, ${count(kind, "info")} archived)`);
   }
   if (details) for (const i of issues.filter((x) => x.level !== "info")) console.log(`${i.level.toUpperCase()} ${i.kind} ${i.file}: ${i.msg}`);
