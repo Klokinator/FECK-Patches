@@ -1,4 +1,5 @@
 NAME=SOUND_NIMAP2(Native Instrument Map)
+NAME.en=SOUND_NIMAP2(Native Instrument Map)
 
 //BINパッチとして実装します
 TYPE=BIN

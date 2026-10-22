@@ -1,4 +1,5 @@
 NAME=Anima Triangle
+NAME.en=Anima Triangle
 TYPE=EA
 TAG=#ENGINE
 

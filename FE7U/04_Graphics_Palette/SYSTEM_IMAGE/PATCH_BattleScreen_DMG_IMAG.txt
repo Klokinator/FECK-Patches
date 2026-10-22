@@ -1,4 +1,5 @@
 NAME=BattleScreen_DMG_IMAGE
+NAME.en=BattleScreen_DMG_IMAGE
 
 TYPE=IMAGE
 

@@ -1,4 +1,5 @@
 NAME=Limit Weapon Rank Display
+NAME.en=Limit Weapon Rank Display
 
 TYPE=EA
 TAG=#ENGINE

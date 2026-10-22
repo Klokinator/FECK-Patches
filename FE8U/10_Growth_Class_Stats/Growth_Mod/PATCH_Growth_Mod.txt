@@ -1,4 +1,5 @@
 NAME=Growth_Mod
+NAME.en=Growth_Mod
 TYPE=BIN
 REQUIRES=10_Growth_Class_Stats/Passive Boosts Patches|10_Growth_Class_Stats/Passive Boosts Patches no-stack
 

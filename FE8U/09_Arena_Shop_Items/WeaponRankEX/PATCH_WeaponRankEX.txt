@@ -1,4 +1,5 @@
 NAME=WeaponRankEX (XP Editor)
+NAME.en=WeaponRankEX (XP Editor)
 
 IF:0x16d5c=0x00 0x4B 0x18 0x47
 

@@ -1,4 +1,5 @@
 NAME=Display all weapon ranks your character has
+NAME.en=Display all weapon ranks your character has
 TYPE=BIN
 TAG=#ENGINE
 

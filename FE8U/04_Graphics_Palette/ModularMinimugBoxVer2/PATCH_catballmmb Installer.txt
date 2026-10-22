@@ -1,4 +1,5 @@
 NAME=ModularMinimugBoxV2: catball Style(Installer)
+NAME.en=ModularMinimugBoxV2: catball Style(Installer)
 
 TYPE=EA
 TAG=#ENGINE

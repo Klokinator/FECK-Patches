@@ -1,4 +1,5 @@
 NAME=StatusScreenGraphics1
+NAME.en=StatusScreenGraphics1
 
 TYPE=IMAGE
 TAG=#IMAGE

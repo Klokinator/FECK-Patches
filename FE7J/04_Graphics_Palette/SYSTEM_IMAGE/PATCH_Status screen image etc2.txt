@@ -1,4 +1,5 @@
 NAME=Status screen image etc2
+NAME.en=Status screen image etc2
 
 TYPE=IMAGE
 

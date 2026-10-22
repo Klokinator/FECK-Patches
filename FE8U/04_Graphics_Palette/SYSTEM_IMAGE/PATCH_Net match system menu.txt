@@ -1,4 +1,5 @@
 NAME=Net match system menu
+NAME.en=Net match system menu
 
 TYPE=IMAGE
 

@@ -1,4 +1,5 @@
 NAME=MimeBomb
+NAME.en=MimeBomb
 
 TYPE=IMAGE
 

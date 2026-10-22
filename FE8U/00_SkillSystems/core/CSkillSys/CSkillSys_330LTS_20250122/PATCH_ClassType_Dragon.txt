@@ -1,4 +1,5 @@
 NAME=[CSKILL_K (3.3.0-LTS)] Class type: Dragon
+NAME.en=[CSKILL_K (3.3.0-LTS)] Class type: Dragon
 NAME.zh=[CSKILL_K (3.3.0-LTS)] 职业类型: 龙
 AUTHOR=Mokha(悠木晓缺)
 

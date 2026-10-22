@@ -1,4 +1,5 @@
 NAME=LevelUpBG
+NAME.en=LevelUpBG
 
 TYPE=IMAGE
 

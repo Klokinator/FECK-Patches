@@ -1,4 +1,5 @@
 NAME=[CSKILL_K (3.3.0-LTS)] Skill misc infos
+NAME.en=[CSKILL_K (3.3.0-LTS)] Skill misc infos
 NAME.zh=[CSKILL_K (3.3.0-LTS)] 技能杂项信息
 AUTHOR=Mokha(悠木晓缺)
 

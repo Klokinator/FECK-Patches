@@ -1,4 +1,5 @@
 NAME=SupplyWeaponItemIcon1
+NAME.en=SupplyWeaponItemIcon1
 
 TYPE=IMAGE
 

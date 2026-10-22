@@ -1,4 +1,5 @@
 NAME=DancerRingRefresh
+NAME.en=DancerRingRefresh
 
 //BINパッチとして実装します
 TYPE=EA

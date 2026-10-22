@@ -1,4 +1,5 @@
 NAME=[CSKILL_K (3.3.0-LTS)] Shield item config
+NAME.en=[CSKILL_K (3.3.0-LTS)] Shield item config
 NAME.zh=[CSKILL_K (3.3.0-LTS)] 盾牌道具配置
 AUTHOR=Mokha(悠木晓缺)
 

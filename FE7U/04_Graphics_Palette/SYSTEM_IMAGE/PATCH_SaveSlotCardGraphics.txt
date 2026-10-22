@@ -1,4 +1,5 @@
 NAME=SaveSlotCardGraphics
+NAME.en=SaveSlotCardGraphics
 
 TYPE=IMAGE
 

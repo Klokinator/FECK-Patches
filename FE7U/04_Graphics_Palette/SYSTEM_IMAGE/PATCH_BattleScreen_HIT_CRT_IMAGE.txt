@@ -1,4 +1,5 @@
 NAME=BattleScreen_HIT_CRT_IMAGE
+NAME.en=BattleScreen_HIT_CRT_IMAGE
 
 TYPE=IMAGE
 

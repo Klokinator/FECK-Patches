@@ -1,4 +1,5 @@
 NAME=WeaponTypeTextIDArray(Installer)
+NAME.en=WeaponTypeTextIDArray(Installer)
 TYPE=EA
 EA=Installer.event
 AUTHOR=SME

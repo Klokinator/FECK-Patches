@@ -1,4 +1,5 @@
 NAME=ArenaBattleBG
+NAME.en=ArenaBattleBG
 
 TYPE=IMAGE
 

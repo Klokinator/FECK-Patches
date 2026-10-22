@@ -1,4 +1,5 @@
 NAME=LevelUp MapAnime
+NAME.en=LevelUp MapAnime
 
 TYPE=IMAGE
 

@@ -1,4 +1,5 @@
 NAME=OPModeSelect_LynEdtion_Proluge_to_ch10_part1
+NAME.en=OPModeSelect_LynEdtion_Proluge_to_ch10_part1
 INFO=This image is divided into 4 parts
 TYPE=IMAGE
 

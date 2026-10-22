@@ -1,4 +1,5 @@
 NAME=DemonKing_Face
+NAME.en=DemonKing_Face
 
 TYPE=IMAGE
 TAG=#IMAGE

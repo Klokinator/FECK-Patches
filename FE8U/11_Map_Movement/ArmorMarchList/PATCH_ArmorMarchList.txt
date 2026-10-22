@@ -1,4 +1,5 @@
 NAME=ArmorMarchList(Requires Skill System Patch)
+NAME.en=ArmorMarchList(Requires Skill System Patch)
 
 IF:$FGREP4 armormarchskill.dmp=0x00 0xB5 0x46 0x49
 

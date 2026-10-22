@@ -1,4 +1,5 @@
 NAME=ExModularSave
+NAME.en=ExModularSave
 TYPE=EA
 TAG=#ENGINE
 

@@ -1,4 +1,5 @@
 NAME=OP Class Reel Weapon Item Icon
+NAME.en=OP Class Reel Weapon Item Icon
 
 TYPE=IMAGE
 

@@ -1,4 +1,5 @@
 NAME=Net match team number
+NAME.en=Net match team number
 
 TYPE=IMAGE
 

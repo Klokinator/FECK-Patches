@@ -1,4 +1,5 @@
 NAME=fix_lz77decompress
+NAME.en=fix_lz77decompress
 TYPE=BIN
 TAG=#ENGINE #ESSENTIALFIXES
 

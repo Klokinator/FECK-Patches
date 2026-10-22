@@ -1,4 +1,5 @@
 NAME=SaveSLot1
+NAME.en=SaveSLot1
 
 TYPE=IMAGE
 

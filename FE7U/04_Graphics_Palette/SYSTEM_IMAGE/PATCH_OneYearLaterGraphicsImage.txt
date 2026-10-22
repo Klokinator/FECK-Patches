@@ -1,4 +1,5 @@
 NAME=OneYearLaterGraphicsImage
+NAME.en=OneYearLaterGraphicsImage
 INFO="一年後..."という画像
 INFO.en="One year later..." An image that says
 INFO.zh="One year later..." An image that says

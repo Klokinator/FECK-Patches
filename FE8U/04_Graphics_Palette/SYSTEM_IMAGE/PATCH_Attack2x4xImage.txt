@@ -1,4 +1,5 @@
 NAME=Attack2x4xImage
+NAME.en=Attack2x4xImage
 
 TYPE=IMAGE
 

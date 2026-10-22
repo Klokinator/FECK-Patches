@@ -1,4 +1,5 @@
 NAME=16_tracks_12_sounds
+NAME.en=16_tracks_12_sounds
 TYPE=BIN
 TAG=#ENGINE #MUSIC #SONG #SOUND #BGM #ESSENTIALFIXES
 

@@ -1,4 +1,5 @@
 NAME=Fates EXP 20231013
+NAME.en=Fates EXP 20231013
 INFO=Replaces the exp formula to be the one used in fe: fates.\r\nOverleveled units stop gaining exp, while underleveled units gain loads of exp.\r\nPlease see the example table for details.\r\n
 
 AUTHOR=Crazycolor https://feuniverse.us/t/fates-exp-system/22172

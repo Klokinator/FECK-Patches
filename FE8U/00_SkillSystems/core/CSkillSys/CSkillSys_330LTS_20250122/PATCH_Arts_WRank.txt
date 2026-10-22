@@ -1,4 +1,5 @@
 NAME=[CSKILL_K (3.3.0-LTS)] CombatArt-WeaponRank list
+NAME.en=[CSKILL_K (3.3.0-LTS)] CombatArt-WeaponRank list
 NAME.zh=[CSKILL_K (3.3.0-LTS)] 战技-武器熟练度列表
 AUTHOR=Mokha(悠木晓缺)
 

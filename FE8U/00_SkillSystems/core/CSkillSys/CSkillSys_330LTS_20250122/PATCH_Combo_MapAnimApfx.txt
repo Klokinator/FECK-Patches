@@ -1,4 +1,5 @@
 NAME=[CSKILL_K (3.3.0-LTS)] ComboAttack: MapAnimApfx
+NAME.en=[CSKILL_K (3.3.0-LTS)] ComboAttack: MapAnimApfx
 NAME.zh=[CSKILL_K (3.3.0-LTS)] 连携攻击: 地图动画修改
 TYPE=IMAGE
 TAG=#ENGINE

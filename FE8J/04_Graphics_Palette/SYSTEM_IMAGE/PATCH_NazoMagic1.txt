@@ -1,4 +1,5 @@
 NAME=NazoMagic1
+NAME.en=NazoMagic1
 NAME.zh=谜魔法1
 
 TYPE=IMAGE

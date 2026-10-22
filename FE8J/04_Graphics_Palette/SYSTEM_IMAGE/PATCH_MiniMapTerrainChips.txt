@@ -1,4 +1,5 @@
 NAME=MiniMapTerrainChips
+NAME.en=MiniMapTerrainChips
 INFO=ミニマップに利用されるマップタイル
 
 TYPE=IMAGE

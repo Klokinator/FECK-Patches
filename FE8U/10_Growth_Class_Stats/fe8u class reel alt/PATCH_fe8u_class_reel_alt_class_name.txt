@@ -1,4 +1,5 @@
 NAME=fe8u class reel alt class name(Editor)
+NAME.en=fe8u class reel alt class name(Editor)
 
 IF:0xB369C=0x00 0x4B 0x18 0x47
 

@@ -1,4 +1,5 @@
 NAME=[CSKILL_K (3.3.0-LTS)] Hook function: UnitStatus SpdGetters
+NAME.en=[CSKILL_K (3.3.0-LTS)] Hook function: UnitStatus SpdGetters
 NAME.zh=[CSKILL_K (3.3.0-LTS)] 钩函数: 单位信息 获得速度 UnitStatus SpdGetters
 AUTHOR=Mokha(悠木晓缺)
 

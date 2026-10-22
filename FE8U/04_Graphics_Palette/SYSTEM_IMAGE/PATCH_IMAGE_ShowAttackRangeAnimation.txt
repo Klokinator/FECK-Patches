@@ -1,4 +1,5 @@
 NAME=IMAGE_ShowAttackRangeAnimation
+NAME.en=IMAGE_ShowAttackRangeAnimation
 
 TYPE=IMAGE
 

@@ -1,4 +1,5 @@
 NAME=NosResire
+NAME.en=NosResire
 TYPE=EA
 EA=NosResire.event
 AUTHOR=SME https://feuniverse.us/t/smes-asm-and-miscellany/4445/55

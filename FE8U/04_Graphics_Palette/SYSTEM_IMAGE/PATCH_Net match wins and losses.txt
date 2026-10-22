@@ -1,4 +1,5 @@
 NAME=Net match wins and losses
+NAME.en=Net match wins and losses
 
 TYPE=IMAGE
 

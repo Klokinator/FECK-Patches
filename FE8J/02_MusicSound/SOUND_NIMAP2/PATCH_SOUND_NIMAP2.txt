@@ -1,4 +1,5 @@
 NAME=SOUND_NIMAP2(Native Instrument Map)
+NAME.en=SOUND_NIMAP2(Native Instrument Map)
 NAME.zh=声音_NIMAP 2(本土的乐器图)
 
 //BINパッチとして実装します

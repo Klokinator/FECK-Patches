@@ -1,4 +1,5 @@
 NAME=Map Clear
+NAME.en=Map Clear
 
 TYPE=IMAGE
 TAG=#IMAGE

@@ -1,4 +1,5 @@
 NAME=SaveSLot Palette: Resume, Restart, Extra Inactive
+NAME.en=SaveSLot Palette: Resume, Restart, Extra Inactive
 
 TYPE=IMAGE
 

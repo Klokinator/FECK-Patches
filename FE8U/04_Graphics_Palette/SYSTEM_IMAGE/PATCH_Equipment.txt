@@ -1,4 +1,5 @@
 NAME=Equipment
+NAME.en=Equipment
 
 TYPE=IMAGE
 

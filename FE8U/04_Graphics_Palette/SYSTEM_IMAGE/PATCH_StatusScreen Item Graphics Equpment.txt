@@ -1,4 +1,5 @@
 NAME=StatusScreen Item: Graphics Equpment
+NAME.en=StatusScreen Item: Graphics Equpment
 
 TYPE=IMAGE
 

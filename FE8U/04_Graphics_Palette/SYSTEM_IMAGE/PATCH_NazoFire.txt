@@ -1,4 +1,5 @@
 NAME=NazoFire
+NAME.en=NazoFire
 
 TYPE=IMAGE
 TAG=#IMAGE

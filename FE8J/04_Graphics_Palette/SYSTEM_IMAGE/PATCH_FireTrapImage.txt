@@ -1,4 +1,5 @@
 NAME=FireTrapImage
+NAME.en=FireTrapImage
 
 TYPE=IMAGE
 

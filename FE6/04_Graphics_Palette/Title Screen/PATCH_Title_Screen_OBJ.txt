@@ -1,4 +1,5 @@
 NAME=Title Screen OBJ
+NAME.en=Title Screen OBJ
 AUTHOR=laqieer
 
 TYPE=IMAGE

@@ -1,5 +1,6 @@
 
 NAME=CG9
+NAME.en=CG9
 
 //画像パッチとして実装します
 TYPE=IMAGE

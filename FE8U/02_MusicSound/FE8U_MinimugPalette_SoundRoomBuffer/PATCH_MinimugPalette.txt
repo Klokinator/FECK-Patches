@@ -1,6 +1,7 @@
 TYPE=EA
 TAG=#ENGINE
 NAME=MinimugPalette Using Soundroom Buffer
+NAME.en=MinimugPalette Using Soundroom Buffer
 
 EA=MinimugPalette.event
 

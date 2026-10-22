@@ -1,4 +1,5 @@
 NAME=ItemEffect_Javelin_9
+NAME.en=ItemEffect_Javelin_9
 NAME.zh=项目效果_标枪_9
 
 TYPE=IMAGE

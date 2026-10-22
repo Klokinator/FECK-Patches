@@ -1,4 +1,5 @@
 NAME=Fix_DoesThisChapterCount
+NAME.en=Fix_DoesThisChapterCount
 INFO=章が攻略評価に値するかどうかを判定しますが、攻略ターンに書き込まれている章はすべて評価するべきです。\r\n常に、対象の章だと回答した方が安全です。
 
 TYPE=BIN

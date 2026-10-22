@@ -1,4 +1,5 @@
 NAME=SOUND_NIMAP(Native Instrument Map)
+NAME.en=SOUND_NIMAP(Native Instrument Map)
 DEPRECATED=1
 
 //BINパッチとして実装します

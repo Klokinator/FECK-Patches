@@ -1,4 +1,5 @@
 NAME=ExModularSave with Supply 200 ver20220401
+NAME.en=ExModularSave with Supply 200 ver20220401
 TYPE=EA
 TAG=#ENGINE
 

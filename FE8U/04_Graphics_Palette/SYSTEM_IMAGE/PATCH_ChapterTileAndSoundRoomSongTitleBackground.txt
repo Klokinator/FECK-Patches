@@ -1,4 +1,5 @@
 NAME=ChapterTileAndSoundRoomSongTitleBackground
+NAME.en=ChapterTileAndSoundRoomSongTitleBackground
 
 TYPE=IMAGE
 

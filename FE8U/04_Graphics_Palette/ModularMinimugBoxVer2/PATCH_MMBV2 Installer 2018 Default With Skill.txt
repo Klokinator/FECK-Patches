@@ -1,4 +1,5 @@
 NAME=ModularMinimugBoxV2: Vesly Style(Installer)
+NAME.en=ModularMinimugBoxV2: Vesly Style(Installer)
 
 TYPE=EA
 TAG=#ENGINE

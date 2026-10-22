@@ -1,4 +1,5 @@
 NAME=SaveSLot Palette: Easy Inactive
+NAME.en=SaveSLot Palette: Easy Inactive
 
 TYPE=IMAGE
 

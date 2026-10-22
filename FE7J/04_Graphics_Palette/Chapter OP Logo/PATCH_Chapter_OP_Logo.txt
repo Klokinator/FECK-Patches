@@ -1,4 +1,5 @@
 NAME=ChapterOPLogo
+NAME.en=ChapterOPLogo
 TYPE=IMAGE
 
 AUTHOR=laqieer

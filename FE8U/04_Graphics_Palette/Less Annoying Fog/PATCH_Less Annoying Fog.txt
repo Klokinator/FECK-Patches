@@ -1,4 +1,5 @@
 NAME=Less Annoying Fog
+NAME.en=Less Annoying Fog
 
 TYPE=EA
 TAG=#ENGINE

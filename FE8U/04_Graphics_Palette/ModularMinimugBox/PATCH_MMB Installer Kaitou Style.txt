@@ -1,4 +1,5 @@
 NAME=ModularMinimugBox: Kaitou Style(Installer)
+NAME.en=ModularMinimugBox: Kaitou Style(Installer)
 
 TYPE=EA
 TAG=#ENGINE

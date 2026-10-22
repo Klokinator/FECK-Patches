@@ -1,4 +1,5 @@
 NAME=WeaponRankEX (Max Rank for Promoted)
+NAME.en=WeaponRankEX (Max Rank for Promoted)
 
 IF:0x16d5c=0x00 0x4B 0x18 0x47
 

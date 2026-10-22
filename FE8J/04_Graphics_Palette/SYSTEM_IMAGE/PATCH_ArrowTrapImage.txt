@@ -1,4 +1,5 @@
 NAME=ArrowTrapImage
+NAME.en=ArrowTrapImage
 
 TYPE=IMAGE
 

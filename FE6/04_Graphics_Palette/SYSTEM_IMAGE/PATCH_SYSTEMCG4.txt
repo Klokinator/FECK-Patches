@@ -1,5 +1,6 @@
 
 NAME=CG4
+NAME.en=CG4
 
 //画像パッチとして実装します
 TYPE=IMAGE

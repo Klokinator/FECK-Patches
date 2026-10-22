@@ -1,4 +1,5 @@
 NAME=Split Promotion Items PromoItemsList 20220505(Editor)
+NAME.en=Split Promotion Items PromoItemsList 20220505(Editor)
 TYPE=STRUCT
 IF:0xCC5F6=0xC0 0x46
 

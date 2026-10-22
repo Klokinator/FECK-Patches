@@ -1,5 +1,6 @@
 
 NAME=CG3
+NAME.en=CG3
 
 //画像パッチとして実装します
 TYPE=IMAGE

@@ -1,4 +1,5 @@
 NAME=UnInstall SkillSystems RandomMugs
+NAME.en=UnInstall SkillSystems RandomMugs
 
 AUTHOR=7743
 TYPE=BIN

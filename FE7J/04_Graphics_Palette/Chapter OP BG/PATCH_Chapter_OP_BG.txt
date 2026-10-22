@@ -1,4 +1,5 @@
 NAME=ChapterOPBG
+NAME.en=ChapterOPBG
 
 AUTHOR=laqieer
 

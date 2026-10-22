@@ -1,4 +1,5 @@
 NAME=WeaponRankEX (Installer)
+NAME.en=WeaponRankEX (Installer)
 
 TYPE=EA
 TAG=#ENGINE

@@ -1,4 +1,5 @@
 NAME=Convert Chapter Titles to Text
+NAME.en=Convert Chapter Titles to Text
 TYPE=EA
 TAG=#ENGINE
 

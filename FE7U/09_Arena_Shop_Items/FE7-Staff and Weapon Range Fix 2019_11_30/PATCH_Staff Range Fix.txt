@@ -1,4 +1,5 @@
 NAME=Staff Range Fix 2019_11_30
+NAME.en=Staff Range Fix 2019_11_30
 TYPE=EA
 TAG=#ENGINE
 

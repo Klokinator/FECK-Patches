@@ -1,5 +1,6 @@
 ﻿
 NAME=DeadMotion(Editor)
+NAME.en=DeadMotion(Editor)
 
 IF:0x53068=0x00 0x4B 0x18 0x47
 

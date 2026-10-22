@@ -1,4 +1,5 @@
 NAME=MapClear
+NAME.en=MapClear
 
 TYPE=IMAGE
 TAG=#IMAGE

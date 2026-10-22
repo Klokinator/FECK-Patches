@@ -1,6 +1,7 @@
 TYPE=EA
 TAG=#ENGINE
 NAME=MinimugPalette Using TextBuffer
+NAME.en=MinimugPalette Using TextBuffer
 
 EA=MinimugPalette.event
 

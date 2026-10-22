@@ -1,4 +1,5 @@
 NAME=WalkingSoundHack(Install)
+NAME.en=WalkingSoundHack(Install)
 INFO=ユニットの移動音を設定できるようにします。
 INFO.en=Change you to set the moving sound of the unit.
 

@@ -1,4 +1,5 @@
 NAME=ModularMinimugBox: VisionQuest Style with ItemList(Installer)
+NAME.en=ModularMinimugBox: VisionQuest Style with ItemList(Installer)
 
 TYPE=EA
 TAG=#ENGINE

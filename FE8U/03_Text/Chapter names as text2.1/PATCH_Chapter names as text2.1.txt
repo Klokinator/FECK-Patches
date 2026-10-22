@@ -1,4 +1,5 @@
 NAME=Convert Chapter Titles to Text_ver2.1 Support Lat1(Install)
+NAME.en=Convert Chapter Titles to Text_ver2.1 Support Lat1(Install)
 TYPE=EA
 TAG=#ENGINE
 

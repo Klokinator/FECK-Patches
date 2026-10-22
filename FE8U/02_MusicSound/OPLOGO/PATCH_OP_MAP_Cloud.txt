@@ -1,4 +1,5 @@
 NAME=OP_MAP_Cloud
+NAME.en=OP_MAP_Cloud
 
 TYPE=IMAGE
 TAG=#IMAGE

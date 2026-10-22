@@ -1,4 +1,5 @@
 NAME=ModularMinimugBox: RUNABOX LHT Style (Installer)
+NAME.en=ModularMinimugBox: RUNABOX LHT Style (Installer)
 
 TYPE=EA
 TAG=#ENGINE

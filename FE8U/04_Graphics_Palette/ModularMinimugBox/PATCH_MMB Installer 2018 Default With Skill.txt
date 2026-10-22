@@ -1,4 +1,5 @@
 NAME=ModularMinimugBox: 2018 Default With Skill(Installer)
+NAME.en=ModularMinimugBox: 2018 Default With Skill(Installer)
 
 
 TYPE=EA

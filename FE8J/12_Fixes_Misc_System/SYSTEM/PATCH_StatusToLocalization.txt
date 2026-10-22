@@ -1,4 +1,5 @@
 NAME=StatusToLocalization English
+NAME.en=StatusToLocalization English
 //アドレスパッチとして実装します
 TYPE=SWITCH
 TAG=#ENGINE #LOCALIZATION

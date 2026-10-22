@@ -1,4 +1,5 @@
 NAME=Fixes ranking to work properly on hector mode
+NAME.en=Fixes ranking to work properly on hector mode
 TYPE=EA
 TAG=#ENGINE
 

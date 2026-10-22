@@ -1,4 +1,5 @@
 NAME=(OLD)Staff Range Fix 2016_07_27
+NAME.en=(OLD)Staff Range Fix 2016_07_27
 TYPE=EA
 TAG=#ENGINE
 

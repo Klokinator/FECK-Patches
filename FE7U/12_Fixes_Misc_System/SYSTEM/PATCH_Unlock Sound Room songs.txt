@@ -1,4 +1,5 @@
 NAME=Unlock Sound Room songs
+NAME.en=Unlock Sound Room songs
 TYPE=SWITCH
 TAG=#ENGINE
 

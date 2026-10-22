@@ -1,4 +1,5 @@
 NAME=Health & Safety Warning
+NAME.en=Health & Safety Warning
 
 TYPE=IMAGE
 

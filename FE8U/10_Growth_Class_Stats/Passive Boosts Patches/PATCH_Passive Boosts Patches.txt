@@ -1,4 +1,5 @@
 NAME=Passive Boosts Patches
+NAME.en=Passive Boosts Patches
 TYPE=EA
 
 

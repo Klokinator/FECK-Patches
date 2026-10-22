@@ -1,4 +1,5 @@
 NAME=DeadMotion(Install)
+NAME.en=DeadMotion(Install)
 TYPE=EA
 TAG=#ENGINE
 

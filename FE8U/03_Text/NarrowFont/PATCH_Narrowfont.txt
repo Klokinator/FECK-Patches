@@ -1,4 +1,5 @@
 NAME=NarrowFont
+NAME.en=NarrowFont
 INFO=Supported Small font
 
 AUTHOR=Scraiza https://feuniverse.us/t/scraizas-crazy-asm/5624/2 ,MintX

@@ -1,4 +1,5 @@
 NAME=Range Display Fix With FE8N Skill
+NAME.en=Range Display Fix With FE8N Skill
 
 TYPE=EA
 TAG=#ENGINE

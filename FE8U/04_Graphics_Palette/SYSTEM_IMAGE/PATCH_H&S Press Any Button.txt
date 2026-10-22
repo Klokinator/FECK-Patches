@@ -1,4 +1,5 @@
 NAME=Health & Safety Warning Press Any Button
+NAME.en=Health & Safety Warning Press Any Button
 
 TYPE=IMAGE
 

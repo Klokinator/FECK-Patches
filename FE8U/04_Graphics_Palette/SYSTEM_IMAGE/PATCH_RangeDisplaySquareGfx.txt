@@ -1,4 +1,5 @@
 NAME=RangeDisplaySquareGfx
+NAME.en=RangeDisplaySquareGfx
 
 TYPE=IMAGE
 TAG=#IMAGE

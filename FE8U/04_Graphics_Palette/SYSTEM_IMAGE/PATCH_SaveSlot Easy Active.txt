@@ -1,4 +1,5 @@
 NAME=SaveSLot Palette: Easy Active
+NAME.en=SaveSLot Palette: Easy Active
 
 TYPE=IMAGE
 

@@ -1,4 +1,5 @@
 NAME=MainMenu
+NAME.en=MainMenu
 
 AUTHOR=laqieer
 

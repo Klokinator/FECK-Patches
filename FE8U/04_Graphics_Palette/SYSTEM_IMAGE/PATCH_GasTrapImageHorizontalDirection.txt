@@ -1,4 +1,5 @@
 NAME=GasTrapImageHorizontalDirection
+NAME.en=GasTrapImageHorizontalDirection
 
 TYPE=IMAGE
 
