@@ -1,4 +1,4 @@
-#define csvmacro000(arg000,arg001) "BYTE arg000 0x00; SHORT arg001;
+#define csvmacro000(arg000,arg001) "BYTE arg000 0x00; SHORT arg001;"
 
 DrawSpecialChapter_Table:
 //csvmacro000(0x00,0xe3)   //Prologue やらなくても自動的に出せます
