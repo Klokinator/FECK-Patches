@@ -2,7 +2,6 @@
 
 #include "EAstdlib.event"
 #include "Extensions/Hack Installation.txt"
-#endif
 
 PUSH
 ORG $25A2C

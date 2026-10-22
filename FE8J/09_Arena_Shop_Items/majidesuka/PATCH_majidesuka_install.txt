@@ -9,7 +9,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0xB9478=0x00 0x4B
+PATCHED_IF:0xB9478=0x00 0x4B 0x18 0x47
 EDIT_PATCH:1=PATCH_majidesuka.txt
 EA=installer.event
 
