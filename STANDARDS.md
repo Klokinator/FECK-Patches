@@ -19,3 +19,17 @@ Every patch should carry the ROM it was verified on and a PATCHED_IF that FECK c
 
 ## Out of scope
 FE8N and unstable community patches (FECK ADR-0017).
+
+## Detection (PATCHED_IF)
+- Every installable patch (TYPE EA or BIN) carries a `PATCHED_IF:<addr>=<bytes>` that is false on the untouched vanilla ROM and true after install. Use `PATCHED_IFNOT` only for a patch that removes something.
+- Use at least 4 bytes, and 16 where the patch writes that much. A signature that is a prefix of a sibling patch's signature reads as installed when the sibling is (the Passive Boosts defect); when two patches write the same hook, add bytes that differ.
+- A hook written by a `JUMP` or a free-space pointer holds a thunk or an address that depends on where the host put the code. Sign the fixed bytes next to it, or the payload's own first bytes, never the pointer.
+- `_tools/validate-library.mjs` enforces this: it fails the library on a signature that is true on vanilla, and warns on weak, missing or payload-inconsistent ones. Run it before every handoff.
+
+## EA patches
+- Host-defined symbols: FEBuilder's `MakeEAAutoDef` defines `ItemTable` (and similar) before an EA patch runs. FECK's buildfile path does the same. A patch that uses such a symbol should say so in `INFO.en`.
+- A code block after `POP` with no `ORG` relies on the host choosing free space (`ALLOC_SIZE_HINT`). Prefer an explicit `ORG` or a documented hint.
+- Verify each EA patch by assembling it on a vanilla ROM and comparing `PATCHED_IF` before and after.
+
+## Payload files
+- Every `BIN:`, `BINF:` and `EA=` file a patch names sits in the patch's own folder. A `BIN:<addr>=<file>` whose address contains the patch's `PATCHED_IF` must hold those same bytes there.
