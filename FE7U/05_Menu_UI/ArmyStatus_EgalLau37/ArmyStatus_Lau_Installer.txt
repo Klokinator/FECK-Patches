@@ -1,4 +1,4 @@
-
+#ifdef _FE7_
 PUSH
 ORG 0x8E9B0
 SHORT 0x4900 0x468F
