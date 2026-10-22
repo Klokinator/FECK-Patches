@@ -4,6 +4,7 @@ NAME.zh=Save at the start of the player's turn, after, not before, recovery and 
 
 //アドレスパッチとして実装します
 TYPE=SWITCH
+REQUIRES=08_Save_Records/autosave
 TAG=#ENGINE
 
 COMBO=Default: Save before poisoning|OFF|FIX: Save after poisoning|FIX

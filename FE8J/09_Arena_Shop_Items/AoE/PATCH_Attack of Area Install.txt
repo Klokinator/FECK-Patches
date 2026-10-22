@@ -2,6 +2,7 @@ NAME=AoE 範囲技 広範囲のエリア攻撃(Install)
 NAME.en=AoE Area of Effect(Installer)
 NAME.zh=AoE Area of Effect(Installer)
 TYPE=EA
+REQUIRES=01_BattleAnimation/DrawMapActionAnimation
 TAG=#ENGINE
 
 EXTENDS:0x1100=TEXT

@@ -10,6 +10,9 @@ Draft, to be finalized when the new GitHub project is created.
 
 ## Required metadata in PATCH_*.txt
 NAME.en, INFO.en, AUTHOR, TAG, TYPE, PATCHED_IF, plus `VERSION` and `REQUIRES` (other patches) which upstream lacks.
+`REQUIRES=<folder>[;<folder>...]` names the patches that must be installed first, as folder paths under the game folder
+(`10_Growth_Class_Stats/Passive Boosts Patches`); `|` inside one entry lists alternatives (either variant will do). Add it only
+when the patch's own INFO or code says it depends on another patch; never guess. Nothing reads it yet.
 
 ## Layout
 `<Game>/<NN_Category>/<patch>/` as in this repo; superseded versions go in `_older versions`, never loose beside the new one.
