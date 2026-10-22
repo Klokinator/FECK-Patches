@@ -5,6 +5,17 @@ metadata. Commit ids are in this repository's history.
 
 ## 2026-10-22
 
+Publication
+- Added `LICENSE` (GPLv3) for the library's own additions, a "License and credits" section in the README (each patch keeps its
+  author's terms) and `CONTRIBUTING.md`.
+- Added FE7U CritCap (Contro; ported by FECK): caps the shown crit rate at 100. Added the `thumbptr` validator check (a jump
+  stub whose pointer lacks the Thumb bit).
+- Added FE7U Show Heal Amount (Tequila; FE7 version from masterofcontroversy's CC0 ASM collection).
+- Install check (each installable EA patch assembled on its vanilla ROM, `PATCHED_IF` read afterwards): three wrong
+  signatures fixed. FE7U UnitActionRework read 0x02F6E4, the hook is at 0x02F218; FE8J TalkList read 0x16E16, the hook is at
+  0x92EE8 (`00 48 87 46`); FE8J 1RNMode_Flag read 0xCB8 (the FE8U address), the FE8J hook is at 0xC90.
+- Removed 16 leftover folders (`OLD`, `gomi`, `layoutOLD*`, `old`, `Old Capture (Obsolete)`); none held a patch.
+
 Detection and validation
 - Added `_tools/validate-library.mjs`: payload, vanilla-`PATCHED_IF`, weak-signature, contained-signature, duplicate,
   empty-file, metadata and credit checks. Signatures are now checked against the vanilla ROMs and against the payload bytes.

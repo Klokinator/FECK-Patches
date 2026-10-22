@@ -1,0 +1,11 @@
+NAME=ライブの杖で回復量を表示します
+NAME.en=Show Heal Amount
+TYPE=EA
+EA=Installer.event
+TAG=#ENGINE
+
+PATCHED_IF:0x0232A0=0x00 0x4B 0x18 0x47
+
+INFO.en=Shows the amount a healing staff will restore when the staff is used, next to the target's HP in the info window.\r\nUses text ID 0x12B1 (the vanilla hyphen) as the arrow; to show "->" make a text with that and change Arrow_Text_ID in Installer.event.\r\nThe hook at 0x0232A0 replaces the call to the HP window routine with a copy of it that adds the heal amount.
+
+AUTHOR=Tequila (FE7 version from masterofcontroversy's ASM collection, CC0)

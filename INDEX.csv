@@ -672,6 +672,7 @@
 "FE7U","05_Menu_UI","0","0","FE7U\05_Menu_UI\multi_prohibits_bad_status","PATCH_prohibits_bad_status_install.txt","Define multiple classes that prohibit additional effects such as poisons bad status(Install)","状態異常の毒などの追加効果を禁止するクラスを複数定義する(Install)","EA","","7743"
 "FE7U","05_Menu_UI","0","0","FE7U\05_Menu_UI\Negative Stats Display","PATCH_Negative Stats Display.txt","Negative Stats Display","Negative Stats Display","EA","#ENGINE","circleseverywhere https://feuniverse.us/t/fe8-negative-stat-boost-display-fix/1715/3"
 "FE7U","05_Menu_UI","0","0","FE7U\05_Menu_UI\Null Move Display-7743","PATCH_Null Move Display-7743.txt","Null Move Display By 7743","移動しないAIだったら移動範囲を表示しない By 7743","BIN","","7743"
+"FE7U","05_Menu_UI","0","0","FE7U\05_Menu_UI\Show Heal Amount","PATCH_Show Heal Amount.txt","Show Heal Amount","ライブの杖で回復量を表示します","EA","#ENGINE","Tequila (FE7 version from masterofcontroversy's ASM collection, CC0)"
 "FE7U","05_Menu_UI","0","0","FE7U\05_Menu_UI\StatScreenBlink","PATCH_StatScreenBlink_SSBlink.txt","Add blink to portrait image on status screen","ステータス画面の顔画像に瞬きを追加する","EA","#ENGINE","Stan"
 "FE7U","05_Menu_UI","0","0","FE7U\05_Menu_UI\UpdatedLButtonCycling","PATCH_UpdatedLButtonCycling.txt","Updated L Button Cycling","敵選択時のLボタンで自軍ではなく、次の敵ユニットを選択する","EA","#ENGINE","AuraWolf https://feuniverse.us/t/fe8u-aura-wolfs-asm-or-something/8467/4"
 "FE7U","06_Events_Scripting","0","0","FE7U\06_Events_Scripting\map_change_to_flag","PATCH_map_change_to_flag.txt","Add Event Condition: Tile Change","マップ変化すると特定のフラグを立てるようにする","BIN","#ENGINE","7743"

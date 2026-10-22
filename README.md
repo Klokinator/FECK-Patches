@@ -58,6 +58,14 @@ All zero-dependency Node scripts in `_tools/` (`node _tools/<name>.mjs`):
 Every `AUTHOR` line is kept as upstream wrote it. About 1,450 patches have no author upstream (1,208 outside the archived folders); they stay uncredited here until a
 source names someone, and no author is ever guessed (the validator lists them as `noauthor`).
 
+## License and credits
+
+This library is open source, editable by anyone, and not for profit. `LICENSE` (GPLv3, the same as FECK and
+FEBuilderGBA) covers what this repository adds: the tools in `_tools/`, the index and reports, the documentation, and the
+fixes and ports made here. Each patch keeps its original author's own terms and credit: the `AUTHOR` line of its
+`PATCH_*.txt` is the credit, and the GPL does not replace what an author asked for. If you are an author and want a
+credit changed or a patch removed, open an issue. See `CONTRIBUTING.md` to help.
+
 ## Things to know
 
 - Grab-bag folders hold many small unrelated patches in one folder: `SYSTEM`, `SYSTEM_IMAGE`, `FEEditor`, `OTHER`,
