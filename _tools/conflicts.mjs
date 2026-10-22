@@ -16,7 +16,7 @@ const walk = (d) => {
     if (e.name.startsWith(".") || e.name === "_tools" || e.name === "_removed-upstream" || e.name === "_older versions") continue;
     const p = join(d, e.name);
     if (e.isDirectory()) { walk(p); continue; }
-    if (!/^PATCH_.*\.txt$/.test(e.name)) continue;
+    if (!/^PATCH_.*\.txt$/i.test(e.name)) continue;
     const rel = relative(root, p).split(sep).join("/");
     const game = rel.split("/")[0];
     for (const m of dec(readFileSync(p)).matchAll(/^PATCHED_IF:(0x[0-9a-fA-F]+)=((?:0x[0-9a-fA-F]{2}\s*)+)/gm)) {

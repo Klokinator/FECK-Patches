@@ -1,0 +1,13 @@
+./FE6/02_MusicSound/AllInstrumentEA/Patch_AllInstrument.txt -> ./FE6/02_MusicSound/AllInstrumentEA/PATCH_AllInstrument.txt
+./FE7J/02_MusicSound/AllInstrumentEA/Patch_AllInstrument.txt -> ./FE7J/02_MusicSound/AllInstrumentEA/PATCH_AllInstrument.txt
+./FE7U/02_MusicSound/AllInstrumentEA/Patch_AllInstrument.txt -> ./FE7U/02_MusicSound/AllInstrumentEA/PATCH_AllInstrument.txt
+./FE8J/02_MusicSound/AllInstrumentEA/Patch_AllInstrument.txt -> ./FE8J/02_MusicSound/AllInstrumentEA/PATCH_AllInstrument.txt
+./FE8J/05_Menu_UI/EventMenu_20230401/Patch_EventMenu.txt -> ./FE8J/05_Menu_UI/EventMenu_20230401/PATCH_EventMenu.txt
+./FE8J/05_Menu_UI/_older versions/EventMenu/Patch_EventMenu.txt -> ./FE8J/05_Menu_UI/_older versions/EventMenu/PATCH_EventMenu.txt
+./FE8J/12_Fixes_Misc_System/MNC2Fix/Patch_MNC2Fix.txt -> ./FE8J/12_Fixes_Misc_System/MNC2Fix/PATCH_MNC2Fix.txt
+./FE8U/02_MusicSound/AllInstrumentEA/Patch_AllInstrument.txt -> ./FE8U/02_MusicSound/AllInstrumentEA/PATCH_AllInstrument.txt
+./FE8U/02_MusicSound/Str as res20190715/Patch_StrenghtAsRes.txt -> ./FE8U/02_MusicSound/Str as res20190715/PATCH_StrenghtAsRes.txt
+./FE8U/02_MusicSound/_older versions/Str as res/Patch_StrenghtAsRes.txt -> ./FE8U/02_MusicSound/_older versions/Str as res/PATCH_StrenghtAsRes.txt
+./FE8U/05_Menu_UI/EventMenu_20230401/Patch_EventMenu.txt -> ./FE8U/05_Menu_UI/EventMenu_20230401/PATCH_EventMenu.txt
+./FE8U/05_Menu_UI/_older versions/EventMenu/Patch_EventMenu.txt -> ./FE8U/05_Menu_UI/_older versions/EventMenu/PATCH_EventMenu.txt
+./FE8U/12_Fixes_Misc_System/MNC2Fix/Patch_MNC2Fix.txt -> ./FE8U/12_Fixes_Misc_System/MNC2Fix/PATCH_MNC2Fix.txt

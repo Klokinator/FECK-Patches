@@ -46,7 +46,7 @@ const walk = (dir, out = []) => {
     if (name.startsWith(".") || name === "_tools") continue;
     const p = join(dir, name);
     if (statSync(p).isDirectory()) walk(p, out);
-    else if (/^PATCH_.*\.txt$/.test(name)) out.push(p);
+    else if (/^PATCH_.*\.txt$/i.test(name)) out.push(p);
   }
   return out;
 };
