@@ -2,8 +2,9 @@
 
 Every patch FEBuilderGBA ships in its `config/patch2/<game>/` database, copied into one tree and sorted by what the
 patch does. Source: `laqieer/FEBuilderGBA-patch2` at commit 6b0105c2 (2026-07-02), overlaid onto the earlier hand-categorized snapshot of FEBuilderGBA_20210328.22. Folders removed upstream sit in `FE8U\_removed-upstream`.
-Nothing here is edited; folders are whole, so the `PATCH_*.txt` files still find their `.dmp/.s/.event/.png/.bin`
-payloads by relative name.
+Since the import the library has been audited and corrected (see `CHANGELOG.md`): detection signatures, credits, missing
+metadata and a few broken installers were fixed, and nothing else was rewritten. Folders are whole, so the `PATCH_*.txt`
+files still find their `.dmp/.s/.event/.png/.bin` payloads by relative name.
 
 Out of scope for FECK (ADR-0017): FE8N and unstable community patches. They are kept, under
 `00_SkillSystems\FE8N (out of scope, ADR-0017)` or flagged in INDEX.csv, but are not targets.
@@ -35,9 +36,27 @@ Games: `FE6`, `FE7J`, `FE7U`, `FE8J`, `FE8U`.
 
 ## INDEX.csv
 
-One row per `PATCH_*.txt` (4377 rows): Game, Category, Superseded, RemovedUpstream, Folder (path relative to this folder), OldFolder
-(name in the FEBuilder DB), PatchFile, NameEn, NameJp, Type, Tag, Author. Filter on Game then NameEn/Tag. FEBuilder
-tags: `#ENGINE`, `#IMAGE`, `#EVENT`, `#BGM`, `#SOUND`, `#TEXT`, `#ESSENTIALFIXES`.
+One row per `PATCH_*.txt` (4377 rows): Game, Category, Superseded, RemovedUpstream, Folder (path relative to this folder),
+PatchFile, NameEn, NameJp, Type, Tag, Author. Filter on Game then NameEn/Tag. FEBuilder
+tags: `#ENGINE`, `#IMAGE`, `#EVENT`, `#BGM`, `#SOUND`, `#TEXT`, `#ESSENTIALFIXES`. It is generated: `node _tools/make-index.mjs`
+rewrites it, `--check` says whether it is stale.
+
+## Tools and reports
+
+All zero-dependency Node scripts in `_tools/` (`node _tools/<name>.mjs`):
+
+- `validate-library.mjs [--details] [--json]`: payload, detection and metadata checks over every patch; exit 1 on an error.
+  Run it before every change. The vanilla check needs the ROMs in `..\ROMS` and is skipped when they are absent.
+- `conflicts.mjs [--csv]`: patches whose `PATCHED_IF` regions overlap with different bytes. `CONFLICTS.csv` is its output; each
+  such patch also carries the other's signature as `CONFLICT_IF`.
+- `make-index.mjs [--check]`: regenerates `INDEX.csv`.
+
+`STANDARDS.md` holds the rules for new patches and the metadata keys (`REQUIRES`, `CONFLICT_IF`, `PATCHED_IF`).
+
+## Credits
+
+Every `AUTHOR` line is kept as upstream wrote it. About 1,450 patches have no author upstream (1,208 outside the archived folders); they stay uncredited here until a
+source names someone, and no author is ever guessed (the validator lists them as `noauthor`).
 
 ## Things to know
 
