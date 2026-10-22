@@ -5,6 +5,7 @@
 //   WARN   weak      a PATCHED_IF of 2 bytes or fewer
 //   WARN   nodetect  an installable patch (TYPE EA/BIN) with no PATCHED_IF
 //   WARN   meta      missing NAME.en / INFO.en / AUTHOR / TAG / TYPE
+//   WARN   empty     a PATCH file with no content at all (nothing to install or detect)
 //   WARN   duplicate two patches of one game share the same PATCHED_IF address and bytes
 // Exit code 1 when any ERROR is found. Folders _removed-upstream and _older versions are counted but not warned on.
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
@@ -77,8 +78,10 @@ for (const file of walk(root)) {
     const val = line.slice(eq + 1).trim();
     keys.set(key, val);
     if (/^BINF?:/.test(key) || key === "EA") payloads.push(val);
-    if (key.startsWith("PATCHED_IF:")) piList.push([key.slice(11), val]);
+    if (key.startsWith("PATCHED_IF:")) piList.push([key.slice(11), val, false]);
+    if (key.startsWith("PATCHED_IFNOT:")) piList.push([key.slice(14), val, true]);
   }
+  if (lines.join("").trim() === "") add("warn", "empty", file, "file is empty");
   const type = keys.get("TYPE") ?? "";
   const quiet = archived ? "info" : "warn";
   for (const v of payloads) {
@@ -94,18 +97,19 @@ for (const file of walk(root)) {
   if (inst) installable++;
   if (inst && piList.length === 0) add(quiet, "nodetect", file, "no PATCHED_IF");
   if (piList.length) detectable++;
-  for (const [a, b] of piList) {
+  for (const [a, b, negated] of piList) {
     if (!/^(0x)?[0-9a-f]+$/i.test(a)) continue;
     const addr = parseInt(a, 16);
     const bytes = b.split(/\s+/).filter(Boolean).map((x) => parseInt(x, 16));
     if (!bytes.length || bytes.some(Number.isNaN)) continue;
-    if (bytes.length <= 2) add(quiet, "weak", file, `${bytes.length} byte(s) at 0x${addr.toString(16)}`);
+    if (!negated && bytes.length <= 2) add(quiet, "weak", file, `${bytes.length} byte(s) at 0x${addr.toString(16)}`);
     const rom = roms[game];
-    if (rom && addr + bytes.length <= rom.length && bytes.every((x, i) => rom[addr + i] === x)) {
-      add("error", "vanilla", file, `PATCHED_IF true on vanilla ${game} at 0x${addr.toString(16)}`);
+    if (rom && addr + bytes.length <= rom.length) {
+      const same = bytes.every((x, i) => rom[addr + i] === x);
+      if (same !== negated) add("error", "vanilla", file, `${negated ? "PATCHED_IFNOT" : "PATCHED_IF"} reads as installed on vanilla ${game} at 0x${addr.toString(16)}`);
     }
     if (!archived) {
-      const k = `${game}|${addr}|${bytes.join(",")}`;
+      const k = `${game}|${addr}|${bytes.join(",")}${negated ? "|not" : ""}`;
       if (!sigs.has(k)) sigs.set(k, []);
       sigs.get(k).push(file);
     }
@@ -121,7 +125,7 @@ if (asJson) {
   console.log(JSON.stringify({ total, installable, detectable, issues }, null, 1));
 } else {
   console.log(`patches: ${total}; installable (EA/BIN): ${installable}; with PATCHED_IF: ${detectable}; ROMs found: ${Object.keys(roms).join(",") || "none"}`);
-  for (const kind of ["payload", "vanilla", "weak", "nodetect", "meta", "duplicate"]) {
+  for (const kind of ["payload", "vanilla", "empty", "weak", "nodetect", "meta", "duplicate"]) {
     console.log(`${kind.padEnd(10)} ${count(kind, "error") + count(kind, "warn") + count(kind, "info")} (${count(kind, "error")} error, ${count(kind, "warn")} warn, ${count(kind, "info")} archived)`);
   }
   if (details) for (const i of issues.filter((x) => x.level !== "info")) console.log(`${i.level.toUpperCase()} ${i.kind} ${i.file}: ${i.msg}`);
