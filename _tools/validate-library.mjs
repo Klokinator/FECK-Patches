@@ -1,0 +1,130 @@
+// Library validator (PatchLibraryPlan step 6). Zero dependencies: node _tools/validate-library.mjs [--details] [--json]
+// Walks every PATCH_*.txt and checks, per file:
+//   ERROR  payload   a BIN:/BINF:/EA= file the patch names is missing from its folder
+//   ERROR  vanilla   a PATCHED_IF that is TRUE on that game's untouched ROM (needs ../ROMS; skipped if absent)
+//   WARN   weak      a PATCHED_IF of 2 bytes or fewer
+//   WARN   nodetect  an installable patch (TYPE EA/BIN) with no PATCHED_IF
+//   WARN   meta      missing NAME.en / INFO.en / AUTHOR / TAG / TYPE
+//   WARN   duplicate two patches of one game share the same PATCHED_IF address and bytes
+// Exit code 1 when any ERROR is found. Folders _removed-upstream and _older versions are counted but not warned on.
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { dirname, join, relative, resolve, sep } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const ROMS = resolve(root, "..", "ROMS");
+const ROM_FILES = {
+  FE6: "Fire Emblem 6 - Fuuin no Tsurugi (J).gba",
+  FE7J: "Fire Emblem 7 - Rekka no Ken (J).gba",
+  FE7U: "Fire Emblem 7 - (U).gba",
+  FE8J: "Fire Emblem 8 - Seima no Kouseki (J).gba",
+  FE8U: "Fire Emblem 8 - The Sacred Stones (U).gba",
+};
+const roms = {};
+for (const [g, f] of Object.entries(ROM_FILES)) {
+  const p = join(ROMS, f);
+  if (existsSync(p)) roms[g] = readFileSync(p);
+}
+
+const details = process.argv.includes("--details");
+const asJson = process.argv.includes("--json");
+
+const decode = (buf) => {
+  try {
+    return new TextDecoder("utf-8", { fatal: true }).decode(buf);
+  } catch {
+    return new TextDecoder("shift_jis").decode(buf);
+  }
+};
+
+const walk = (dir, out = []) => {
+  for (const name of readdirSync(dir).sort()) {
+    if (name.startsWith(".") || name === "_tools") continue;
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) walk(p, out);
+    else if (/^PATCH_.*\.txt$/.test(name)) out.push(p);
+  }
+  return out;
+};
+
+const issues = [];
+const add = (level, kind, file, msg) => issues.push({ level, kind, file: relative(root, file), msg });
+
+const sigs = new Map();
+let total = 0;
+let installable = 0;
+let detectable = 0;
+
+for (const file of walk(root)) {
+  const rel = relative(root, file).split(sep);
+  const game = rel[0];
+  if (!(game in ROM_FILES)) continue;
+  total++;
+  const archived = rel.some((s) => s === "_removed-upstream" || s === "_older versions");
+  const dir = dirname(file);
+  const keys = new Map();
+  const lines = decode(readFileSync(file)).replace(/^﻿/, "").split(/\r\n|\n|\r/);
+  const payloads = [];
+  const piList = [];
+  for (let line of lines) {
+    if (line.startsWith("//")) continue;
+    const c = line.indexOf("//");
+    if (c >= 0) line = line.slice(0, c);
+    line = line.trim();
+    const eq = line.indexOf("=");
+    if (eq < 0) continue;
+    const key = line.slice(0, eq);
+    const val = line.slice(eq + 1).trim();
+    keys.set(key, val);
+    if (/^BINF?:/.test(key) || key === "EA") payloads.push(val);
+    if (key.startsWith("PATCHED_IF:")) piList.push([key.slice(11), val]);
+  }
+  const type = keys.get("TYPE") ?? "";
+  const quiet = archived ? "info" : "warn";
+  for (const v of payloads) {
+    if (!v || v.includes("$")) continue;
+    if (!existsSync(join(dir, v))) add("error", "payload", file, `missing ${v}`);
+  }
+  if (!keys.has("NAME.en")) add(quiet, "meta", file, "NAME.en");
+  if (!keys.has("INFO.en") && !keys.has("INFO")) add(quiet, "meta", file, "INFO.en");
+  if (!keys.has("AUTHOR")) add(quiet, "meta", file, "AUTHOR");
+  if (!keys.has("TAG")) add(quiet, "meta", file, "TAG");
+  if (!type) add(quiet, "meta", file, "TYPE");
+  const inst = type === "EA" || type === "BIN";
+  if (inst) installable++;
+  if (inst && piList.length === 0) add(quiet, "nodetect", file, "no PATCHED_IF");
+  if (piList.length) detectable++;
+  for (const [a, b] of piList) {
+    if (!/^(0x)?[0-9a-f]+$/i.test(a)) continue;
+    const addr = parseInt(a, 16);
+    const bytes = b.split(/\s+/).filter(Boolean).map((x) => parseInt(x, 16));
+    if (!bytes.length || bytes.some(Number.isNaN)) continue;
+    if (bytes.length <= 2) add(quiet, "weak", file, `${bytes.length} byte(s) at 0x${addr.toString(16)}`);
+    const rom = roms[game];
+    if (rom && addr + bytes.length <= rom.length && bytes.every((x, i) => rom[addr + i] === x)) {
+      add("error", "vanilla", file, `PATCHED_IF true on vanilla ${game} at 0x${addr.toString(16)}`);
+    }
+    if (!archived) {
+      const k = `${game}|${addr}|${bytes.join(",")}`;
+      if (!sigs.has(k)) sigs.set(k, []);
+      sigs.get(k).push(file);
+    }
+  }
+}
+for (const [k, files] of sigs) {
+  if (files.length > 1) for (const f of files) add("warn", "duplicate", f, `shares PATCHED_IF ${k.split("|")[0]} 0x${Number(k.split("|")[1]).toString(16)} with ${files.length - 1} other(s)`);
+}
+
+const count = (kind, level) => issues.filter((i) => i.kind === kind && (!level || i.level === level)).length;
+const errors = issues.filter((i) => i.level === "error");
+if (asJson) {
+  console.log(JSON.stringify({ total, installable, detectable, issues }, null, 1));
+} else {
+  console.log(`patches: ${total}; installable (EA/BIN): ${installable}; with PATCHED_IF: ${detectable}; ROMs found: ${Object.keys(roms).join(",") || "none"}`);
+  for (const kind of ["payload", "vanilla", "weak", "nodetect", "meta", "duplicate"]) {
+    console.log(`${kind.padEnd(10)} ${count(kind, "error") + count(kind, "warn") + count(kind, "info")} (${count(kind, "error")} error, ${count(kind, "warn")} warn, ${count(kind, "info")} archived)`);
+  }
+  if (details) for (const i of issues.filter((x) => x.level !== "info")) console.log(`${i.level.toUpperCase()} ${i.kind} ${i.file}: ${i.msg}`);
+  else for (const i of errors.slice(0, 40)) console.log(`ERROR ${i.kind} ${i.file}: ${i.msg}`);
+}
+process.exit(errors.length ? 1 : 0);
