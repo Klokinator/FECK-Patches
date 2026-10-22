@@ -44,25 +44,25 @@ BYTE  #0x00 We don't care about Seth's class here
 //samples
 
 //Sample 1: Eirika changes to Ross if Gilliam exists
-SHORT #0x0002
-SHORT #0x0009
-SHORT #0x0000
-BYTE  #0x03 
-BYTE  #0x00 
+SHORT 0x0002
+SHORT 0x0009
+SHORT 0x0000
+BYTE  0x03 
+BYTE  0x00 
 
 //Sample 2: Seth changes to Neimi if Event Flag A is set
-SHORT #0x0004
-SHORT #0x000A
-SHORT #0x000A
-BYTE  #0x00 
-BYTE  #0x00 
+SHORT 0x0004
+SHORT 0x000A
+SHORT 0x000A
+BYTE  0x00 
+BYTE  0x00 
 
 //Sample 3: Gilliam changes to Colm if Gilliam exists and is a General
-SHORT #0x0005
-SHORT #0x000C
-SHORT #0x0000
-BYTE  #0x03 
-BYTE  #0x0B 
+SHORT 0x0005
+SHORT 0x000C
+SHORT 0x0000
+BYTE  0x03 
+BYTE  0x0B 
 
 
 WORD 0x0 0x0//Terminator, don't delete this or very bad things will happen
