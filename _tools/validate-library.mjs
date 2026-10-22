@@ -5,7 +5,8 @@
 //   WARN   payloadsig a BIN:addr=file payload that does not hold the patch's own PATCHED_IF bytes at that address (catches damaged or truncated payloads)
 //   WARN   weak      a PATCHED_IF of 2 bytes or fewer
 //   WARN   nodetect  an installable patch (TYPE EA/BIN) with no PATCHED_IF
-//   WARN   meta      missing NAME.en / INFO.en / AUTHOR / TAG / TYPE
+//   WARN   meta      missing NAME.en / INFO.en / TAG / TYPE
+//   WARN   noauthor  no AUTHOR: no credit upstream; never guessed, left as is until a source names the author
 //   WARN   empty     a PATCH file with no content at all (nothing to install or detect)
 //   WARN   contained a PATCHED_IF lying wholly inside another patch's PATCHED_IF of the same game (same bytes there), so it reads as installed whenever the other is
 //   WARN   duplicate two patches of one game share the same PATCHED_IF address and bytes
@@ -95,7 +96,7 @@ for (const file of walk(root)) {
   }
   if (!keys.has("NAME.en")) add(quiet, "meta", file, "NAME.en");
   if (!keys.has("INFO.en") && !keys.has("INFO")) add(quiet, "meta", file, "INFO.en");
-  if (!keys.has("AUTHOR")) add(quiet, "meta", file, "AUTHOR");
+  if (!keys.has("AUTHOR")) add(quiet, "noauthor", file, "AUTHOR");
   if (!keys.has("TAG")) add(quiet, "meta", file, "TAG");
   if (!type) add(quiet, "meta", file, "TYPE");
   const inst = type === "EA" || type === "BIN";
@@ -154,7 +155,7 @@ if (asJson) {
   console.log(JSON.stringify({ total, installable, detectable, issues }, null, 1));
 } else {
   console.log(`patches: ${total}; installable (EA/BIN): ${installable}; with PATCHED_IF: ${detectable}; ROMs found: ${Object.keys(roms).join(",") || "none"}`);
-  for (const kind of ["payload", "payloadsig", "vanilla", "contained", "empty", "weak", "nodetect", "meta", "duplicate"]) {
+  for (const kind of ["payload", "payloadsig", "vanilla", "contained", "empty", "weak", "nodetect", "meta", "noauthor", "duplicate"]) {
     console.log(`${kind.padEnd(10)} ${count(kind, "error") + count(kind, "warn") + count(kind, "info")} (${count(kind, "error")} error, ${count(kind, "warn")} warn, ${count(kind, "info")} archived)`);
   }
   if (details) for (const i of issues.filter((x) => x.level !== "info")) console.log(`${i.level.toUpperCase()} ${i.kind} ${i.file}: ${i.msg}`);
