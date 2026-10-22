@@ -4,7 +4,7 @@
 //   ERROR  vanilla   a PATCHED_IF that is TRUE on that game's untouched ROM (needs ../ROMS; skipped if absent)
 //   WARN   payloadsig a BIN:addr=file payload that does not hold the patch's own PATCHED_IF bytes at that address (catches damaged or truncated payloads)
 //   WARN   weak      a PATCHED_IF of 2 bytes or fewer
-//   WARN   nodetect  an installable patch (TYPE EA/BIN) with no PATCHED_IF
+//   WARN   nodetect  an installable patch (TYPE EA/BIN) with no PATCHED_IF (uninstallers, by file name, are exempt)
 //   WARN   meta      missing NAME.en / INFO.en / TAG / TYPE
 //   WARN   noauthor  no AUTHOR: no credit upstream; never guessed, left as is until a source names the author
 //   WARN   empty     a PATCH file with no content at all (nothing to install or detect)
@@ -101,7 +101,8 @@ for (const file of walk(root)) {
   if (!type) add(quiet, "meta", file, "TYPE");
   const inst = type === "EA" || type === "BIN";
   if (inst) installable++;
-  if (inst && piList.length === 0) add(quiet, "nodetect", file, "no PATCHED_IF");
+  // An uninstaller's state is the absence of another patch, which PATCHED_IFNOT cannot express (it would read as applied on vanilla).
+  if (inst && piList.length === 0 && !/uninstall/i.test(file)) add(quiet, "nodetect", file, "no PATCHED_IF");
   if (piList.length) detectable++;
   for (const [a, b, negated] of piList) {
     if (!/^(0x)?[0-9a-f]+$/i.test(a)) continue;
