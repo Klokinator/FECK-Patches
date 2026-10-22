@@ -14,7 +14,7 @@ INFO.zh=Allow the chapter's BGM to be infinitely changed from the two vanilla on
 
 
 //既に適応されたかどうか
-PATCHED_IF:0x15FD0=0x00 0x4B
+PATCHED_IF:0x15FD0=0x00 0x4B 0x18 0x47
 
 EVENTSCRIPT:1=400D0000{$L1:SetChapterSong.dmp}	章のBGM動的に変更(LOW)	{MUSIC}
 EVENTSCRIPT:2=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMを動的に変更[XX:MAPMUSIC:Player][YY:MAPMUSIC:Enemy][ZZ:MAPMUSIC:NPC][TT:BOOL:勝利BGMより優先]	{MUSIC}	「勝利BGMより優先」を0(Flase)にすると、敵の数が少なくなったら勝利BGMが再生されます。\r\n「勝利BGMより優先」を1(True)にすると、勝利BGMを再生しません。

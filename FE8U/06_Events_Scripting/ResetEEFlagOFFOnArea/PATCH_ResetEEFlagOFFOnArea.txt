@@ -7,7 +7,7 @@ NAME.zh=Enable flag 0xEE in the arena and do not pop up damage.
 EA=install.event
 
 //既に適応されたかどうか
-PATCHED_IF:0x0B5AC8=0x00 0x4B
+PATCHED_IF:0x0B5AC8=0x00 0x4B 0x18 0x47
 
 INFO=これは、戦闘アニメーションでダメージのポップアップを利用している人向けのパッチです。\r\n闘技場で戦う時には、自動的にフラグ0xEEを有効にしてダメージポップアップを抑制します。\r\n闘技場での戦いが終わると自動的にフラグ0xEEを無効にして、ダメージのポップアップを復活させます。\r\n闘技場での戦いでダメージのポップアップをなくしたい場合に利用してください。
 

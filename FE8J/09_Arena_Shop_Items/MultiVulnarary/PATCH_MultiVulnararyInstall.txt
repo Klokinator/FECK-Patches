@@ -4,7 +4,7 @@ NAME.zh=Multiple vulnerary(Installer)
 TYPE=EA
 TAG=#ENGINE
 
-PATCHED_IF:0x2FE14=0x00 0x4B
+PATCHED_IF:0x2FE14=0x00 0x4B 0x18 0x47
 EDIT_PATCH:01=PATCH_MultiVulnararyEditor.txt
 
 EA=Install.event

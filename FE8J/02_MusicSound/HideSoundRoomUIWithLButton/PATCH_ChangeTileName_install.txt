@@ -5,7 +5,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0xB44C4=0x00 0x4B
+PATCHED_IF:0xB44C4=0x00 0x4B 0x18 0x47
 EA=Installer.event
 
 AUTHOR=7743 , Original idea: Huichelaar https://github.com/Huichelaar/FE8U_SoundRoomBG

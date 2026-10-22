@@ -9,5 +9,5 @@ TYPE=EA
 EA=installer.event
 AUTHOR=7743
 
-PATCHED_IF:0xE838=0x00 0x4B
+PATCHED_IF:0xE838=0x00 0x4B 0x18 0x47
 EDIT_PATCH:1=PATCH_ChooseRandomBackgroundFromPickList.txt

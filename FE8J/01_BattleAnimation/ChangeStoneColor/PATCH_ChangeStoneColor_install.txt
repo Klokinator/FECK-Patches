@@ -9,7 +9,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x69934=0x00 0x4B
+PATCHED_IF:0x69934=0x00 0x4B 0x18 0x47
 EDIT_PATCH:1=PATCH_ChangeStoneColor.txt
 EDIT_PATCH:2=PATCH_ChangeStoneColor_Palette.txt
 EA=ChangeStoneColor_installer.event

@@ -11,7 +11,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0xD1440=0x00 0x48
+PATCHED_IF:0xD1440=0x00 0x48 0x87 0x46
 EDIT_PATCH:1=PATCH_TraineeRework.txt
 EA=Install.event
 

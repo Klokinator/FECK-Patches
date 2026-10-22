@@ -3,7 +3,7 @@ INFO=サウンドルームに再生した楽曲255個をちゃんと記録でき
 
 TYPE=EA
 EA=Installer.event
-PATCHED_IF:0xA3F24=0x00 0x4B
+PATCHED_IF:0xA3F24=0x00 0x4B 0x18 0x47
 
 AUTHOR=7743
 EVENTSCRIPT:01=400DXXXX{$L1:ASMC_CheckSoundRoom.dmp}	[XX:MUSIC:音楽]がSoundRoomで聞けるようになっているか確認する(ASMC_CheckSoundRoom)	{MUSIC}	{COND}	@STOREC

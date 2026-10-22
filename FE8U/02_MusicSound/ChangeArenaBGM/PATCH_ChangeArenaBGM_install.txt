@@ -6,7 +6,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x72710=0x00 0x4B
+PATCHED_IF:0x72710=0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_ChangeArenaBGM.txt
 EA=ChangeArenaBGM_installer.event
 

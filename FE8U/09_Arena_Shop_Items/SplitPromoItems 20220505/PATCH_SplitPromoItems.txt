@@ -1,7 +1,7 @@
 NAME=Split Promotion Items 20220505(Installer)
 TYPE=EA
 EA=Installer.event
-PATCHED_IF:0xCC5F6=0xC0 0x46
+PATCHED_IF:0xCC5F6=0xC0 0x46 0x00 0x4B 0x18 0x47
 
 AUTHOR=SME https://feuniverse.us/t/smes-asm-and-miscellany/4445/48 ,Vesly https://feuniverse.us/t/veslys-asm/12011/101
 INFO=CCアイテムごとにCCするクラスをもっと細かく分岐させます。\r\nDSFEのElysianWhipと同様に、さまざまなプロモーションアイテムを使用すると、使用時にさまざまなクラスになります。\r\nまた、バニラFE8のCC分岐の機能も保持しているため、マスターシールなどのアイテムに選択肢を与えたり、プロモーションアイテムを分けたりして、どちらか一方を強制的に選択することができます。

@@ -14,7 +14,7 @@ INFO.zh=Allow the chapter's battle background to be changed dynamically from an 
 
 
 //既に適応されたかどうか
-PATCHED_IF:0x57A54=0x00 0x4B
+PATCHED_IF:0x57A54=0x00 0x4B 0x18 0x47
 
 EVENTSCRIPT:1=400D0000{$L1:SetBattleBattleBG.dmp}	章の戦闘地形の背景を動的に変更(LOW)
 EVENTSCRIPT:2=40050100XXXX0000400D0000{$L1:SetBattleBattleBG.dmp}	章の戦闘地形の背景を動的に変更[XX:BATTLETERRAINSET:TerrainSet]

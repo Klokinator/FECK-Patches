@@ -4,7 +4,7 @@ NAME.zh=Set multiple Staff BGMs 20240814(Installer)
 TYPE=EA
 TAG=#ENGINE #SONG #MUSIC #BGM
 
-PATCHED_IF:0x74D38=0x00 0x4B
+PATCHED_IF:0x74D38=0x00 0x4B 0x18 0x47
 EDIT_PATCH:01=PATCH_MultiStaffBGMEditor.txt
 
 EA=Install.event

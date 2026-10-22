@@ -9,7 +9,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x5E0FC=0x00 0x4B
+PATCHED_IF:0x5E0FC=0x00 0x4B 0x18 0x47
 EDIT_PATCH:1=PATCH_ChangeSealedSwordFireColor.txt
 EDIT_PATCH:2=PATCH_ChangeSealedSwordFireColor_Palette.txt
 EA=ChangeSealedSwordFireColor_installer.event
