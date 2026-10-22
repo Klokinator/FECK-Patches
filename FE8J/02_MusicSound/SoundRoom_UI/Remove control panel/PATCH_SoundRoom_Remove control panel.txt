@@ -4,7 +4,7 @@ NAME.en=SoundRoom: Turn off the sound room control panel.
 TYPE=EA
 EA=SoundRoom_Remove control panel.event
 
-PATCHED_IF:0xB4F64=0x62 0xD0
+PATCHED_IF:0xAAA658=0x09 0x0A 0x00 0x00 0x00 0x00 0x00 0x00
 
 INFO=サウンドルームの左側にある、ボタン操作のヘルプボックスを消します。
 INFO.en=Turns off the button help box on the left side of the sound room.
