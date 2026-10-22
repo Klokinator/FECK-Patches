@@ -1,7 +1,7 @@
-﻿param([switch]$DryRun)
+param([switch]$DryRun)
 # Overlays the newest upstream FEBuilderGBA-patch2 content onto the categorized tree.
-$u = 'C:\Users\MegaD\Desktop\Romhacks\FEBuilder Rebuild\REFERENCE\FEBuilderGBA-patch2 (upstream)'
-$d = 'C:\Users\MegaD\Desktop\Romhacks\FEBuilder Rebuild\FECK-Patches'
+$u = 'F:\AI PROJECTS\FEBuilder Rebuild\REFERENCE\FEBuilderGBA-patch2 (upstream)'
+$d = 'F:\AI PROJECTS\FEBuilder Rebuild\FECK-Patches'
 $games = 'FE6','FE7J','FE7U','FE8J','FE8U'
 
 # Where new upstream top-level folders belong (decided by hand).
