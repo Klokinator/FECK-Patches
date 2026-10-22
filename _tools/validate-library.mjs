@@ -2,6 +2,7 @@
 // Walks every PATCH_*.txt and checks, per file:
 //   ERROR  payload   a BIN:/BINF:/EA= file the patch names is missing from its folder
 //   ERROR  vanilla   a PATCHED_IF that is TRUE on that game's untouched ROM (needs ../ROMS; skipped if absent)
+//   ERROR  thumbptr  an EA file's jump stub (BYTE 0x00 0x4B 0x18 0x47 or SHORT 0x4B00 0x4718) whose next POIN/WORD lacks the Thumb bit (|1 or +1): bx r3 to an even address enters ARM state
 //   WARN   payloadsig a BIN:addr=file payload that does not hold the patch's own PATCHED_IF bytes at that address (catches damaged or truncated payloads)
 //   WARN   weak      a PATCHED_IF of 2 bytes or fewer
 //   WARN   nodetect  an installable patch (TYPE EA/BIN) with no PATCHED_IF (uninstallers, by file name, are exempt)
@@ -94,6 +95,20 @@ for (const file of walk(root)) {
     if (!v || v.includes("$")) continue;
     if (!existsSync(join(dir, v))) add("error", "payload", file, `missing ${v}`);
   }
+  const eaFile = keys.get("EA");
+  if (eaFile && !eaFile.includes("$") && existsSync(join(dir, eaFile)) && statSync(join(dir, eaFile)).isFile()) {
+    const el = decode(readFileSync(join(dir, eaFile))).split(/\r\n|\n|\r/);
+    el.forEach((l, i) => {
+      if (!/0x00\s+0x4B\s+0x18\s+0x47|0x4B00\s+0x4718/i.test(l)) return;
+      for (let k = i + 1; k < Math.min(el.length, i + 4); k++) {
+        const t = el[k].replace(/\/\/.*/, "").trim();
+        if (!t) continue;
+        const m = /^(POIN|WORD)\s+(.+)$/i.exec(t);
+        if (m && !/(\|\s*1|\+\s*1|\|\s*0x1)$/i.test(m[2].trim()) && !/^(0x)?[0-9a-f]*[13579bdf]$/i.test(m[2].trim())) add("error", "thumbptr", file, `${eaFile}:${k + 1} jump stub pointer has no Thumb bit: ${t}`);
+        break;
+      }
+    });
+  }
   if (!keys.has("NAME.en")) add(quiet, "meta", file, "NAME.en");
   if (!keys.has("INFO.en") && !keys.has("INFO")) add(quiet, "meta", file, "INFO.en");
   if (!keys.has("AUTHOR")) add(quiet, "noauthor", file, "AUTHOR");
@@ -156,7 +171,7 @@ if (asJson) {
   console.log(JSON.stringify({ total, installable, detectable, issues }, null, 1));
 } else {
   console.log(`patches: ${total}; installable (EA/BIN): ${installable}; with PATCHED_IF: ${detectable}; ROMs found: ${Object.keys(roms).join(",") || "none"}`);
-  for (const kind of ["payload", "payloadsig", "vanilla", "contained", "empty", "weak", "nodetect", "meta", "noauthor", "duplicate"]) {
+  for (const kind of ["payload", "thumbptr", "payloadsig", "vanilla", "contained", "empty", "weak", "nodetect", "meta", "noauthor", "duplicate"]) {
     console.log(`${kind.padEnd(10)} ${count(kind, "error") + count(kind, "warn") + count(kind, "info")} (${count(kind, "error")} error, ${count(kind, "warn")} warn, ${count(kind, "info")} archived)`);
   }
   if (details) for (const i of issues.filter((x) => x.level !== "info")) console.log(`${i.level.toUpperCase()} ${i.kind} ${i.file}: ${i.msg}`);

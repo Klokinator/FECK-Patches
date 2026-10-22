@@ -1,0 +1,19 @@
+// FE7U port of Contro's CritCap (FE8). ComputeCrit (0x08028D74) stores the crit rate at battle struct +0x6A and only clamps it below 0.
+// This hook replaces the "CMP r1,#0 / BGE / MOV r0,#0 / STRH r0,[r5]" clamp at 0x08028DDA: r1 = crit (signed), r5 = &crit.
+PUSH
+ORG $28DDA
+SHORT 0x46C0
+BYTE 0x00 0x4B 0x18 0x47
+POIN CritCap|1 // |1: bx r3 needs the Thumb bit
+POP
+
+ALIGN 4
+CritCap:
+SHORT 0x2900 0xDA02 // cmp r1,#0 ; bge positive
+SHORT 0x2000 0x8028 // mov r0,#0 ; strh r0,[r5]
+SHORT 0xE003 // b done
+SHORT 0x2964 0xDD01 // positive: cmp r1,#100 ; ble done
+SHORT 0x2064 0x8028 // mov r0,#100 ; strh r0,[r5]
+SHORT 0x2400 // done: mov r4,#0 (the instruction at 0x08028DE2 the hook overwrote)
+SHORT 0x4B00 0x4718 // ldr r3,[pc,#0] ; bx r3
+WORD 0x08028DE5 // back to 0x08028DE4 (thumb)
