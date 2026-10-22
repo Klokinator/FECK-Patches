@@ -2,6 +2,7 @@
 // Walks every PATCH_*.txt and checks, per file:
 //   ERROR  payload   a BIN:/BINF:/EA= file the patch names is missing from its folder
 //   ERROR  vanilla   a PATCHED_IF that is TRUE on that game's untouched ROM (needs ../ROMS; skipped if absent)
+//   WARN   payloadsig a BIN:addr=file payload that does not hold the patch's own PATCHED_IF bytes at that address (catches damaged or truncated payloads)
 //   WARN   weak      a PATCHED_IF of 2 bytes or fewer
 //   WARN   nodetect  an installable patch (TYPE EA/BIN) with no PATCHED_IF
 //   WARN   meta      missing NAME.en / INFO.en / AUTHOR / TAG / TYPE
@@ -66,6 +67,7 @@ for (const file of walk(root)) {
   const keys = new Map();
   const lines = decode(readFileSync(file)).replace(/^﻿/, "").split(/\r\n|\n|\r/);
   const payloads = [];
+  const binAt = [];
   const piList = [];
   for (let line of lines) {
     if (line.startsWith("//")) continue;
@@ -78,6 +80,7 @@ for (const file of walk(root)) {
     const val = line.slice(eq + 1).trim();
     keys.set(key, val);
     if (/^BINF?:/.test(key) || key === "EA") payloads.push(val);
+    if (/^BIN:(0x)?[0-9a-f]+$/i.test(key) && val && !val.includes("$")) binAt.push([parseInt(key.slice(4), 16), val]);
     if (key.startsWith("PATCHED_IF:")) piList.push([key.slice(11), val, false]);
     if (key.startsWith("PATCHED_IFNOT:")) piList.push([key.slice(14), val, true]);
   }
@@ -102,6 +105,18 @@ for (const file of walk(root)) {
     const addr = parseInt(a, 16);
     const bytes = b.split(/\s+/).filter(Boolean).map((x) => parseInt(x, 16));
     if (!bytes.length || bytes.some(Number.isNaN)) continue;
+    if (!negated) {
+      for (const [a0, v] of binAt) {
+        const p = join(dir, v);
+        if (!existsSync(p)) continue;
+        const d = readFileSync(p);
+        if (addr < a0 || addr >= a0 + d.length) continue;
+        if ([...keys.keys()].some((k) => k.startsWith("JUMP:"))) continue; // a JUMP rewrites the hook bytes the PATCHED_IF reads
+        const rom0 = roms[game];
+        const seg = bytes.map((_, i) => (addr - a0 + i < d.length ? d[addr - a0 + i] : rom0 ? rom0[addr + i] : undefined)); // payload over vanilla
+        if (!bytes.every((x, i) => seg[i] === x)) add(quiet, "payloadsig", file, `${v} (${d.length} bytes) does not hold the PATCHED_IF bytes at 0x${addr.toString(16)}`);
+      }
+    }
     if (!negated && bytes.length <= 2) add(quiet, "weak", file, `${bytes.length} byte(s) at 0x${addr.toString(16)}`);
     const rom = roms[game];
     if (rom && addr + bytes.length <= rom.length) {
@@ -125,7 +140,7 @@ if (asJson) {
   console.log(JSON.stringify({ total, installable, detectable, issues }, null, 1));
 } else {
   console.log(`patches: ${total}; installable (EA/BIN): ${installable}; with PATCHED_IF: ${detectable}; ROMs found: ${Object.keys(roms).join(",") || "none"}`);
-  for (const kind of ["payload", "vanilla", "empty", "weak", "nodetect", "meta", "duplicate"]) {
+  for (const kind of ["payload", "payloadsig", "vanilla", "empty", "weak", "nodetect", "meta", "duplicate"]) {
     console.log(`${kind.padEnd(10)} ${count(kind, "error") + count(kind, "warn") + count(kind, "info")} (${count(kind, "error")} error, ${count(kind, "warn")} warn, ${count(kind, "info")} archived)`);
   }
   if (details) for (const i of issues.filter((x) => x.level !== "info")) console.log(`${i.level.toUpperCase()} ${i.kind} ${i.file}: ${i.msg}`);
