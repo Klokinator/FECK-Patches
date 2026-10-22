@@ -3,7 +3,7 @@ TYPE=EA
 TAG=#EVENT
 
 //既に適応されたかどうか
-PATCHED_IF:0x70F90=0x50 0x2B
+PATCHED_IF:0x70EAC=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
 EA=Installer.event
 
 AUTHOR=Vesly (FE8), ported to FE6 by FECK https://feuniverse.us/t/veslys-asm/12011/76
