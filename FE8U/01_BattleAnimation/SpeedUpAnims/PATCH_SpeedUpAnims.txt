@@ -5,7 +5,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x4e70=0x00 0x4B
+PATCHED_IF:0x4e70=0x00 0x4B 0x18 0x47
 EA=Installer.event
 
 AUTHOR=Circles https://github.com/FireEmblemUniverse/SelfRandomizingRom-fe8/blob/920248ac5deecda17fae4f2709feb3f0d166d411/src/randomizer_a.c#L345

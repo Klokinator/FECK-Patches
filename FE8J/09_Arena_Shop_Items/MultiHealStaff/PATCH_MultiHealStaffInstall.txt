@@ -4,7 +4,7 @@ NAME.zh=Set the recovery amount of multiple heal staff(Installer)
 TYPE=EA
 TAG=#ENGINE
 
-PATCHED_IF:0x16D64=0x00 0x48
+PATCHED_IF:0x16D64=0x00 0x48 0x87 0x46
 EDIT_PATCH:01=PATCH_MultiHealStaffEditor.txt
 
 EA=Install.event

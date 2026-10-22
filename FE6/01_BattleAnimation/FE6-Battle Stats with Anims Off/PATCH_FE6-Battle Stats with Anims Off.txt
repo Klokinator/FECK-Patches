@@ -8,7 +8,7 @@ TAG=#ENGINE
 EA=FE6_show_stats_with_animations_off.event
 
 //既に適応されたかどうか
-PATCHED_IF:0x632A8=0x00 0x4B
+PATCHED_IF:0x632A8=0x00 0x4B 0x18 0x47
 
 
 AUTHOR=Phanfan https://feuniverse.us/t/fe6-battle-stats-with-animations-off/17036 ; Orignal: Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/51

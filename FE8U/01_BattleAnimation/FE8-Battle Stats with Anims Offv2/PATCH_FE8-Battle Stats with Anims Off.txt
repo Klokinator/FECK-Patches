@@ -8,7 +8,7 @@ TAG=#ENGINE
 EA=FE8-Battle Stats Master EA File.txt
 
 //既に適応されたかどうか
-PATCHED_IF:0x7BED6=0xC0 0x46
+PATCHED_IF:0x7BED6=0xC0 0x46 0x00 0x4B 0x18 0x47
 
 
 AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/67 , Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/51

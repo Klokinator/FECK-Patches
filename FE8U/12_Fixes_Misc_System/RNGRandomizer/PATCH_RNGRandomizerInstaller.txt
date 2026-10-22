@@ -7,7 +7,7 @@ TAG=#ENGINE
 EA=RNGRandomizerInstaller.event
 
 //既に適応されたかどうか
-PATCHED_IF:0x1336=0x08 0xB4
+PATCHED_IF:0x1336=0x08 0xB4 0x00 0x4B 0x18 0x47
 INFO=リセットして再操作しても同じ結果を得られないようにします。
 
 AUTHOR=TR143 https://feuniverse.us/t/gba-rng-randomizer/3175

@@ -6,7 +6,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x727FC=0x00 0x4B
+PATCHED_IF:0x727FC=0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_MultiDancerForBattleAnimeBGM.txt
 EA=Installer.event
 

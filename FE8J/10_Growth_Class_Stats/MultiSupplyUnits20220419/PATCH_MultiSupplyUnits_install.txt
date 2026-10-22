@@ -5,7 +5,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x23F2C=0x00 0x4B
+PATCHED_IF:0x23F2C=0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_MultiSupplyUnits.txt
 EA=Installer.event
 

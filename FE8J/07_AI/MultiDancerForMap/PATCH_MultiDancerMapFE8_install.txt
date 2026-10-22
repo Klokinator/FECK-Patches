@@ -6,7 +6,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x83614=0x00 0x4B
+PATCHED_IF:0x83614=0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_MultiDancerMapFE8.txt
 EA=Installer.event
 
