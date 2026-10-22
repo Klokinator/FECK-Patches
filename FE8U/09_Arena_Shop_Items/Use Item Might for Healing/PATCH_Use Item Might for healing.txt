@@ -7,6 +7,7 @@ TAG=ENGINE
 BIN:0x16FB8=Use Item Might for healing.dmp
 
 PATCHED_IF:0x16FB8=0x10 0xB5 0x03 0x1C 0x0A 0x1C 0x24 0x24 0xFF 0x21 0x11 0x40 0x61 0x43 0x00 0x24 0x0B 0x48
+CONFLICT_IF:0x16FBC=0x00 0x48 0x87 0x46
 
 INFO=このパッチはアイテムテーブルのアドレスに依存しているので、アイテムテーブルを拡張してリポイントする前にインストールしてください。\r\n回復量を杖で一律にするのではなく、魔力などを利用して決定します。\r\n回復量=(魔力/2)+杖の威力
 INFO.en=This patch modifies the item table and must be installed prior to item table expansion.\r\nBy default, staffs heal for hardcoded amounts and use the formula Heal = Magic + Value.\r\nThis patches healing staffs to use staff might instead of the hardcoded value.\r\nPatched Formula for healing = Magic / 2 + Staff's Might\r\n

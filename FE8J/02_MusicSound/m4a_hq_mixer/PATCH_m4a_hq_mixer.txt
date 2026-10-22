@@ -3,6 +3,7 @@ NAME.en=m4a hq mixer
 NAME.zh=m4a hq mixer
 
 PATCHED_IF:0xD4ECC=0x96 0x02
+CONFLICT_IF:0xD4ECC=0x18 0x02
 
 TYPE=EA
 TAG=#ENGINE

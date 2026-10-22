@@ -5,6 +5,7 @@ TYPE=EA
 TAG=#ENGINE
 
 PATCHED_IF:0x2ab18=0x05 0x49 0x0A 0x78
+CONFLICT_IF:0x2AB18=0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_WeaponEffectiveness2x3x.txt
 EA=WeaponEffectiveness2x3x.event
 

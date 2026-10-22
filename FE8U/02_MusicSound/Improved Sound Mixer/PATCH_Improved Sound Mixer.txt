@@ -3,6 +3,7 @@ NAME.en=Improved Sound Mixer
 NAME.zh=Improved Sound Mixer
 
 PATCHED_IF:0xd01d4=0x18 0x02
+CONFLICT_IF:0xD01D4=0x96 0x02
 
 TYPE=EA
 TAG=#ENGINE
