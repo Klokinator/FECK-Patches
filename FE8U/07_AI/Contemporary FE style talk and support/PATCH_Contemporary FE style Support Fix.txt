@@ -5,7 +5,7 @@ NAME.zh=即使我提供支援对话，还可以打开菜单
 TYPE=BIN
 TAG=#ENGINE
 
-PATCHED_IF:0x032438=0x00 0x4B
+PATCHED_IF:0x032438=0x00 0x4B 0x9F 0x46
 BIN:$FREEAREA=Supportfix.dmp
 JUMP:0x032438:$r3=Supportfix.dmp
 

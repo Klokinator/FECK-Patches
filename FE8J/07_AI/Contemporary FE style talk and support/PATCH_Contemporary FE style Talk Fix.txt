@@ -5,7 +5,7 @@ NAME.en=Actions After Talk (Contemporary Style)
 TYPE=BIN
 TAG=#ENGINE
 
-PATCHED_IF:0x03230E=0x00 0x00
+PATCHED_IF:0x03230E=0x00 0x00 0x00 0x4B 0x9F 0x46
 
 BIN:$FREEAREA=TalkFix.dmp
 JUMP:0x03230E:$r3=TalkFix.dmp

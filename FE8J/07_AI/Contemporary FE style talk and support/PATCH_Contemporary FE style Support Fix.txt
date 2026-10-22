@@ -3,7 +3,7 @@ NAME.en=Actions After Support (Contemporary Style)
 TYPE=BIN
 TAG=#ENGINE
 
-PATCHED_IF:0x032384=0x00 0x4B
+PATCHED_IF:0x032384=0x00 0x4B 0x9F 0x46
 BIN:$FREEAREA=Supportfix.dmp
 JUMP:0x032384:$r3=Supportfix.dmp
 
