@@ -31,7 +31,7 @@ BYTE 0x00 0x00 0x00 0x4D 0xAF 0x46
 POIN SpellFix
 POP
 SpellFix:
-#incbin "../Fix dodge to front glitch/SpellFix.dmp"
+#incbin "../../12_Fixes_Misc_System/Fix dodge to front glitch/SpellFix.dmp"
 
 
   #define CSAEngine_Dim $95d7ec
