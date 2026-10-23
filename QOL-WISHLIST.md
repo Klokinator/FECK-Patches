@@ -38,6 +38,13 @@ Priority: **A** = hacks effectively assume it, **B** = very common and cheap, **
 | LeaderAIFix | FE7U, FE8U, FE8J | `07_AI\LeaderAIFix_*` |
 | Mode Coefficient EXP fix (grab-bag: Remove Pierce Glitch, hold-A fast move, skip intro, wyvern triangle, stone anim crash) | FE8U, FE8J | `10_Growth_Class_Stats\Mode Coefficient EXP fix` |
 
+### Code-reading findings for the B fixes (TESTER1, item 3 second pass; nothing was played)
+
+- Enemy Control Glitch Fix: FE7U has the same trap code (bytes `07 E0` at 0x3454C), so a port is plausible; FE6 has no such site.
+- BattleForecastFix: the same structure exists in FE7U and FE6 and the garbling is likely there too, but it was not reproduced. No port until it is seen in the game.
+- fix_drawclearnturn_glitch (clear-turn list): not determined; do not port.
+- FE6 MeleeAndMagicFix overwrites a live function at 0x18188 that has 11 callers, so it is unsafe as it stands. Flagged in its INFO; not fixed.
+
 ## B: quality of life
 
 | Patch | Games | Folder | Effect |

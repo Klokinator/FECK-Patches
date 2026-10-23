@@ -14,6 +14,11 @@ metadata. Commit ids are in this repository's history.
   `INFO.en`, and its Chinese description, which sat under a stray `NAME.` key, is now `INFO.zh`. No behaviour changed.
 - `48command_hack` (FE6, FE7U, FE8U, FE8J) signed with `PATCHED_IFNOT`; it now uses `PATCHED_IF` as `STANDARDS.md` asks. FE6, FE7U
   and FE8U read the 4 pointer bytes their payload writes at the hook; FE8J, whose hook is a free-space jump, reads its payload with `$FGREP4`.
+- B4 (capacity and limits): audited the minimug, portrait, sound-room, sound-engine, save and autosave patches (about 45 files): all carry authors where an
+  upstream credit exists and every installable one reads back (install check). FE7U, FE8U and FE8J 16_tracks_12_sounds gained `NAME`/`NAME.en`;
+  FE7J and FE7U Unlock Sound Room songs gained `INFO.en`. FE6 MeleeAndMagicFix gained an `INFO.en` warning: it overwrites a live function at
+  0x18188 with 11 callers, so it is unsafe as it stands (not fixed). `QOL-WISHLIST.md` records TESTER1's code reading of the B fixes (Enemy Control
+  trap code also in FE7U, forecast garbling likely in FE7U and FE6, clear-turn list undetermined). No behaviour changed.
 - B3 (system fixes): FE7J and FE7U Tutorial_Disabler signatures lengthened from the 2-byte branch they patched to the 4-byte
   `mov r0,#0; bx lr` payload they install at the tutorial check (0x79798, 0x78FC8). FE8J Less Annoying Fog and no_easy_mode gained
   `NAME.en`; FE7U display-all-weapon-ranks gained `INFO.en`. No behaviour changed.

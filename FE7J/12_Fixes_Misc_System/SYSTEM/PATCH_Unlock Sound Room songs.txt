@@ -18,3 +18,4 @@ OFF:0xABD86=0x18 0xD1
 
 COMBO=Default|OFF|unlock|ONN
 
+INFO.en=Every song is available in the sound room from the start, instead of only those the player has heard.

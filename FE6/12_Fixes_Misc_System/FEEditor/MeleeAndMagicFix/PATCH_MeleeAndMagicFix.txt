@@ -7,3 +7,4 @@ PATCHED_IF:0x18188=0x00 0xB5 0xFE 0xF7
 BIN:0x18188=MeleeAndMagicFix_FE6.dmp
 
 AUTHOR=melee and magic fix  Hextator  Transplant:7743
+INFO.en=Warning: this FE6 version overwrites a function at 0x18188 that has 11 callers, so installing it is not safe as it stands. Do not use it until it is reworked.

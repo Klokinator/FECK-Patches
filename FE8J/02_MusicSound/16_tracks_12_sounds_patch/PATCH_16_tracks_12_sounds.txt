@@ -1,3 +1,5 @@
+NAME=16 Tracks / 12 Sounds
+NAME.en=16 Tracks / 12 Sounds
 TYPE=BIN
 TAG=#ENGINE #MUSIC #SONG #SOUND #BGM #ESSENTIALFIXES
 //既に適応されたかどうか
