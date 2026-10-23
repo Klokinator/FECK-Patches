@@ -36,7 +36,7 @@ Games: `FE6`, `FE7J`, `FE7U`, `FE8J`, `FE8U`.
 
 ## INDEX.csv
 
-One row per `PATCH_*.txt` (4377 rows): Game, Category, Superseded, RemovedUpstream, Folder (path relative to this folder),
+One row per `PATCH_*.txt` (4347 rows): Game, Category, Superseded, RemovedUpstream, Folder (path relative to this folder),
 PatchFile, NameEn, NameJp, Type, Tag, Author. Filter on Game then NameEn/Tag. FEBuilder
 tags: `#ENGINE`, `#IMAGE`, `#EVENT`, `#BGM`, `#SOUND`, `#TEXT`, `#ESSENTIALFIXES`. It is generated: `node _tools/make-index.mjs`
 rewrites it, `--check` says whether it is stale.
@@ -55,7 +55,7 @@ All zero-dependency Node scripts in `_tools/` (`node _tools/<name>.mjs`):
 
 ## Credits
 
-Every `AUTHOR` line is kept as upstream wrote it. About 1,450 patches have no author upstream (1,208 outside the archived folders); they stay uncredited here until a
+Every `AUTHOR` line is kept as upstream wrote it. 1,416 patches have no author upstream (1,184 outside the archived folders); they stay uncredited here until a
 source names someone, and no author is ever guessed (the validator lists them as `noauthor`).
 
 ## License and credits

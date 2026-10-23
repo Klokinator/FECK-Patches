@@ -34,6 +34,8 @@ Fixes to patches
   had a stray `#endif`; removed.
 - FE7J tile-healing item id: `ADDRESS` pointed at the FE7U address; now 0x032D9A.
 - ExtendWeaponDescBox ports (FE6, FE7J, FE7U): `INFO.en` lost its second sentence to a raw line break.
+- FE7U OPLOGO TextShadow: `PALETTE_POINTER` named the image pointer (0x0BA550); the palette pointer is at 0x0BA54C
+  (0x66AB28 in the vanilla ROM). The other FE7U OPLOGO pointers match the vanilla ROM.
 - Duplicate `01command_hack` copies under `12_Fixes_Misc_System/FEEditor` removed.
 
 Metadata
