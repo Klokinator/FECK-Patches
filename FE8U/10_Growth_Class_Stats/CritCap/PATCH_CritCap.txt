@@ -11,3 +11,4 @@ INFO.en=Fixed critcal from appearing in excess of 100%.\r\nIf the critcal exceed
 AUTHOR=Contro https://feuniverse.us/t/contros-asm-lineup/13514/6
 NAME.zh=防止出现超过 100% 的必殺一击。
 INFO.zh=防止出现超过 100% 的必殺一击。\r\n如果致命一击超过 100%，则看起来很糟糕，并修正为 100%。
+TAG=#ENGINE

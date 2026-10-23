@@ -13,3 +13,4 @@ PATCHED_IF:0x022E2C=0x00 0x4B 0x18 0x47
 EA=Installer.event
 
 AUTHOR=Contro https://feuniverse.us/t/contros-asm-lineup/13514/15
+TAG=#ENGINE #ESSENTIALFIXES

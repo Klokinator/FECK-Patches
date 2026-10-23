@@ -10,3 +10,4 @@ BIN:0xEBCA=EBCA.bin
 BIN:0xEDE0=EDE0.bin
 
 AUTHOR=Port:7743
+INFO.en=Fixes the glitch in the CG fade.

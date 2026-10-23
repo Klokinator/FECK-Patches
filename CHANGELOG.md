@@ -6,8 +6,10 @@ metadata. Commit ids are in this repository's history.
 ## 2026-10-23
 
 - `VERIFIED.csv` gained a BIN group: 465 `TYPE=BIN` patches, each installed on an in-memory vanilla ROM (`BIN`, `BINF` and
-  `CLEAR` lines applied) and its `PATCHED_IF` read back. 112 pass, 353 are not checked (223 use a `$GREP4`/`$FGREP4`
-  search; the rest use `JUMP`, `REPLACE_POINTER`, `EA`, `SLIDE`, `EXTENDS` or an address rebase, so their bytes depend on the host). None fail.
+  `CLEAR` lines applied; `JUMP` thunks written with a placeholder pointer) and its `PATCHED_IF` read back. 196 pass, 269 are not
+  checked (224 use a `$GREP4`/`$FGREP4` search; the rest use `REPLACE_POINTER`, `EA` or an address rebase, so their bytes depend on the host). None fail.
+- B1 fixes (FE8U, FE8J): `TAG` added to FixBattleAnimeExitNoise, FixGuideDictionarySortGlitch, BattleForecastFix, Fix_StatusUp_BigNumber,
+  MENUFixCantoFix, fix_display_for_minus_statbooster and CritCap; `INFO.en` added to CG Fade glitch. No behaviour changed.
 - `48command_hack` (FE6, FE7U, FE8U, FE8J) signed with `PATCHED_IFNOT`; it now uses `PATCHED_IF` as `STANDARDS.md` asks. FE6, FE7U
   and FE8U read the 4 pointer bytes their payload writes at the hook; FE8J, whose hook is a free-space jump, reads its payload with `$FGREP4`.
 - `QOL-WISHLIST.md`: the Staff Range Fix is a range feature that conflicts with FreeRange, not a bug fix; it leaves the A foundations.

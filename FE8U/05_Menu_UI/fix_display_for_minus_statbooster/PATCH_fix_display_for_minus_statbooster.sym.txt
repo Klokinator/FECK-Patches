@@ -12,3 +12,4 @@ PATCHED_IF:0x004B54=0x00 0x4B 0x9F 0x46
 AUTHOR=7743
 INFO.en=Solves the problem that the tens digit of the screen is not updated when subtraction from 2 digits occurs when making a minus statbooster.\r\nResolves an issue where 19 is displayed when it is -1 from 10 to 9.\r\nWarning: This patch is not compatible with the BWL display under the status screen.\r\nIf you want to display BWL on the status screen, do not use it.
 INFO.zh=解决了在减号为statbooster时发生两位数减法时屏幕的十位数未更新的问题。\r\n解决了从10到9为-1时显示19的问题。\r\nWarning: This patch is not compatible with the BWL display under the status screen.\r\nIf you want to display BWL on the status screen, do not use it.
+TAG=#ENGINE #ESSENTIALFIXES
