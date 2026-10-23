@@ -12,3 +12,4 @@ BIN:0x8154C=8154C.bin
 BIN:0x184DC=184DC.bin
 
 AUTHOR=jjl2357\r\nhttps://feuniverse.us/t/fe7-fe8-display-all-weapon-ranks-your-character-has/744\r\nMeleeAndMagicFix:melee and magic fix  Hextator,Tequila
+INFO.en=Patches the ROM to hide all weapon types on the Status Menu that a unit has no rank in.\r\nFor example, if a unit can equip Swords and Lances, only Swords and Lances will appear.

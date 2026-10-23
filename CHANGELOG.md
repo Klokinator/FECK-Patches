@@ -14,6 +14,11 @@ metadata. Commit ids are in this repository's history.
   `INFO.en`, and its Chinese description, which sat under a stray `NAME.` key, is now `INFO.zh`. No behaviour changed.
 - `48command_hack` (FE6, FE7U, FE8U, FE8J) signed with `PATCHED_IFNOT`; it now uses `PATCHED_IF` as `STANDARDS.md` asks. FE6, FE7U
   and FE8U read the 4 pointer bytes their payload writes at the hook; FE8J, whose hook is a free-space jump, reads its payload with `$FGREP4`.
+- B3 (system fixes): FE7J and FE7U Tutorial_Disabler signatures lengthened from the 2-byte branch they patched to the 4-byte
+  `mov r0,#0; bx lr` payload they install at the tutorial check (0x79798, 0x78FC8). FE8J Less Annoying Fog and no_easy_mode gained
+  `NAME.en`; FE7U display-all-weapon-ranks gained `INFO.en`. No behaviour changed.
+- Install re-check with the fixed assembler (FECK 9db7136): FE8J arenadic and FE8U Text_Engine_Rework, which did not assemble on the
+  `PROC_` macros, now assemble and pass (arenadic's `$FGREP4` payload also occurs in vanilla, noted). Four rows still do not assemble: both AoE and both ModularMinimugBox.
 - `QOL-WISHLIST.md`: the Staff Range Fix is a range feature that conflicts with FreeRange, not a bug fix; it leaves the A foundations.
 
 ## 2026-10-22

@@ -13,3 +13,4 @@ AUTHOR=Original author: https://feuniverse.us/t/nintenlords-utilities/52
 INFO=難易度選択画面で簡単モードを選択できなくします。
 INFO.en=Removes Easy Mode from the Campaign Select Menu.\r\nThis patch can not select easy mode on difficulty selection screen.
 INFO.zh=此补丁使得无法在难度选择屏幕上选择简易模式。
+NAME.en=Remove Easy Mode
