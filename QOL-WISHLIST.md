@@ -13,7 +13,7 @@ Priority: **A** = hacks effectively assume it, **B** = very common and cheap, **
 | MeleeAndMagicFix (+ItemFix20220721) | FE7J/FE7U/FE8J/FE8U | `FE8U\09_Arena_Shop_Items\MeleeAndMagicFix_ItemFix20220721`, `FE8U\12_Fixes_Misc_System\FEEditor\MeleeAndMagicFix` | Lets weapons be melee/ranged/magic by weapon rather than class; needed by any magic-system hack. |
 | Anti-Huffman | all | `<game>\12_Fixes_Misc_System\Anti-Huffman` (FEEditor\ in FE6/FE7U/FE8U) | Stops Huffman text compression so text can be edited/expanded freely. |
 | fix_lz77decompress | FE8U, FE8J | `FE8U\08_Save_Records\fix_lz77decompress` | Fixes the LZ77 decompress bug that corrupts big images. |
-| FE8-Staff Range Fix / FE7-Staff Range Fix | FE8U, FE7U | `FE8U\09_Arena_Shop_Items\FE8-Staff Range Fix` | Stops staff range going wrong when a staff is used from a long range. |
+| FE8-Staff Range Fix / FE7-Staff Range Fix | FE8U, FE7U | `FE8U\09_Arena_Shop_Items\FE8-Staff Range Fix` | Not a bug fix: a range feature (staff and weapon range extension) that conflicts with FreeRange. Not one of the foundations; no FE8J, FE7J or FE6 version exists upstream, so none is ported. A real FE7J or FE6 staff-range bug waits for evidence in the game. |
 
 ## B: fixes (small, safe, almost always wanted)
 
