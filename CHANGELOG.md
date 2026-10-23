@@ -44,8 +44,8 @@ Metadata
 - 190 `AUTHOR` credits added from sibling patches, reference snapshots and folder names. No author was guessed; patches with
   no upstream credit stay uncredited (`noauthor` in the validator).
 - 486 `NAME.en` lines added, copied from the English-only `NAME`.
-- `REQUIRES` defined in `STANDARDS.md` and added to 13 patch files whose INFO names a prerequisite in another folder (ShowDifficulty
-  needs Casual mode; GetItemRangeString needs FreeRange; the AoE installers now also list Anti-Huffman).
+- `REQUIRES` defined in `STANDARDS.md` and added to 8 patch files whose INFO names a prerequisite in another folder (ShowDifficulty
+  needs Casual mode; GetItemRangeString needs FreeRange) and extended on the 2 AoE installers (now also Anti-Huffman).
 - `VERSION=YYYYMMDD` added to 591 patches, taken from the date suffix of the patch folder. Folders without a date get none.
 - `STANDARDS.md`: detection, EA-patch and payload rules.
 
