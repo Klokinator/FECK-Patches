@@ -23,8 +23,8 @@ Detection and validation
   (EA installers assembled with the standard prelude; JUMP thunks extended to their full form). Passive Boosts (FE7U, FE8U)
   can now tell the stacking and no-stack versions apart. Detection added for toggle_L, trap data limit, MeleeAndMagicFix
   and FE8J Fix EnemyCapture_GetUnitPortraitId.
-- Ten patches that the upstream overlay had emptied were restored. 32 patches are still zero bytes upstream; they are listed
-  by the validator as `empty` and left in place.
+- Ten patches that the upstream overlay had emptied were restored. The 32 patches that are still empty upstream (29 zero
+  bytes, 3 holding only a byte-order mark) were removed on the owner's say-so; the validator now reports no `empty` files.
 - Added `_tools/conflicts.mjs` and `CONFLICTS.csv` (59 pairs with overlapping signatures and different bytes); each such
   patch carries the other's signature as `CONFLICT_IF`.
 - Added `_tools/make-index.mjs`; `INDEX.csv` is generated and checkable.
