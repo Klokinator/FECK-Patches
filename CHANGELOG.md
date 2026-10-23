@@ -10,6 +10,8 @@ metadata. Commit ids are in this repository's history.
   checked (224 use a `$GREP4`/`$FGREP4` search; the rest use `REPLACE_POINTER`, `EA` or an address rebase, so their bytes depend on the host). None fail.
 - B1 fixes (FE8U, FE8J): `TAG` added to FixBattleAnimeExitNoise, FixGuideDictionarySortGlitch, BattleForecastFix, Fix_StatusUp_BigNumber,
   MENUFixCantoFix, fix_display_for_minus_statbooster and CritCap; `INFO.en` added to CG Fade glitch. No behaviour changed.
+- B2 (QoL part 1): all 12 patches have a `PATCHED_IF`; every one the install check can read back passes. FE8U Show Heal Amount gained
+  `INFO.en`, and its Chinese description, which sat under a stray `NAME.` key, is now `INFO.zh`. No behaviour changed.
 - `48command_hack` (FE6, FE7U, FE8U, FE8J) signed with `PATCHED_IFNOT`; it now uses `PATCHED_IF` as `STANDARDS.md` asks. FE6, FE7U
   and FE8U read the 4 pointer bytes their payload writes at the hook; FE8J, whose hook is a free-space jump, reads its payload with `$FGREP4`.
 - `QOL-WISHLIST.md`: the Staff Range Fix is a range feature that conflicts with FreeRange, not a bug fix; it leaves the A foundations.
