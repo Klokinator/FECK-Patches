@@ -22,3 +22,4 @@ P0:ASM=MMBBuildRoutines Function
 INFO=Tracks the data of MMBBuildRoutines.
 
 
+AUTHOR=ZaneAvernathy https://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235 (MIT License)
