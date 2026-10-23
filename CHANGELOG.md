@@ -26,6 +26,7 @@ metadata. Commit ids are in this repository's history.
   `PROC_` macros, now assemble and pass (arenadic's `$FGREP4` payload also occurs in vanilla, noted). Four rows still do not assemble: both AoE and both ModularMinimugBox.
 - `QOL-WISHLIST.md`: the Staff Range Fix is a range feature that conflicts with FreeRange, not a bug fix; it leaves the A foundations.
 - Credits, FE8U 04_Graphics_Palette: the five ModularMinimugBox SubData patches gained `AUTHOR=ZaneAvernathy` (MIT License) with the thread that credits his Modular Minimug Box, as on its installers. The SYSTEM_IMAGE entries are game assets and the one buff-state patch has no stated author; they stay uncredited.
+- Credits, 01_BattleAnimation (FE8U and FE8J): the DrawMapActionAnimation add-ons BATTLE_MAPANIMATION_NUMBERS_FLAG and SaveScreenNumbers gained `AUTHOR=Vesly`. The credit comes from the package's other files (install, WeaponTypeAnimations, SpecificWeaponAnimations), which cite the Vesly thread; the add-ons name no author themselves.
 
 ## 2026-10-22
 
