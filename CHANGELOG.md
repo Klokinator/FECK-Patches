@@ -28,6 +28,7 @@ metadata. Commit ids are in this repository's history.
 - Credits, FE8U 04_Graphics_Palette: the five ModularMinimugBox SubData patches gained `AUTHOR=ZaneAvernathy` (MIT License) with the thread that credits his Modular Minimug Box, as on its installers. The SYSTEM_IMAGE entries are game assets and the one buff-state patch has no stated author; they stay uncredited.
 - Credits, 01_BattleAnimation (FE8U and FE8J): the DrawMapActionAnimation add-ons BATTLE_MAPANIMATION_NUMBERS_FLAG and SaveScreenNumbers gained `AUTHOR=Vesly`. The credit comes from the package's other files (install, WeaponTypeAnimations, SpecificWeaponAnimations), which cite the Vesly thread; the add-ons name no author themselves.
 - Credits, FE8J 04_Graphics_Palette: the five ModularMinimugBox.jp SubData patches gained `AUTHOR=ZaneAvernathy` (MIT License) with the thread that credits his Modular Minimug Box, as on the FE8U ones and the installers. The 129 SYSTEM_IMAGE patches are FEBuilder's own image-slot entries and stay uncredited.
+- Credits, FE8J 04_Graphics_Palette/_older versions: "Fixes blue flash when return to title" gained `AUTHOR=Leonarth`. The credit comes from the package's other two files (installer and main patch), which cite the Leonarth thread; this file names no author itself.
 
 ## 2026-10-22
 

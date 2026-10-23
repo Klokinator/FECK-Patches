@@ -9,3 +9,4 @@ TYPE=BIN
 IF:0xCA56E=0x01 0x80
 BINF:0xCA56E=nop.dmp
 IF:0xCA4F4=0x00 0x4B 0x18 0x47
+AUTHOR=Leonarth https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/10
