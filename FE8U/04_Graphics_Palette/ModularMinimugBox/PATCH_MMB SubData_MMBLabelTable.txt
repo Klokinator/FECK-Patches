@@ -30,3 +30,4 @@ HEIGHT=8
 PALETTE=1
 
 INFO=Tracks the data of MMBLabelTable
+AUTHOR=ZaneAvernathy https://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235 (MIT License)

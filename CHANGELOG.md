@@ -25,6 +25,7 @@ metadata. Commit ids are in this repository's history.
 - Install re-check with the fixed assembler (FECK 9db7136): FE8J arenadic and FE8U Text_Engine_Rework, which did not assemble on the
   `PROC_` macros, now assemble and pass (arenadic's `$FGREP4` payload also occurs in vanilla, noted). Four rows still do not assemble: both AoE and both ModularMinimugBox.
 - `QOL-WISHLIST.md`: the Staff Range Fix is a range feature that conflicts with FreeRange, not a bug fix; it leaves the A foundations.
+- Credits, FE8U 04_Graphics_Palette: the five ModularMinimugBox SubData patches gained `AUTHOR=ZaneAvernathy` (MIT License) with the thread that credits his Modular Minimug Box, as on its installers. The SYSTEM_IMAGE entries are game assets and the one buff-state patch has no stated author; they stay uncredited.
 
 ## 2026-10-22
 

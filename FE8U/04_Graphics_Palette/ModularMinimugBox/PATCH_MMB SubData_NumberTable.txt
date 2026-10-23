@@ -28,3 +28,4 @@ W6=Y
 
 
 INFO=Tracks the data of NumberTable
+AUTHOR=ZaneAvernathy https://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235 (MIT License)

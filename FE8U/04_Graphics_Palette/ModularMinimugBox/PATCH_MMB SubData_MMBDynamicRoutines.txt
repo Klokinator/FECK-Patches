@@ -20,3 +20,4 @@ DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
 P0:ASM=MMBDynamicRoutines Function
 
 INFO=Tracks the data of MMBDynamicRoutines
+AUTHOR=ZaneAvernathy https://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235 (MIT License)
