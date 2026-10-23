@@ -28,6 +28,8 @@ Detection and validation
 - Added `_tools/conflicts.mjs` and `CONFLICTS.csv` (59 pairs with overlapping signatures and different bytes); each such
   patch carries the other's signature as `CONFLICT_IF`.
 - Added `_tools/make-index.mjs`; `INDEX.csv` is generated and checkable.
+- Added `VERIFIED.csv`: the result of assembling 610 EA patches on their vanilla ROMs and reading their signatures back
+  (575 pass, 35 not assemblable). 22 of the passes use a `$FGREP4` payload that also occurs in the vanilla ROM and are noted.
 
 Fixes to patches
 - Five `Installer.event` files (ChangeStatusBGEachChapter and ChangePoisonDamage in FE8J and FE8U, ChangePortrait in FE8U)

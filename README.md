@@ -51,6 +51,11 @@ All zero-dependency Node scripts in `_tools/` (`node _tools/<name>.mjs`):
   such patch also carries the other's signature as `CONFLICT_IF`.
 - `make-index.mjs [--check]`: regenerates `INDEX.csv`.
 
+`VERIFIED.csv` records what was really run: 610 installable EA patches with a literal `EA=` file, each assembled on an
+in-memory copy of its vanilla ROM (named in the Rom column) with FECK's assembler, then its `PATCHED_IF` or `$FGREP4`
+signature read back (575 pass; 35 could not be assembled because they use symbols FEBuilder defines at install time). It
+lists nothing that was not run. It is a record of one check, not a play test.
+
 `STANDARDS.md` holds the rules for new patches and the metadata keys (`REQUIRES`, `CONFLICT_IF`, `PATCHED_IF`).
 
 ## Credits
