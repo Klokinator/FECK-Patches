@@ -13,6 +13,6 @@ TEXTADV:0xedc=0xedc.txt
 
 
 AUTHOR=Tequila
-INFO.en=Shows the amount a healing staff will restore when the staff is used.
+INFO.en=Shows the amount a healing staff will restore when the staff is used. On a vanilla ROM, install Anti-Huffman first: the patch's text "->" cannot be encoded by the vanilla Huffman text.
 INFO.zh=该补丁还用活杖显示恢复量
 NAME.zh=用活棒显示恢复量。
