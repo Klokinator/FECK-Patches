@@ -14,3 +14,4 @@ AUTHOR=7743
 INFO=杖BGMを、回復と癒しBGM以外に設定できるようにします。
 INFO.en=This patch allows you to set the staff Battle BGM to something other than Healing and Curing BGM.
 INFO.zh=This patch allows you to set the staff Battle BGM to something other than Healing and Curing BGM.
+VERSION=20230814

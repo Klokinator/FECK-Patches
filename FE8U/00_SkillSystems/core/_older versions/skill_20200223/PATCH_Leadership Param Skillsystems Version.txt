@@ -27,3 +27,4 @@ INFO=Leadership. Grants +5 Hit +3 Avo to all ally units per star.\r\nNote:\r\nEn
 
 
 AUTHOR=Zeta
+VERSION=20200223

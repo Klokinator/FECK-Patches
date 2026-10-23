@@ -34,3 +34,4 @@ INFO.zh=提示：运输车。
 NAME.en=Change to have multiple units that can call supply 20200302(Editor)
 INFO.en=Change so that you can set multiple units that can call supply.
 NAME.zh=更改为具有多个可以呼叫护卫队的人物 20200302(Editor)
+VERSION=20200302

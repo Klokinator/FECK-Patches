@@ -71,3 +71,4 @@ B27:$COMBO combo.arts.txt.zh=战技(弓 C)
 B28:$COMBO combo.arts.txt.zh=战技(弓 B)
 B29:$COMBO combo.arts.txt.zh=战技(弓 A)
 B30:$COMBO combo.arts.txt.zh=战技(弓 S)
+VERSION=20250122

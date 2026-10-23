@@ -53,3 +53,4 @@ b32:DECIMAL=crit
 b33:DECIMAL=silencer
 b34:DECIMAL=dodge
 b35:$COMBO combo.bool.txt=cannot_move
+VERSION=20240910

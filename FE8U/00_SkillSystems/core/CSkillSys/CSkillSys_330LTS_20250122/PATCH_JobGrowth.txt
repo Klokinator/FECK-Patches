@@ -31,3 +31,4 @@ b3:DECIMAL.zh=速度
 b4:DECIMAL.zh=幸运
 b5:DECIMAL.zh=防御
 b6:DECIMAL.zh=魔防
+VERSION=20250122

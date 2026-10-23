@@ -13,3 +13,4 @@ COMBO=Only playable units|0x09 0xD1|All units|0xC0 0x46
 
 AUTHOR=Shuusuke
 
+VERSION=20220127

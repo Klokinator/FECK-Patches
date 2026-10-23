@@ -14,3 +14,4 @@ AUTHOR=7743
 INFO=FE7のサウンドルームのように、背景にCGを描画します。\r\nCGだけではなくBG、BATTLEBGも描画できます。\r\nこのバージョンからBATTLEBGの表示にも対応しました。\r\nどのCG,BG,BATTLEBGを描画するかをリストで指定できます。
 INFO.en=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG and BATTLEBG.\r\nFrom this version, BATTLE BG display is also supported.\r\nYou can specify which CG and BG and BATTLEBG to draw in a list.
 INFO.zh=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG and BATTLEBG.\r\nFrom this version, BATTLE BG display is also supported.\r\nYou can specify which CG and BG and BATTLEBG to draw in a list.
+VERSION=20211003

@@ -34,3 +34,4 @@ b5:DECIMAL.zh=回避率
 b6:DECIMAL.zh=必杀率
 b7:DECIMAL.zh=暗杀率
 b8:$COMBO combo.bool.txt.zh=是否为增益状态
+VERSION=20250122

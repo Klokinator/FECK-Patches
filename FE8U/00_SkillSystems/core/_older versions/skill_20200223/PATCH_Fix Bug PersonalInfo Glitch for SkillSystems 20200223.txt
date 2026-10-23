@@ -5,3 +5,4 @@ TYPE=BIN
 IF:0xB49AA6=0x10 0x20
 
 BINF:0xB49AA6=Fix Bug PersonalInfo Glitch for SkillSystems 20200223.dmp
+VERSION=20200223

@@ -11,3 +11,4 @@ COMBO=Default: |0x10 0xB5 0x1C 0x48 0x86 0x46 0x17 0x49 0x08 0x68 0x1B 0x49 0x00
 INFO=輸送隊の仕様をバニラの仕様に戻します。
 INFO.en=Change the convoy(Supply) specifications back to vanilla specifications.\r\remove,nuninstall
 INFO.zh=将车队规格改回香草规格。
+VERSION=20200211

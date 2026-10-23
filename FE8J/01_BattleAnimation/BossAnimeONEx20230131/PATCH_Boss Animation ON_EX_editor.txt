@@ -27,3 +27,4 @@ B0:UNIT=Unit(0x00=ANY)
 B1:MAP_ANYFF=MAPID(0xFF=ANY)
 B2:$COMBO Boss_Animation_On_Cond.txt=Cond
 B3:$COMBO Boss_Animation_On_Anime.txt=Anime
+VERSION=20230131

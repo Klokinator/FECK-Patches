@@ -77,3 +77,4 @@ b29:DECIMAL.zh=防御成长率加成
 b30:DECIMAL.zh=魔防成长率加成
 W32:SKILL.zh=技能
 W34:SKILL.zh=技能
+VERSION=20250122

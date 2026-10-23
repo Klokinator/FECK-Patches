@@ -21,3 +21,4 @@ B4:DECIMAL=enemy hit bonus
 B5:DECIMAL=enemy avo bonus
 B6:DECIMAL=npu hit bonus
 B7:DECIMAL=npu avo bonus
+VERSION=20240910

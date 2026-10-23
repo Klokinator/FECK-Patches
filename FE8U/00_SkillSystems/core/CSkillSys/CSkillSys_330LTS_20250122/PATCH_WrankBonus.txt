@@ -36,3 +36,4 @@ B8:DECIMAL.zh= 回避加成
 B9:DECIMAL.zh= 必杀加成
 B10:DECIMAL.zh= 必杀回避加成
 B11:DECIMAL.zh= 暗杀加成
+VERSION=20250122

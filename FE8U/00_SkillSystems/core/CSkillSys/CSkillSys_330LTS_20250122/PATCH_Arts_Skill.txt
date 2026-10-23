@@ -17,3 +17,4 @@ DATACOUNT=0x400
 LISTNAME=SKILL
 B0:$COMBO combo.arts.txt=art
 B0:$COMBO combo.arts.txt.zh=战技
+VERSION=20250122

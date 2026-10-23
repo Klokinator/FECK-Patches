@@ -18,3 +18,4 @@ b0:DECIMAL=base
 b1:DECIMAL=growth
 b2:DECIMAL=cap
 b3:DECIMAL=promotion bonus
+VERSION=20240910

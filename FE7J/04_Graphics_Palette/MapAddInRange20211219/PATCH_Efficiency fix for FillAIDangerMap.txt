@@ -16,3 +16,4 @@ INFO.en=I rewrote the function in ASM and it's 5 times faster than vanilla.\r\hT
 INFO.zh=I rewrote the function in ASM and it's 5 times faster than vanilla.\r\hThis function is executed in large numbers in the game, so I think it makes sense to make it faster.\r\nThis function is used to draw a range such as the attack range.
 
 AUTHOR=7743
+VERSION=20211219

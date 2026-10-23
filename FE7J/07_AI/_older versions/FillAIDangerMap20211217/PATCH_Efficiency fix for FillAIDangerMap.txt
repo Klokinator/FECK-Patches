@@ -18,3 +18,4 @@ INFO.zh=When generating AI units' movement, the game uses a nested for loop to i
 
 AUTHOR=7743 / Orignal: HyperGammaSpaces https://feuniverse.us/t/hypergammaspaces-assorted-asm/4085/8
 DEPRECATED=1
+VERSION=20211217

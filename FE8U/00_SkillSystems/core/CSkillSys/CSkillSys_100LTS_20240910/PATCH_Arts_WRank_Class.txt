@@ -42,3 +42,4 @@ B25:$COMBO combo.arts.txt=art(Bow C)
 B26:$COMBO combo.arts.txt=art(Bow B)
 B27:$COMBO combo.arts.txt=art(Bow A)
 B28:$COMBO combo.arts.txt=art(Bow S)
+VERSION=20240910

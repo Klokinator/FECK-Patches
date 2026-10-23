@@ -44,3 +44,4 @@ B26:$COMBO combo.skills_equip.txt=skill learned at lv25
 B27:$COMBO combo.skills_equip.txt=skill learned at lv25
 B28:$COMBO combo.skills_equip.txt=skill learned at lv25
 B29:$COMBO combo.skills_equip.txt=skill learned at lv25
+VERSION=20240910

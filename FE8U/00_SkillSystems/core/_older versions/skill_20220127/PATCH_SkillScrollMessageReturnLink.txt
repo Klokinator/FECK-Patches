@@ -20,3 +20,4 @@ LISTNAME=$W0:TEXT
 W0:TEXT=Text
 
 INFO=Editor: SkillScrollMessageReturnLink
+VERSION=20220127

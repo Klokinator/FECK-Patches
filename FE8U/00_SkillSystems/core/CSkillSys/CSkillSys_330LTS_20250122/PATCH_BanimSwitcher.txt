@@ -25,3 +25,4 @@ B7:$COMBO combo.bool.txt=activate when critical attack
 W8:BATTLEANIME=banim
 W10:SKILL=skill (00=ANY)
 W12:FLAG=flag (00=ANY)
+VERSION=20250122

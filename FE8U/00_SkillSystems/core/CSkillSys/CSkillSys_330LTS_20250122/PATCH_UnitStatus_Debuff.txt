@@ -84,3 +84,4 @@ b32:DECIMAL.zh=必杀率
 b33:DECIMAL.zh=暗杀率
 b34:DECIMAL.zh=必杀回避率
 b35:$COMBO combo.bool.txt.zh=不能移动
+VERSION=20250122

@@ -15,3 +15,4 @@ INFO.en=If same Map BGM and Batlle BGM is specified, Continue playing without st
 NAME.zh=还在Battle BGM中进行了延续判断 20200919
 INFO.zh=如果指定了与当前正在播放的BGM相同的BGM，则它将继续播放而不停止音乐。
 DEPRECATED=1
+VERSION=20200919

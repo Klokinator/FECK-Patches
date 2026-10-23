@@ -62,3 +62,4 @@ b21:$COMBO combo.bool.txt.zh=魔法攻击
 B22:$COMBO combo.art_effectiveness.txt.zh=特效
 B23:$COMBO combo.debuffs.txt.zh=减益状态
 b24:$COMBO combo.bool.txt.zh=群体减益状态
+VERSION=20250122

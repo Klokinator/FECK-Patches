@@ -15,3 +15,4 @@ COMBO=Default: Half Damage|0xBB 0x5E 0x5B 0x10|Not Halved|0xBB 0x5E 0x00 0x00
 AUTHOR=Huichelaar, Σxcalibur Σmerald
 AUTHOR.en=Huichelaar, Σxcalibur Σmerald.
 AUTHOR.zh=Huichelaar，ΣxcaliburΣmerald。
+VERSION=20190708

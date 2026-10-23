@@ -11,3 +11,4 @@ TYPE=EA
 EA=prohibits_critical_installer.event
 
 PATCHED_IF:0x2ACAC=0x00 0x4B 0x18 0x47
+VERSION=20230114

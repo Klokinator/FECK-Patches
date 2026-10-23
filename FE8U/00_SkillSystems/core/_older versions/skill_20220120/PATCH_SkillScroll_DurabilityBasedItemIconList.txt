@@ -21,3 +21,4 @@ B0:ITEM=Item
 B1:ITEMICONSRC=Icon
 
 INFO=Editor: DurabilityItemList\r\nSpecifies the item ID whose processing changes depending on the durability of the item.\r\nUsually, the ItemID of the Skill Scroll is specified.
+VERSION=20220120

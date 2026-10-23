@@ -19,3 +19,4 @@ LISTNAME=$COMBO combo.maptask_conf.txt
 W0=x
 W2=y
 P4=objects
+VERSION=20250122

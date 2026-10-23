@@ -16,3 +16,4 @@ DATACOUNT=0x100
 LISTNAME=ITEM
 W0:$COMBO combo.skills_item.txt=skill
 W2:$COMBO combo.skills_item.txt=skill
+VERSION=20240910

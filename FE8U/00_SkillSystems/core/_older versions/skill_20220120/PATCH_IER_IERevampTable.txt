@@ -24,3 +24,4 @@ P12=ItemEffect
 P16=PostBattleItemEffect
 
 INFO=Editor: ItemEffectRevamp Item_Effect_Revamp
+VERSION=20220120

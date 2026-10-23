@@ -32,3 +32,4 @@ INFO=ステータス画面の4ページ目にユニットのPersonalDataを表�
 INFO.en=The unit's PersonalData is displayed on the fourth page of the status screen.\r\nhttps://feuniverse.us/t/runa-does-an-asm/6853/7
 INFO.zh=The unit's PersonalData is displayed on the fourth page of the status screen.\r\nhttps://feuniverse.us/t/runa-does-an-asm/6853/7
 AUTHOR=Runa
+VERSION=20220120

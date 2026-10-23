@@ -508,3 +508,4 @@ UPDATE_UNINSTALL:12=..\bad_status_sword\PATCH_bad_status_sword.txt
 
 
 
+VERSION=20171130

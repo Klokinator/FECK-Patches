@@ -8,3 +8,4 @@ BIN:0x188F6=Uninstall SkillSystems Boon_188F6.bin
 TYPE=BIN
 INFO.en=Disable SkillSystems Boon.\r\nThis is because SkillSystems Boon has a bug in the 20191022 version and Bad status is not automatically restored.\r\nUse this if you want to disable this version of Boon.
 INFO.zh=这是因为SkillSystems Boon在20191022版本中存在错误，而Bad状态不是自动生成的。\r\n请使用此版本禁用Boon。
+VERSION=20190708

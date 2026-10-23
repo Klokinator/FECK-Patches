@@ -21,3 +21,4 @@ AUTHOR=7743
 HINT=CasualMode
 
 EDIT_PATCH:1=PATCH_ShowDifficulty_Text.txt
+REQUIRES=05_Menu_UI/CasualModeMenu2.jp

@@ -26,3 +26,4 @@ B2:$COMBO COMBO_SaveSlotPopupTextColor.en.txt:.en=SaveSlotPopupTextColor
 B3:$COMBO COMBO_StatusScreenTextColor.en.txt:.en=StatusScreenTextColor
 B2:$COMBO COMBO_SaveSlotPopupTextColor.en.txt:.zh=SaveSlotPopupTextColor
 B3:$COMBO COMBO_StatusScreenTextColor.en.txt:.zh=StatusScreenTextColor
+REQUIRES=05_Menu_UI/CasualModeMenu2.en

@@ -23,3 +23,4 @@ B2:DECIMAL=MaxHP
 B3=00
 
 INFO=This patch edits the TrapBreakableTerrainList in TrapRework(SkillSystems).\r\nIt defines the terrain that can be broken.
+VERSION=20220703

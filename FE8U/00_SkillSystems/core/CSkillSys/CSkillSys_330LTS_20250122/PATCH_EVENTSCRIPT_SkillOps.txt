@@ -21,3 +21,4 @@ EVENTSCRIPT:4=4546YY00XX000000	(CSKILL_K (3.x)) remove skill[YY:skill] for unit 
 EVENTSCRIPT:6=4646XX00YY000000	(CSKILL_K (3.x)) remove skill[XX:skill] for active unit
 EVENTSCRIPT:5=4746ZZ00XX00YY00	(CSKILL_K (3.x)) remove skill[ZZ:skill] for unit on map [XX:x][YY:y]
 EVENTSCRIPT:6=4846XX00YY000000	(CSKILL_K (3.x)) remove skill[XX:skill] for unit in slot-C
+VERSION=20250122

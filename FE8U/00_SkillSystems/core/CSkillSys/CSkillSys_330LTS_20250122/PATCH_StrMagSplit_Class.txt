@@ -25,3 +25,4 @@ b0:DECIMAL.zh=基础
 b1:DECIMAL.zh=成长率
 b2:DECIMAL.zh=上限
 b3:DECIMAL.zh=转职加成
+VERSION=20250122

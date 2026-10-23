@@ -31,3 +31,4 @@ B4:DECIMAL.zh=敌方命中加成
 B5:DECIMAL.zh=敌方回避加成
 B6:DECIMAL.zh=友方命中加成
 B7:DECIMAL.zh=友方回避加成
+VERSION=20250122

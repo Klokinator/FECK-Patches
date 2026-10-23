@@ -12,7 +12,10 @@ Draft, to be finalized when the new GitHub project is created.
 NAME.en, INFO.en, AUTHOR, TAG, TYPE, PATCHED_IF, plus `VERSION` and `REQUIRES` (other patches) which upstream lacks.
 `REQUIRES=<folder>[;<folder>...]` names the patches that must be installed first, as folder paths under the game folder
 (`10_Growth_Class_Stats/Passive Boosts Patches`); `|` inside one entry lists alternatives (either variant will do). Add it only
-when the patch's own INFO or code says it depends on another patch; never guess. Nothing reads it yet.
+when the patch's own INFO or code says it depends on another patch; never guess. It covers prerequisites in other folders only;
+the installer and editor files of one patch share a folder and need none. Nothing reads it yet.
+`VERSION=<YYYYMMDD>` is the date of the patch's last change, taken from the date suffix of its folder name. A patch whose
+folder has no date suffix gets no `VERSION` line; never invent one.
 
 ## Layout
 `<Game>/<NN_Category>/<patch>/` as in this repo; superseded versions go in `_older versions`, never loose beside the new one.

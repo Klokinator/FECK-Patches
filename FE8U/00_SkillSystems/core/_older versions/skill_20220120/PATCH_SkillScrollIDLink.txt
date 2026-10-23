@@ -20,3 +20,4 @@ LISTNAME=$B0:ITEM
 B0:ITEM=Item
 
 INFO=Editor: Skill Scroll SkillScrollIDLink
+VERSION=20220120

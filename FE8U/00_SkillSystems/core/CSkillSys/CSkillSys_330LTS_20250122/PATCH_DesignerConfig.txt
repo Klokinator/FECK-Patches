@@ -81,3 +81,4 @@ B31:DECIMAL.zh=最高等级记录 (0-80)
 B32:$COMBO combo.bool.txt.zh=Heros风格位移支援技能需要装备技能
 
 INFO=Editor: gKernelDesigerConfig\nhttps://github.com/FireEmblemUniverse/fe8u-cskillsys/tree/main/docs/SystemConfig.md
+VERSION=20250122

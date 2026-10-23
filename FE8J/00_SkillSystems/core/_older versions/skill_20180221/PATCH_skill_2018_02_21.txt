@@ -202,3 +202,4 @@ AUTHOR.en=Source: https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_
 
 DEPRECATED=1
 UPDATE_PATCH=..\skill_2019_02_19\PATCH_Skill20181028.txt
+VERSION=20180221

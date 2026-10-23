@@ -1214,3 +1214,4 @@ EDIT_PATCH:26=../skill20220120/PATCH_SkillScrollIDLink.txt
 EDIT_PATCH:27=../skill20220120/PATCH_SkillScrollMessageReturnLink.txt
 EDIT_PATCH:28=../skill20220120/PATCH_Capture_Trade_GenericPortraitTable.txt
 
+VERSION=20220703

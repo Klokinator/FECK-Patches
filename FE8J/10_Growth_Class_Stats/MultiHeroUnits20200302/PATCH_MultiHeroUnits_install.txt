@@ -14,3 +14,4 @@ NAME.en=Change to have multiple main characters selected by auto cursor 20200302
 INFO.en=Change so that you can set multiple heroes selected by auto cursor.
 NAME.zh=更改为通过自动光标选择多个主要字符 20200302(Install)
 INFO.zh=进行更改，以便您可以设置由自动光标选择的多个英雄。
+VERSION=20200302

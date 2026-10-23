@@ -76,3 +76,4 @@ B26:SKILL.zh=技能学习在等级25
 B27:SKILL.zh=技能学习在等级25
 B28:SKILL.zh=技能学习在等级25
 B29:SKILL.zh=技能学习在等级25
+VERSION=20250122

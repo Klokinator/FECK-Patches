@@ -25,3 +25,4 @@ B0:UNIT=Unit(00=ANY)
 B1:CLASS=Class(00=ANY)
 W2:SONG=DanceSE
 NAME.zh=在战斗动画中设置多个舞者的BGM。 20200610(Editor)
+VERSION=20200610

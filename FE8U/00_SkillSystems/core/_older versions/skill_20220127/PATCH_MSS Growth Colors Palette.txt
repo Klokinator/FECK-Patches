@@ -16,3 +16,4 @@ W0:PALETTE=color
 INFO=SkillSystemsのステータス画面MSSでの成長率を定義する色を設定します。\r\nディフォルトでは、高い成長率が緑色で、悪い成長率は赤色になります。
 INFO.en=Sets the color that defines the growth rate in the SkillSystems status screen MSS.\r\nBy default, high growth rates are green and bad growth rates are red.
 INFO.zh=Sets the color that defines the growth rate in the SkillSystems status screen MSS.\r\nBy default, high growth rates are green and bad growth rates are red.
+VERSION=20220127

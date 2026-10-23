@@ -22,3 +22,4 @@ P0:ASM_NOWARNING=ASM
 
 INFO=Editor: PostBattleCalcLoop
 
+VERSION=20220120

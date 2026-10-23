@@ -20,3 +20,4 @@ W2:SKILL=skill
 
 W0:SKILL.zh=技能
 W2:SKILL.zh=技能
+VERSION=20250122

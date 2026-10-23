@@ -11,3 +11,4 @@ COMBO=Default: |0x00 0xF8 0x00 0x28 0x20 0xD0|Always Enable: |0x00 0x00 0x00 0x0
 INFO=Captureスキルを保持していなくても、Captureを行うことができるようにします。
 INFO.en=Even if you don't have Capture skills, you can do Capture.
 INFO.zh=即使您没有Capture技能，也可以进行Capture。
+VERSION=20191022

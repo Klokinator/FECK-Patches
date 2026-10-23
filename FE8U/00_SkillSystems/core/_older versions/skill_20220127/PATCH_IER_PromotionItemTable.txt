@@ -23,3 +23,4 @@ P4:CLASSLIST=ClassList
 P8:ASM_NOWARNING=Usability ASM(00=Default)
 
 INFO=Editor: ItemEffectRevamp PromotionItemTable
+VERSION=20220127

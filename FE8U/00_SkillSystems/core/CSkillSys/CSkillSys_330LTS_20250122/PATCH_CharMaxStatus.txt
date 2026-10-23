@@ -37,3 +37,4 @@ b6:DECIMAL.zh=魔防
 b7:DECIMAL.zh=幸运
 b8:DECIMAL.zh=体格
 b9:DECIMAL.zh=移动力
+VERSION=20250122

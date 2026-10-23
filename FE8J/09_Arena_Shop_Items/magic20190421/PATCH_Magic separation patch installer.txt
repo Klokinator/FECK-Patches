@@ -16,3 +16,4 @@ INFO.zh=该补丁还设置魔法物品并分开魔法。\r\n通过使用武力�
 
 //CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
 //CONFLICT_MESSAGE=FE8N Skill Extends
+VERSION=20190421

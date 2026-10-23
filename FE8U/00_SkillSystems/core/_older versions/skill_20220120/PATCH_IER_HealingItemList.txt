@@ -21,3 +21,4 @@ LISTNAME=$B0:ITEMSTAFFUSEEFFECT
 B0:ITEMSTAFFUSEEFFECT=ItemEffect
 
 INFO=Editor: ItemEffectRevamp HealingItemList\r\nList of healing items effects usable by the AI
+VERSION=20220120

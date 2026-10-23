@@ -38,3 +38,4 @@ INFO.en=Set the Super Arena flag when all conditions are met.\r\nThe default is 
 
 NAME.zh=Set the Super Arena status flag when you win in Arena(Editor)
 INFO.zh=Set the Super Arena flag when all conditions are met.\r\nThe default is to set the Super Arena flag on the unit if it is senior level 20 and has 10 or more wins in the battle history and the party has 1000 gold or more.\r\n\r\nWhen the unit wins in the arena, if it meets the specified time requirements, it will set the SuperArena status flag.
+VERSION=20220623

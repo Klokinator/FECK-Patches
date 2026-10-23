@@ -23,3 +23,4 @@ b5:DECIMAL=avo
 b6:DECIMAL=crt
 b7:DECIMAL=silencer
 b8:$COMBO combo.bool.txt=is buff
+VERSION=20240910

@@ -31,3 +31,4 @@ AUTHOR=7743
 INFO.en=Change so that multiple units can be seize
 NAME.zh=更改为具有多个可以抑制的人物 20200302(Editor)
 INFO.zh=进行更改，以便可以控制多个人物
+VERSION=20200302

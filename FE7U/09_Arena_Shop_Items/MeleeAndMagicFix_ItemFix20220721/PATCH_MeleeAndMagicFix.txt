@@ -17,3 +17,4 @@ NAME.en=MeleeAndMagicFix
 AUTHOR.en=melee and magic fix  Hextator,Tequila,7743
 NAME.zh=近战和魔法修复
 AUTHOR.zh=melee and magic fix  Hextator,Tequila,7743
+VERSION=20220721

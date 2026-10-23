@@ -31,3 +31,4 @@ B4:CLASS=Class(00=ANY)
 B5:$COMBO combo.Allegiance.txt=Allegiance
 W6:FLAG=Flag(00=ANY)
 B8:DECIMAL=Probability(100=ANY)
+VERSION=20230814

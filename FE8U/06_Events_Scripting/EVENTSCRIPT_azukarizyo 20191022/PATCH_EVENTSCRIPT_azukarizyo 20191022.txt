@@ -21,3 +21,4 @@ NAME.zh=事件命令 从事件订单调用护航的附加命令(Add Event) 20191
 INFO.zh=从活动订单中呼叫车队。\r\n当你想制作像FE5 存放处这样的东西时，请使用它。
 
 EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_azukarizyo.dmp}	呼叫运输队
+VERSION=20191022

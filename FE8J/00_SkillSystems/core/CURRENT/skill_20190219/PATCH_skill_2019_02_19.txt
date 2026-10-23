@@ -203,3 +203,4 @@ AUTHOR.zh=来源:https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N
 AUTHOR.en=Source: https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N/_Skills  , kenpuku
 
 
+VERSION=20190219

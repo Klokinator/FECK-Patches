@@ -14,3 +14,4 @@ COMBO=Default 3x|0x52 0x18|2x|0x00 0x00
 INFO=必殺ダメージの計算式を変更します。\r\nディフォルトはダメージ3倍です。
 INFO.en=Changed the calculation formula for critical damage.\r\nDefault is 3x damage.
 INFO.zh=更改了暴击伤害的计算公式。\r\n默认为 3 倍伤害。
+VERSION=20220120

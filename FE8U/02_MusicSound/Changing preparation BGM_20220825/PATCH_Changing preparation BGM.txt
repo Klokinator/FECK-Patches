@@ -50,3 +50,4 @@ AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/RePrepara
 EVENTSCRIPT:1=400D0000{$L1:c2p.bin}	進撃準備のBGMを再生する	{MUSIC}
 EVENTSCRIPT:1.en=400D0000{$L1:c2p.bin}	Play BGM in Preparation.	{MUSIC}
 EVENTSCRIPT:1.zh=400D0000{$L1:c2p.bin}	Play BGM in Preparation.	{MUSIC}
+VERSION=20220825

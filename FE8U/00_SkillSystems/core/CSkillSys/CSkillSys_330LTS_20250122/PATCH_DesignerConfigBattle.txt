@@ -35,3 +35,4 @@ B10:DECIMAL.zh=连携攻击附加伤害百分比
 B11:DECIMAL.zh=追击速差要求
 
 INFO=Editor: gKernelBattleDesignerConfig\nhttps://github.com/FireEmblemUniverse/fe8u-cskillsys/tree/main/docs/SystemConfig.md
+VERSION=20250122

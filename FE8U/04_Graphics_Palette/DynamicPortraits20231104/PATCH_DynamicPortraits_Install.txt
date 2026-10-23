@@ -15,3 +15,4 @@ INFO.en=Switch Portrait to the status screen and MiniMug class, flags.\r\nThis p
 
 NAME.zh=按类，旗切换面部图像 20231104(Install)
 INFO.zh=切换到状态屏幕和MiniMug类，标志
+VERSION=20231104

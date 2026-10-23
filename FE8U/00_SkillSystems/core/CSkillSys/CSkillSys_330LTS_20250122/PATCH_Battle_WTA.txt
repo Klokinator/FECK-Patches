@@ -40,3 +40,4 @@ b12:DECIMAL.zh=回避率
 b13:DECIMAL.zh=必杀率
 b14:DECIMAL.zh=必杀回避率
 b15:DECIMAL.zh=暗杀率
+VERSION=20250122

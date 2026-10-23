@@ -38,3 +38,4 @@ INFO=ユニットごとの特殊技能を作成します。\r\n特殊技能は�
 
 INFO.en=Create special skills for each unit.\r\nSpecial skills can be described as event instructions.\r\nIf you set the event to 0 or 1, you have no special skills.
 INFO.zh=为每个单元创建特殊技能。\r\n特殊技能可以描述为事件说明。\r\n如果将事件设置为0或1，则没有特殊技能。
+VERSION=20200508

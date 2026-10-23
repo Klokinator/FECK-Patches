@@ -22,3 +22,4 @@ P0:ASM_NOWARNING=ASM
 
 INFO=Editor: PostActionCalcLoop
 
+VERSION=20220127

@@ -30,3 +30,4 @@ W6=00
 INFO=Do not set Divisor to 0.
 
 AUTHOR=Snakey1 https://feuniverse.us/t/snakes-pit-of-asm-and-other-stuff/3627/18
+VERSION=20200604

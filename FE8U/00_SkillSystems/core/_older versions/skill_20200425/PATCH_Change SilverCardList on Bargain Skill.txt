@@ -24,3 +24,4 @@ B0:ITEM=SilverCard
 INFO=If have, specify item that will be discounted.
 
 AUTHOR=SkillSystems Authors
+VERSION=20200425

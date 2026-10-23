@@ -18,3 +18,4 @@ INFO.zh=This patch can store statuses over 31.\r\nIt also supports class expansi
 
 ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
 DEPRECATED=1
+VERSION=20220127

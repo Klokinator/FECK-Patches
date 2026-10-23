@@ -27,3 +27,4 @@ B1:DECIMAL=Star
 
 INFO=Leadership. Grants +5 Hit +3 Avo to all ally units per star.
 AUTHOR=Zeta
+VERSION=20191022

@@ -29,3 +29,4 @@ LISTNAME=$B0:DECIMAL
 B0:DECIMAL=Growth%
 B1:$COMBO combo_mss_growth_colors_table.txt=PALETTE INDEX
 
+VERSION=20191022

@@ -22,3 +22,4 @@ W2:TEXT=Text message
 P4:ASM_SWITCH=ASM(00=None)
 
 INFO=Editor: ItemEffectRevamp IER_StatboosterText
+VERSION=20220120

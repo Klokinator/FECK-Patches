@@ -22,3 +22,4 @@ P0:ASM_NOWARNING=BattleProcASM
 
 INFO=Editor: MugLoadingCalcLoop
 
+VERSION=20220127

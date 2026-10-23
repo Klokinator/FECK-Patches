@@ -30,3 +30,4 @@ W6:TEXT=desc
 
 W4:TEXT.zh=名字
 W6:TEXT.zh=杂项
+VERSION=20250122

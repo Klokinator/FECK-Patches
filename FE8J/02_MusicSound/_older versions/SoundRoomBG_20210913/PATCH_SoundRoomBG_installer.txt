@@ -16,3 +16,4 @@ INFO.en=This patch draws CG on the background, like the sound room of FE7.\r\nYo
 INFO.zh=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG.\r\nYou can specify which CG and BG to draw in a list.
 
 DEPRECATED=1
+VERSION=20210913

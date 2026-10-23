@@ -41,3 +41,4 @@ NAME.zh=为每章更改商店的BGM 20221227(Editor)
 INFO.zh=更改每章的商店BGM。\r\n你可以改变武器商店，工具店，秘密商店的BGM。\r\n如果与列表不匹配，将播放默认BGM。
 
 AUTHOR=7743
+VERSION=20221227

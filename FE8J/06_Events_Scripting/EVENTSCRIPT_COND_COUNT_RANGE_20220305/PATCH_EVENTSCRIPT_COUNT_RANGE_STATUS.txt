@@ -26,3 +26,4 @@ BIN:$FREEAREA:1=CountRangeState.dmp
 
 AUTHOR=7743 , add state suusuke
 
+VERSION=20220305

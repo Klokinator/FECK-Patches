@@ -23,3 +23,4 @@ LISTNAME=$B0:ITEMSTAFFUSEEFFECT
 B0:ITEMSTAFFUSEEFFECT=ItemEffect
 
 INFO=Editor: ItemEffectRevamp ChestKeyEffectList\r\nlist of effect ids the ai will check for as chest keys
+VERSION=20220127

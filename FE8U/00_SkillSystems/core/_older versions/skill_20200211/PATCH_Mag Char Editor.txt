@@ -24,3 +24,4 @@ B1:DECIMAL=Magic Growth
 
 INFO=Mag Char Editor.nmm SkillSystems's Strmag split
 
+VERSION=20200211

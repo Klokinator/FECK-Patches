@@ -41,3 +41,4 @@ b21:$COMBO combo.bool.txt=magic_attack
 B22:$COMBO combo.art_effectiveness.txt=effectiveness
 B23:$COMBO combo.debuffs.txt=debuff
 b24:$COMBO combo.bool.txt=aoe_debuff
+VERSION=20240910

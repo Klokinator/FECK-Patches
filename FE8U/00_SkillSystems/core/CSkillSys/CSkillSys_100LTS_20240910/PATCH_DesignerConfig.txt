@@ -29,3 +29,4 @@ B14:$COMBO combo.PageStyle_Unit.txt=unit_page_style
 B15:$COMBO combo.PageStyle_Skill.txt=skil_page_style
 
 INFO=Editor: gKernelDesigerConfig
+VERSION=20240910

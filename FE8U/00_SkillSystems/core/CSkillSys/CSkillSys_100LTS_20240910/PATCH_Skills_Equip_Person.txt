@@ -99,3 +99,4 @@ B81:$COMBO combo.skills_equip.txt=skill learned at (with hidden level) lv80
 B82:$COMBO combo.skills_equip.txt=skill learned at (with hidden level) lv80
 B83:$COMBO combo.skills_equip.txt=skill learned at (with hidden level) lv80
 B84:$COMBO combo.skills_equip.txt=skill learned at (with hidden level) lv80
+VERSION=20240910

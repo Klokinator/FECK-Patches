@@ -17,3 +17,4 @@ NAME.en=Flexible change of Arena BGM 20221019(Installer)
 INFO.en=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.
 NAME.zh=Flexible change of Arena BGM 20221019(Installer)
 INFO.zh=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.
+VERSION=20221019

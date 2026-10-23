@@ -29,3 +29,4 @@ INFO.en="256 Color Title Background Installer" must be patched onto the current 
 INFO.zh=在OP标题的背景上提供256种颜色的图像。\r\n使用FEBuilderGBA的色彩还原工具创建时，请在“类型"中使用“05 =不使用TSA的256色"。\r\n使用其他方法准备时，请准备256色，240 x 160的图像。此时不要使用调色板的第一个颜色。
 
 AUTHOR=Leonarth https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/10
+VERSION=20180611

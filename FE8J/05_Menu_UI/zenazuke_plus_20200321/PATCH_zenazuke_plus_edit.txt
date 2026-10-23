@@ -32,3 +32,4 @@ INFO.en=You can set items to always send to the convoy or not to send.
 
 NAME.zh=GiveAll+ Menu 20200321(Editor)
 INFO.zh=You can set items to always send to the convoy or not to send.
+VERSION=20200321

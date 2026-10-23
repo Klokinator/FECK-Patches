@@ -43,3 +43,4 @@ EVENTSCRIPT:22.zh=400A0000401F590840050300FFVV00002037FFFF	Give itemSkillScroll0
 EVENTSCRIPT:23.zh=400A0000401F590840050300FFVV00002037YYYY	Give itemSkillScroll0xFF[VV:SKILL:Skill]to[YYYY:UNIT:Character]
 EVENTSCRIPT:24.zh=2833FFFF2006C20040050300FFVV0000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure SkillScroll0xFF[VV:SKILL:Skill][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}
 
+VERSION=20220127

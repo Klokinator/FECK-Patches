@@ -21,3 +21,4 @@ INFO.en=Displays a branching menu that will be displayed when branching to caric
 NAME.zh=分支菜单(Install) 20230401
 INFO.zh=显示分支到caricino和glado时将显示的分支菜单。\r\nThis is the version with Text_ResetTileAllocation added.\r\nIt does not cause any problems even if the menu is continuously displayed.
 EVENTSCRIPT:1.zh=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	分支菜单[XXXXXXXX:POINTER_MENUEXTENDS:菜单]	@STOREC	Display Split Menu
+VERSION=20230401

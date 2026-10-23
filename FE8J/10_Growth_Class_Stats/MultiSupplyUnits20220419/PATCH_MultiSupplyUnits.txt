@@ -35,3 +35,4 @@ NAME.en=Change to have multiple units that can call supply 20220419(Editor)
 AUTHOR=7743
 INFO.en=Change so that you can set multiple units that can call supply.
 NAME.zh=更改为具有多个可以呼叫护卫队的人物 20220419(Editor)
+VERSION=20220419
