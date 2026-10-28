@@ -157,11 +157,46 @@ let commit = "unknown";
 try { commit = execFileSync("git", ["-C", root, "rev-parse", "HEAD"], { encoding: "utf8" }).trim(); } catch {}
 const today = new Date().toISOString().slice(0, 10);
 const lc = (s) => s.toLowerCase();
+// Display titles carry no dates; a date, a type word, the author or the folder is added only where two patches in one game would otherwise share a title.
+const DATE = /(?:20\d{6}|20\d{2}-\d{2}(?:-\d{2})?|20\d{2})/;
+const fmtDate = (d) => (/^\d{8}$/.test(d) ? d.slice(0, 4) + "-" + d.slice(4, 6) + "-" + d.slice(6) : d);
+const stripDates = (t) => t.replace(/\s*\((old)\s+(?:20\d{6}|20\d{2}-\d{2}(?:-\d{2})?|20\d{2})\)/i, " ($1)").replace(/\s*\((?:20\d{6}|20\d{2}-\d{2}(?:-\d{2})?|20\d{2})\)/g, "").replace(/(\s)(?:20\d{6}|20\d{2}-\d{2}(?:-\d{2})?|20\d{2})(?![\d-])/g, "").replace(/\(\s*\)/g, "").replace(/\s+/g, " ").trim();
+const TYPE_WORD = { STRUCT: "settings", IMAGE: "image", ADDR: "value" };
+const uniqueTitles = (patches) => {
+  for (const p of patches) { p.dateInTitle = (DATE.exec(p.title) || [])[0] || ""; p.title = stripDates(p.title); p.parts = []; }
+  const final = (p) => { for (let n = p.parts.length; n >= 0; n--) { const s = n ? " (" + p.parts.slice(0, n).join(", ") + ")" : ""; if (p.title.length + s.length <= 54) return p.title + s; } return p.title; };
+  const dis = [
+    (p) => TYPE_WORD[p.type] || "",
+    (p) => fmtDate(p.dateInTitle || (/(20\d{6})(?!.*20\d{6})/.exec(p.id) || [])[1] || ""),
+    (p) => (p.author && p.author.length <= 20 && !/http/.test(p.author) ? p.author : ""),
+    (p) => p.id.split("/").slice(-2, -1)[0].replace(/[_-]+/g, " ").trim(),
+    (p) => (p.id.split("/").pop().replace(/^PATCH_/i, "").replace(/\.txt$/i, "").split(/[_ ]/).pop().replace(/^(?:edit(?:or)?|install(?:er|ation)?)$/i, "") || ""),
+    (p) => fmtDate((/(20\d{6})/.exec(p.id.split("/").slice(0, -1).join("/")) || [])[1] || ""),
+    (p) => p.id.split("/").pop().replace(/^PATCH_/i, "").replace(/\.txt$/i, ""),
+    (p) => p.id.split("/").pop().replace(/^PATCH_/i, "").split(" ")[0],
+  ];
+  // For each group sharing a title, the first combination of the words above that tells every member apart is appended; a group none of them separates stays as it is.
+  const combos = [[0], [1], [2], [3], [4], [0, 1], [0, 2], [0, 3], [1, 2], [1, 3], [0, 1, 2], [0, 1, 3], [0, 4], [1, 4], [0, 1, 4], [5], [0, 5], [4, 5], [3, 5], [6], [7]];
+  const by = new Map();
+  for (const p of patches) (by.get(lc(p.title)) || by.set(lc(p.title), []).get(lc(p.title))).push(p);
+  for (const g of by.values()) {
+    if (g.length < 2) continue;
+    for (const c of combos) {
+      const parts = g.map((p) => c.map((i) => dis[i](p)).filter(Boolean));
+      if (new Set(parts.map((x) => x.join(", "))).size < g.length) continue;
+      if (g.some((p, i) => p.title.length + (parts[i].length ? parts[i].join(", ").length + 3 : 0) > 54)) continue;
+      g.forEach((p, i) => { p.parts = parts[i]; });
+      break;
+    }
+  }
+  for (const p of patches) { p.title = final(p); delete p.parts; delete p.dateInTitle; }
+};
 const outs = {};
 let dangling = 0;
 for (const game of GAMES) {
   const patches = index.filter((r) => r.Game === game).map(build);
   for (const p of patches) for (const c of p.conflicts) if (c.with && !ids.has(c.with)) dangling++;
+  uniqueTitles(patches.filter((p) => !p.removedUpstream));
   const byId = new Map(patches.map((p) => [p.id, p]));
   const date = (p) => (/(20\d{6})(?!.*20\d{6})/.exec(p.name + " " + p.folder) || [])[1];
   const current = new Map();
