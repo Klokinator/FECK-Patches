@@ -21,4 +21,4 @@ AUTHOR=7743
 HINT=CasualMode
 
 EDIT_PATCH:1=PATCH_ShowDifficulty_Text.txt
-REQUIRES=05_Menu_UI/CasualModeMenu2.en
+REQUIRES=05_Menu_UI/CasualModeMenu2.en;12_Fixes_Misc_System/FEEditor/Anti-Huffman

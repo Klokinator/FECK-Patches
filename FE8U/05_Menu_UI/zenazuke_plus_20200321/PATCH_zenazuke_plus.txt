@@ -19,4 +19,5 @@ EXTENDS:0x1100=TEXT
 EA=EA.event
 EDIT_PATCH=PATCH_zenazuke_plus_edit.txt
 AUTHOR=7743
+REQUIRES=12_Fixes_Misc_System/FEEditor/Anti-Huffman
 VERSION=20200321

@@ -8,6 +8,7 @@ INFO=サブメニューを表示します。\r\nデバッグ用の機能とし�
 サブメニューが利用できる場合、Waitは、Wait >>となります。
 
 AUTHOR=7743
+REQUIRES=12_Fixes_Misc_System/FEEditor/Anti-Huffman
 
 EA_SEARCH_MENU_ID=0x6B //Wait Menu ID
 EXTENDS:0x1100=TEXT
