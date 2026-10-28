@@ -11,6 +11,7 @@ EDIT_PATCH:01=PATCH_PromoteCommand Editor.txt
 
 EA=Installer.event
 AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/40
+REQUIRES=12_Fixes_Misc_System/FEEditor/Anti-Huffman
 
 
 INFO=特定の条件を満たしていると、メニューにＣＣコマンドが表示され、それを選択することで上位クラスへ昇格できるようにします。\r\nようするに、このパッチは、ＣＣアイテムの代わりにメニューを使う昇進方法を提供します。

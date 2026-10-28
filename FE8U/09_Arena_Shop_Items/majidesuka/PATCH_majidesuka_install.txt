@@ -20,3 +20,4 @@ TEXTID:0xe81=Secret
 TEXTID:0xe82=WorldmapSell
 
 AUTHOR=7743
+REQUIRES=12_Fixes_Misc_System/FEEditor/Anti-Huffman

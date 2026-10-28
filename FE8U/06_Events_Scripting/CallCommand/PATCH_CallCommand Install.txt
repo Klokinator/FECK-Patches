@@ -12,6 +12,7 @@ EDIT_PATCH:02=PATCH_CallCommand Editor_CallLimit_List.txt
 
 EA=CallCommand.event
 AUTHOR=7743 Orignal: Vesly https://feuniverse.us/t/veslys-asm/12011/19
+REQUIRES=12_Fixes_Misc_System/FEEditor/Anti-Huffman
 
 INFO=レスキューの杖のように遠くの味方を近くに呼び寄せます。\r\nこのコマンドは、すべての味方ユニットを近くに呼び寄せというとても強力な機能です。\r\n利用できるユニットに制限をかけたり、HPをコストとして支払うといった設定が可能です。
 INFO.en=This Patch is calls distant allies close to you like a rescue staff.\r\nThis command is a very powerful feature, calling all allied units close to you.\r\nYou can limit the number of units that can be used, or pay HP as a cost.
