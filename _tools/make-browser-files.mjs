@@ -1,4 +1,4 @@
-// Regenerates browser/files.json: path, size and git blob sha of every file under the game folders, so FECK can list the library
+// Regenerates browser/files.json: path, size and git blob sha of every file under the game folders and the five browser/<game>.json files, so FECK can list the library
 // from raw.githubusercontent.com at a pinned commit without the GitHub tree API. Zero dependencies: node _tools/make-browser-files.mjs [--check]
 // The data is git's own (ls-tree of HEAD), so a sha is the blob sha GitHub serves and size is the stored size, whatever core.autocrlf does
 // to the working tree. Generate it after the commit that holds the content: the file lists HEAD, not uncommitted changes, and leaves out
@@ -15,7 +15,7 @@ const GAMES = new Set(["FE6", "FE7J", "FE7U", "FE8J", "FE8U"]);
 const files = [];
 for (const rec of git("ls-tree", "-r", "-l", "-z", "HEAD").toString("utf8").split("\0")) {
   const m = /^\d+ blob ([0-9a-f]{40}) +(\d+)\t([^]*)$/.exec(rec);
-  if (!m || !GAMES.has(m[3].split("/")[0])) continue;
+  if (!m || !(GAMES.has(m[3].split("/")[0]) || /^browser\/FE(6|7J|7U|8J|8U)\.json$/.test(m[3]))) continue;
   files.push({ path: m[3], size: Number(m[2]), sha: m[1] });
 }
 files.sort((a, b) => (a.path < b.path ? -1 : a.path > b.path ? 1 : 0));
