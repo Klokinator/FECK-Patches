@@ -10,7 +10,11 @@
 //   conflicts = CONFLICTS.csv overlaps (both directions) plus every CONFLICT_IF:<offset>=<bytes> line (with = null).
 //   requires = string[][]: one group per REQUIRES entry (";"-separated), holding every patch id in the folder(s) it names ("|" alternatives merged); needs one from each group. [] when none.
 //   tags drop ESSENTIALFIXES: the browser shows no ranking tags.
-//   superseded = the patch sits under an "_older versions" folder (an extra field; supersededBy is always null: nothing in the files names the replacement).
+//   superseded = the patch sits under an "_older versions" folder, or its name starts with "(Old)".
+//   supersededBy = the id of the one current patch of the same game whose name is the same once "(Old)", dates and "(Editor)/(Installer)"-style brackets are dropped; null when none or more than one matches.
+//   author = AUTHOR as written (literal \r\n sequences become spaces); authorUrl = the first http(s) link inside it, null when none.
+//   description = INFO.en's first two sentences; a lone opening double quote (an odd number of quote marks) is dropped.
+//   filesComplete = false when a folder has more than 60 files and "files" lists only part of them.
 //   verified = VERIFIED.csv rolled up: every row pass = pass, any fail/not assemblable with a pass = partial, only fails = fail, only "not checked" = null.
 //   files = FILES.csv's rows for the patch folder; a folder with more than 60 files lists only the patch file, its readme-role files and the files its text names.
 import { execFileSync } from "node:child_process";
@@ -41,6 +45,9 @@ const parseCsv = (name) => {
 const nul = (s) => (s === undefined || s === "" ? null : s);
 const hex = (s) => s.trim().split(/\s+/).map((b) => (parseInt(b, 16) & 0xff).toString(16).toUpperCase().padStart(2, "0")).join("");
 const num = (s) => parseInt(s, 16);
+const oldName = (n) => /^\s*\(old\)/i.test(n);
+const sameName = (n) => n.replace(/^\s*\(old\)\s*/i, "").replace(/\([^)]*\)/g, "").replace(/\d{6,8}/g, "").toLowerCase().replace(/[^a-z0-9぀-ヿ一-鿿]/g, "");
+const cleanDesc = (s) => (s && s.startsWith('"') && (s.match(/"/g) || []).length % 2 ? s.slice(1).trim() : s);
 
 const index = parseCsv("INDEX.csv");
 const descs = new Map(parseCsv("DESCRIPTIONS.csv").map((r) => [r.Folder + "/" + r.PatchFile, r.Description]));
@@ -108,13 +115,14 @@ const build = (r) => {
     id,
     name: nameEn || nameJa || r.PatchFile.replace(/^PATCH_/i, "").replace(/\.txt$/i, ""),
     nameJp: nameEn && nameJa && nameEn !== nameJa ? nameJa : null,
-    description: nul(descs.get(id)),
+    description: nul(cleanDesc(descs.get(id))),
     category: seg[1].replace(/^\d+_/, ""),
     type: r.Type || "",
     tags: (r.Tag.match(/#[^#\s]+/g) || []).map((t) => t.slice(1)).filter((t) => t !== "ESSENTIALFIXES"),
-    author: nul(r.Author),
+    author: nul((r.Author || "").replace(/\\r\\n|\\n/g, " ").replace(/\s+/g, " ").trim()),
+    authorUrl: (/https?:\/\/[^\s"'<>]+/i.exec(r.Author || "") || [null])[0],
     folder,
-    superseded: seg.includes("_older versions"),
+    superseded: seg.includes("_older versions") || oldName(nameEn || nameJa || ""),
     supersededBy: null,
     removedUpstream: r.RemovedUpstream === "1",
     verified: verification(r.Game, id),
@@ -122,6 +130,7 @@ const build = (r) => {
     writes,
     conflicts,
     requires: requires.get(id) || [],
+    filesComplete: files.length === all.length,
     files: files.map((f) => ({ path: f.path, role: f.role })).sort((a, b) => (a.path.toLowerCase() < b.path.toLowerCase() ? -1 : a.path.toLowerCase() > b.path.toLowerCase() ? 1 : 0)),
   };
 };
@@ -135,6 +144,9 @@ let dangling = 0;
 for (const game of GAMES) {
   const patches = index.filter((r) => r.Game === game).map(build);
   for (const p of patches) for (const c of p.conflicts) if (c.with && !ids.has(c.with)) dangling++;
+  const current = new Map();
+  for (const p of patches) if (!p.superseded) { const k = sameName(p.name); if (k) (current.get(k) || current.set(k, []).get(k)).push(p.id); }
+  for (const p of patches) if (p.superseded) { const c = current.get(sameName(p.name)) || []; if (c.length === 1) p.supersededBy = c[0]; }
   patches.sort((a, b) => (lc(a.category) < lc(b.category) ? -1 : lc(a.category) > lc(b.category) ? 1 : lc(a.name) < lc(b.name) ? -1 : lc(a.name) > lc(b.name) ? 1 : a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   outs[game] = { schema: 1, game, commit, generated: today, patches };
 }
