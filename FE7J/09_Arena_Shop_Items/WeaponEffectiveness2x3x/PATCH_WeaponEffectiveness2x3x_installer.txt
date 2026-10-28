@@ -6,7 +6,7 @@ TAG=#ENGINE
 
 PATCHED_IF:0x28FC4=0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_WeaponEffectiveness2x3x.txt
-EA=Install.event
+EA=install.event
 
 
 AUTHOR=7743

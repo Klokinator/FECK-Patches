@@ -25,9 +25,9 @@ BIN:0xA7C8E=nya_A7C8E.bin
 BIN:0xa7d16=nya_0a7d16.bin
 
 
-BIN:0x01dc0e=data_c7.bin
-BIN:0x01dcb6=data_c7.bin
-BIN:0x01dd48=data_c7.bin
+BIN:0x01dc0e=data_C7.bin
+BIN:0x01dcb6=data_C7.bin
+BIN:0x01dd48=data_C7.bin
     
 BIN:0x031450=data_203AB48.bin
 BIN:0x031470=data_203AB48.bin
@@ -36,18 +36,18 @@ BIN:0x031500=data_203AB48.bin
 BIN:0x03152c=data_203AB48.bin
 BIN:0x031550=data_203AB48.bin
 
-BIN:0x031474=data_c8.bin
-BIN:0x0314c2=data_c7.bin
-BIN:0x031508=data_c7.bin
-BIN:0x09a566=data_c7.bin
-BIN:0x09c81c=data_c7.bin
-BIN:0x09c836=data_c7.bin
-BIN:0x09f912=data_c8.bin
-BIN:0x09f9d6=data_c8.bin
-BIN:0x09fa00=data_c8.bin
-BIN:0x09ffb0=data_c7.bin
-BIN:0x0a0ba2=data_c8.bin
-BIN:0x0b92C0=data_c7.bin
+BIN:0x031474=data_C8.bin
+BIN:0x0314c2=data_C7.bin
+BIN:0x031508=data_C7.bin
+BIN:0x09a566=data_C7.bin
+BIN:0x09c81c=data_C7.bin
+BIN:0x09c836=data_C7.bin
+BIN:0x09f912=data_C8.bin
+BIN:0x09f9d6=data_C8.bin
+BIN:0x09fa00=data_C8.bin
+BIN:0x09ffb0=data_C7.bin
+BIN:0x0a0ba2=data_C8.bin
+BIN:0x0b92C0=data_C7.bin
 
 
 

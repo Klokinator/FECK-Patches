@@ -9,7 +9,7 @@ TAG=#EVENT
 PATCHED_IF:$FGREP4 ASMC_RemoveFiretorch.dmp=0xF0 0xB5
 
 //本体をフリーエリアにいれる.
-BIN:$FREEAREA:1=ASMC_RemoveFiretorch.dmp
+BIN:$FREEAREA:1=ASMC_RemoveFireTorch.dmp
 
 AUTHOR=7743
 
