@@ -11,7 +11,7 @@
 //   requires = string[][]: one group per REQUIRES entry (";"-separated), holding every patch id in the folder(s) it names ("|" alternatives merged); needs one from each group. [] when none.
 //   tags drop ESSENTIALFIXES: the browser shows no ranking tags.
 //   superseded = the patch sits under an "_older versions" folder, or its name starts with "(Old)".
-//   supersededBy = the id of the one current patch of the same game whose name is the same once "(Old)", dates and "(Editor)/(Installer)"-style brackets are dropped; null when none or more than one matches.
+//   supersededBy = the id of the one current patch of the same game whose name is the same once "(Old)", dates and "(Editor)/(Installer)"-style brackets are dropped; null when none or more than one matches, or when the match's date (YYYYMMDD in the name or folder) is older than the superseded patch's.
 //   author = AUTHOR as written (literal \r\n sequences become spaces); authorUrl = the first http(s) link inside it, null when none.
 //   description = INFO.en's first two sentences; a lone opening double quote (an odd number of quote marks) is dropped.
 //   filesComplete = false when a folder has more than 60 files and "files" lists only part of them.
@@ -144,9 +144,11 @@ let dangling = 0;
 for (const game of GAMES) {
   const patches = index.filter((r) => r.Game === game).map(build);
   for (const p of patches) for (const c of p.conflicts) if (c.with && !ids.has(c.with)) dangling++;
+  const byId = new Map(patches.map((p) => [p.id, p]));
+  const date = (p) => (/(20\d{6})(?!.*20\d{6})/.exec(p.name + " " + p.folder) || [])[1];
   const current = new Map();
   for (const p of patches) if (!p.superseded) { const k = sameName(p.name); if (k) (current.get(k) || current.set(k, []).get(k)).push(p.id); }
-  for (const p of patches) if (p.superseded) { const c = current.get(sameName(p.name)) || []; if (c.length === 1) p.supersededBy = c[0]; }
+  for (const p of patches) if (p.superseded) { const c = current.get(sameName(p.name)) || []; if (c.length === 1 && !(date(p) && date(byId.get(c[0])) && date(byId.get(c[0])) < date(p))) p.supersededBy = c[0]; }
   patches.sort((a, b) => (lc(a.category) < lc(b.category) ? -1 : lc(a.category) > lc(b.category) ? 1 : lc(a.name) < lc(b.name) ? -1 : lc(a.name) > lc(b.name) ? 1 : a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   outs[game] = { schema: 1, game, commit, generated: today, patches };
 }
