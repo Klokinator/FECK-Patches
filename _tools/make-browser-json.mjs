@@ -12,7 +12,7 @@
 //   tags drop ESSENTIALFIXES: the browser shows no ranking tags.
 //   superseded = the patch sits under an "_older versions" folder, or its name starts with "(Old)".
 //   supersededBy = the id of the one current patch of the same game whose name is the same once "(Old)", dates and "(Editor)/(Installer)"-style brackets are dropped; null when none or more than one matches, or when the match's date (YYYYMMDD in the name or folder) is older than the superseded patch's.
-//   author = AUTHOR as written (literal \r\n sequences become spaces); authorUrl = the first http(s) link inside it, null when none.
+//   author = AUTHOR with links taken out (the first one is in authorUrl) and literal \r\n sequences turned into spaces, a trailing source label ("Source:", "出典元:" or a bare colon) is dropped, and the value is null only when no letter or digit is left; authorUrl = the first http(s) link inside it, null when none.
 //   description = INFO.en's first two sentences; a lone opening double quote (an odd number of quote marks) is dropped.
 //   title = the short display title (at most 40 characters, sentence case, no "(Editor)" suffix) and summary = one or two plain sentences, both from METADATA.csv; name and description stay as the upstream text.
 //   group = optional METADATA.csv Group column (a name from patch-groups.json), else null.
@@ -46,6 +46,13 @@ const parseCsv = (name) => {
 };
 
 const nul = (s) => (s === undefined || s === "" ? null : s);
+// Author text without its links; only a trailing source label ("Source:", "出典元:", a bare colon) and empty brackets are dropped, an unclosed bracket is closed, and the result is empty only when no letter or digit is left.
+const cleanAuthor = (a) => {
+  let s = a.replace(/\\r\\n|\\n/g, " ").replace(/https?:\/\/[^\s"'<>]+/gi, " ").replace(/\s+/g, " ").trim();
+  s = s.replace(/\s*(?:プログラム)?(?:出典元|Source|Original author)?\s*[:：]\s*(?=[)）\]]*$)/iu, "").replace(/\(\s*\)|（\s*）|\[\s*\]/gu, "").replace(/[\s,、]+$/u, "").trim();
+  if ((s.match(/\(/g) || []).length > (s.match(/\)/g) || []).length) s += ")";
+  return /[\p{L}\p{N}]/u.test(s) ? s : "";
+};
 const hex = (s) => s.trim().split(/\s+/).map((b) => (parseInt(b, 16) & 0xff).toString(16).toUpperCase().padStart(2, "0")).join("");
 const num = (s) => parseInt(s, 16);
 const oldName = (n) => /^\s*\(old\)/i.test(n);
@@ -137,8 +144,8 @@ const build = (r) => {
     category: seg[1].replace(/^\d+_/, ""),
     type: r.Type || "",
     tags: (r.Tag.match(/#[^#\s]+/g) || []).map((t) => t.slice(1)).filter((t) => t !== "ESSENTIALFIXES"),
-    author: nul((r.Author || "").replace(/\\r\\n|\\n/g, " ").replace(/\s+/g, " ").trim()),
-    authorUrl: (/https?:\/\/[^\s"'<>]+/i.exec(r.Author || "") || [null])[0],
+    author: nul(cleanAuthor(r.Author || "")),
+    authorUrl: ((/https?:\/\/[^\s"'<>]+/i.exec(r.Author || "") || [null])[0] || "").replace(/^([^(]*)\)+$/, "$1") || null,
     folder,
     superseded: seg.includes("_older versions") || oldName(nameEn || nameJa || ""),
     supersededBy: null,
