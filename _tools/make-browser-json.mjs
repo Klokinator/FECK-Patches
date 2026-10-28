@@ -15,6 +15,7 @@
 //   author = AUTHOR as written (literal \r\n sequences become spaces); authorUrl = the first http(s) link inside it, null when none.
 //   description = INFO.en's first two sentences; a lone opening double quote (an odd number of quote marks) is dropped.
 //   title = the short display title (at most 40 characters, sentence case, no "(Editor)" suffix) and summary = one or two plain sentences, both from METADATA.csv; name and description stay as the upstream text.
+//   group = optional METADATA.csv Group column (a name from patch-groups.json), else null.
 //   A patch without a METADATA.csv entry gets title = name with the suffix stripped and summary = null, so the browser falls back to description.
 //   filesComplete = false when a folder has more than 60 files and "files" lists only part of them.
 //   verified = VERIFIED.csv rolled up: every row pass = pass, any fail/not assemblable with a pass = partial, only fails = fail, only "not checked" = null.
@@ -96,6 +97,8 @@ const ids = new Set(index.map((r) => r.Folder.replace(/\\/g, "/") + "/" + r.Patc
 const metaKey = (name, type, desc) => [name, type, (desc || "").slice(0, 60)].join("\t");
 let meta = new Map();
 try { meta = new Map(parseCsv("METADATA.csv").map((r) => [metaKey(r.Name, r.Type, r.DescStart), r])); } catch {}
+// The group is an optional second-level heading under the category, one of patch-groups.json (the same list for every game); a patch without one lists as before.
+const GROUPS = JSON.parse(readFileSync(join(root, "_tools", "patch-groups.json"), "utf8"));
 // Fallback title when no entry exists: the "(Editor)"/"(Installer)"-style suffix and trailing full stops go, the first letter is capitalised.
 const autoTitle = (n) => { const t = n.replace(/\s*[(（](?:editor|installer?|install)[)）]\s*$/i, "").replace(/[.。\s]+$/, "").trim() || n; return t.charAt(0).toUpperCase() + t.slice(1); };
 
@@ -125,6 +128,7 @@ const build = (r) => {
   const m = meta.get(metaKey(rawName, r.Type || "", rawDesc));
   return {
     id,
+    group: m && GROUPS.includes(m.Group) ? m.Group : null,
     name: rawName,
     title: m && m.Title ? m.Title : autoTitle(rawName),
     nameJp: nameEn && nameJa && nameEn !== nameJa ? nameJa : null,
