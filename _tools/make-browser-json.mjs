@@ -14,6 +14,8 @@
 //   supersededBy = the id of the one current patch of the same game whose name is the same once "(Old)", dates and "(Editor)/(Installer)"-style brackets are dropped; null when none or more than one matches, or when the match's date (YYYYMMDD in the name or folder) is older than the superseded patch's.
 //   author = AUTHOR as written (literal \r\n sequences become spaces); authorUrl = the first http(s) link inside it, null when none.
 //   description = INFO.en's first two sentences; a lone opening double quote (an odd number of quote marks) is dropped.
+//   title = the short display title (at most 40 characters, sentence case, no "(Editor)" suffix) and summary = one or two plain sentences, both from METADATA.csv; name and description stay as the upstream text.
+//   A patch without a METADATA.csv entry gets title = name with the suffix stripped and summary = null, so the browser falls back to description.
 //   filesComplete = false when a folder has more than 60 files and "files" lists only part of them.
 //   verified = VERIFIED.csv rolled up: every row pass = pass, any fail/not assemblable with a pass = partial, only fails = fail, only "not checked" = null.
 //   files = FILES.csv's rows for the patch folder; a folder with more than 60 files lists only the patch file, its readme-role files and the files its text names.
@@ -90,6 +92,13 @@ for (const r of parseCsv("CONFLICTS-BY-PATCH.csv")) if (r.Kind === "requires") {
 }
 const ids = new Set(index.map((r) => r.Folder.replace(/\\/g, "/") + "/" + r.PatchFile));
 
+// METADATA.csv (Name,Type,DescStart,Title,Summary) holds the written titles and summaries. The key ignores the game, so one entry serves the same patch in every game.
+const metaKey = (name, type, desc) => [name, type, (desc || "").slice(0, 60)].join("\t");
+let meta = new Map();
+try { meta = new Map(parseCsv("METADATA.csv").map((r) => [metaKey(r.Name, r.Type, r.DescStart), r])); } catch {}
+// Fallback title when no entry exists: the "(Editor)"/"(Installer)"-style suffix and trailing full stops go, the first letter is capitalised.
+const autoTitle = (n) => { const t = n.replace(/\s*[(（](?:editor|installer?|install)[)）]\s*$/i, "").replace(/[.。\s]+$/, "").trim() || n; return t.charAt(0).toUpperCase() + t.slice(1); };
+
 const build = (r) => {
   const folder = r.Folder.replace(/\\/g, "/"), id = folder + "/" + r.PatchFile, dir = join(root, ...folder.split("/"));
   const text = dec(readFileSync(join(dir, r.PatchFile))).replace(/^﻿/, "");
@@ -111,11 +120,16 @@ const build = (r) => {
   const lower = text.toLowerCase();
   const files = all.length <= 60 ? all : all.filter((f) => f.path === r.PatchFile || f.role === "readme" || lower.includes(f.path.toLowerCase()));
   const seg = folder.split("/");
+  const rawName = nameEn || nameJa || r.PatchFile.replace(/^PATCH_/i, "").replace(/\.txt$/i, "");
+  const rawDesc = nul(cleanDesc(descs.get(id)));
+  const m = meta.get(metaKey(rawName, r.Type || "", rawDesc));
   return {
     id,
-    name: nameEn || nameJa || r.PatchFile.replace(/^PATCH_/i, "").replace(/\.txt$/i, ""),
+    name: rawName,
+    title: m && m.Title ? m.Title : autoTitle(rawName),
     nameJp: nameEn && nameJa && nameEn !== nameJa ? nameJa : null,
-    description: nul(cleanDesc(descs.get(id))),
+    description: rawDesc,
+    summary: m && m.Summary ? m.Summary : null,
     category: seg[1].replace(/^\d+_/, ""),
     type: r.Type || "",
     tags: (r.Tag.match(/#[^#\s]+/g) || []).map((t) => t.slice(1)).filter((t) => t !== "ESSENTIALFIXES"),
@@ -154,6 +168,17 @@ for (const game of GAMES) {
 }
 
 const file = (g) => join(root, "browser", g + ".json");
+// --work prints one JSON line per distinct patch (name, type, description start) that has no METADATA.csv entry yet, for writing titles and summaries.
+if (process.argv.includes("--work")) {
+  const seen = new Map();
+  for (const g of GAMES) for (const p of outs[g].patches) {
+    const k = metaKey(p.name, p.type, p.description);
+    if (meta.has(k) || seen.has(k)) continue;
+    seen.set(k, { name: p.name, type: p.type, descStart: (p.description || "").slice(0, 60), category: p.category, folder: p.folder.split("/").slice(1).join("/"), nameJp: p.nameJp, description: p.description, games: [g] });
+  }
+  for (const v of seen.values()) console.log(JSON.stringify(v));
+  process.exit(0);
+}
 if (process.argv.includes("--check")) {
   let stale = false;
   for (const g of GAMES) {
