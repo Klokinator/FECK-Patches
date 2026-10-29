@@ -47,6 +47,16 @@ const parseCsv = (name) => {
 
 const nul = (s) => (s === undefined || s === "" ? null : s);
 // Author text without its links; only a trailing source label ("Source:", "出典元:", a bare colon) and empty brackets are dropped, an unclosed bracket is closed, and the result is empty only when no letter or digit is left.
+// authorName: the plain name, only for source-credit wordings that already contain it; author keeps the full credit.
+const NAME_FORMS = [
+  /^出典[:：]\s*([^\s@]+?)さんの(?:資料|書き込み)より$/,
+  /^([^\s@:：]+?)さんの(?:資料|書き込み)より$/,
+  /^出典[:：]\s*([^\s@]+)@/,
+  /^Source[:：]\s*([A-Za-z0-9_]+)$/,
+  /^Original work[:：]\s*([^/]+?)\s*\//,
+  /^Animation Hacks by (\w+) Transplant:/,
+];
+const plainName = (a) => { for (const r of NAME_FORMS) { const m = r.exec(a); if (m) return m[1]; } return null; };
 const cleanAuthor = (a) => {
   let s = a.replace(/\\r\\n|\\n/g, " ").replace(/https?:\/\/[^\s"'<>]+/gi, " ").replace(/\s+/g, " ").trim();
   s = s.replace(/\s+How to use\s*[:：]?$/i, "").replace(/\s+,/g, ",").replace(/\s*(?:プログラム)?(?:出典元|Source|Original author)?\s*[:：]\s*(?=[)）\]]*$)/iu, "").replace(/\(\s*\)|（\s*）|\[\s*\]/gu, "").replace(/[\s,、]+$/u, "").trim();
@@ -145,6 +155,7 @@ const build = (r) => {
     type: r.Type || "",
     tags: (r.Tag.match(/#[^#\s]+/g) || []).map((t) => t.slice(1)).filter((t) => t !== "ESSENTIALFIXES"),
     author: nul(cleanAuthor(r.Author || "")),
+    ...(plainName(cleanAuthor(r.Author || "")) ? { authorName: plainName(cleanAuthor(r.Author || "")) } : {}),
     authorUrl: ((/https?:\/\/[^\s"'<>]+/i.exec(r.Author || "") || [null])[0] || "").replace(/^([^(]*)\)+$/, "$1") || null,
     folder,
     superseded: seg.includes("_older versions") || oldName(nameEn || nameJa || ""),
