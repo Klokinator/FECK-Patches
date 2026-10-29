@@ -187,11 +187,10 @@ const lowerFirst = (s) => (/^[A-Z][a-z]/.test(s) ? s.charAt(0).toLowerCase() + s
 const shapeTitle = (t) => {
   t = stripDates(t);
   for (const [a, b] of PREFIXES) if (t.startsWith(a)) { t = b + t.slice(a.length); break; }
-  let m;
+  let m, q = [];
+  if ((m = /^(.*\S)\s+\(([^()]+)\)$/.exec(t))) { t = m[1]; q = [m[2].replace(/^old SkillSys$/, "old")]; }
   if ((m = /^Event condition:\s*(.+)$/i.exec(t))) t = "Event: " + lowerFirst(m[1]);
   else if (!/^Event\b/i.test(t) && (m = /^(.*\S)\s+event$/i.exec(t))) t = "Event: " + lowerFirst(m[1]);
-  let q = [];
-  if ((m = /^(.*\S)\s+\(([^()]+)\)$/.exec(t))) { t = m[1]; q = [m[2].replace(/^old SkillSys$/, "old")]; }
   return { base: t, q };
 };
 const TYPE_WORD = { STRUCT: "settings", IMAGE: "image", ADDR: "value" };
@@ -206,7 +205,7 @@ const uniqueTitles = (patches) => {
     (p) => month(dateOf(p)),
     (p) => (p.author && p.author.length <= 14 && !/http/.test(p.author) ? p.author : ""),
     (p) => p.id.split("/").slice(-2, -1)[0].replace(/[_-]+/g, " ").trim(),
-    (p) => (p.id.split("/").pop().replace(/^PATCH_/i, "").replace(/\.txt$/i, "").split(/[_ ]/).pop().replace(/^(?:edit(?:or)?|install(?:er|ation)?)$/i, "") || ""),
+    (p) => (p.id.split("/").pop().replace(/^PATCH_/i, "").replace(/\.txt$/i, "").split(/[_ ]/).pop().replace(/^(?:edit(?:or)?|install(?:er|ation)?)$/i, "").replace(/^\d{8}$/, fmtDate) || ""),
     (p) => month((/(20\d{6})/.exec(p.id.split("/").slice(0, -1).join("/")) || [])[1] || ""),
     (p) => p.id.split("/").pop().replace(/^PATCH_/i, "").replace(/\.txt$/i, ""),
     (p) => p.id.split("/").pop().replace(/^PATCH_/i, "").split(" ")[0],
