@@ -49,7 +49,7 @@ const nul = (s) => (s === undefined || s === "" ? null : s);
 // Author text without its links; only a trailing source label ("Source:", "出典元:", a bare colon) and empty brackets are dropped, an unclosed bracket is closed, and the result is empty only when no letter or digit is left.
 const cleanAuthor = (a) => {
   let s = a.replace(/\\r\\n|\\n/g, " ").replace(/https?:\/\/[^\s"'<>]+/gi, " ").replace(/\s+/g, " ").trim();
-  s = s.replace(/\s*(?:プログラム)?(?:出典元|Source|Original author)?\s*[:：]\s*(?=[)）\]]*$)/iu, "").replace(/\(\s*\)|（\s*）|\[\s*\]/gu, "").replace(/[\s,、]+$/u, "").trim();
+  s = s.replace(/\s+How to use\s*[:：]?$/i, "").replace(/\s+,/g, ",").replace(/\s*(?:プログラム)?(?:出典元|Source|Original author)?\s*[:：]\s*(?=[)）\]]*$)/iu, "").replace(/\(\s*\)|（\s*）|\[\s*\]/gu, "").replace(/[\s,、]+$/u, "").trim();
   if ((s.match(/\(/g) || []).length > (s.match(/\)/g) || []).length) s += ")";
   return /[\p{L}\p{N}]/u.test(s) ? s : "";
 };
