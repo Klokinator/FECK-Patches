@@ -17,6 +17,7 @@
 //   title = the short display title (at most 40 characters, sentence case, no "(Editor)" suffix) and summary = one or two plain sentences, both from METADATA.csv; name and description stay as the upstream text.
 //   group = optional METADATA.csv Group column (a name from patch-groups.json), else null.
 //   A patch without a METADATA.csv entry gets title = name with the suffix stripped and summary = null, so the browser falls back to description.
+//   a file named by a TEXT_IMPORT=<file> line gets role "text" in place of FILES.csv's role.
 //   filesComplete = false when a folder has more than 60 files and "files" lists only part of them.
 //   verified = VERIFIED.csv rolled up: every row pass = pass, any fail/not assemblable with a pass = partial, only fails = fail, only "not checked" = null.
 //   files = FILES.csv's rows for the patch folder; a folder with more than 60 files lists only the patch file, its readme-role files and the files its text names.
@@ -124,11 +125,12 @@ const build = (r) => {
   const text = dec(readFileSync(join(dir, r.PatchFile))).replace(/^﻿/, "");
   const lines = text.split(/\r?\n/);
   const nameEn = nul(r.NameEn), nameJa = nul(r.NameJp);
-  const detect = [], writes = [], conflicts = [...(overlaps.get(id) || [])];
+  const textImports = new Set(), detect = [], writes = [], conflicts = [...(overlaps.get(id) || [])];
   for (const l of lines) {
     let m;
     if ((m = /^PATCHED_IF:(0x[0-9a-f]+)=(.+)$/i.exec(l))) detect.push({ offset: num(m[1]), bytes: hex(m[2]) });
     else if ((m = /^CONFLICT_IF:(0x[0-9a-f]+)=(.+)$/i.exec(l))) conflicts.push({ kind: "conflict_if", offset: num(m[1]), length: m[2].trim().split(/\s+/).length, with: null });
+    else if ((m = /^TEXT_IMPORT=(.+)$/i.exec(l))) textImports.add(m[1].trim().replace(/\\/g, "/").toLowerCase());
     else if ((m = /^BINF?:(0x[0-9a-f]+)(?::\d+)?=(.+)$/i.exec(l))) {
       const file = m[2].trim().replace(/\\/g, "/"), p = join(dir, file);
       if (!existsSync(p) || !statSync(p).isFile()) continue;
@@ -167,7 +169,7 @@ const build = (r) => {
     conflicts,
     requires: requires.get(id) || [],
     filesComplete: files.length === all.length,
-    files: files.map((f) => ({ path: f.path, role: f.role })).sort((a, b) => (a.path.toLowerCase() < b.path.toLowerCase() ? -1 : a.path.toLowerCase() > b.path.toLowerCase() ? 1 : 0)),
+    files: files.map((f) => ({ path: f.path, role: textImports.has(f.path.toLowerCase()) ? "text" : f.role })).sort((a, b) => (a.path.toLowerCase() < b.path.toLowerCase() ? -1 : a.path.toLowerCase() > b.path.toLowerCase() ? 1 : 0)),
   };
 };
 
