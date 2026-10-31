@@ -979,16 +979,16 @@ EXPORT:08=portrait_0x01_pal.dmp	portrait_0x01_pal_Graphic
 EXPORT:09=portrait_0x01_minimug.dmp	portrait_0x01_minimug_Graphic
 EXPORT:10=Icon_Unit68Graphic.dmp	Icon_Unit68Graphic
 
-EDIT_PATCH:1=../skill20191022/PATCH_AnimaTriangle_FireList SkillSystem Version.txt
-EDIT_PATCH:2=../skill20191022/PATCH_AnimaTriangle_ThunderList SkillSystem Version.txt
-EDIT_PATCH:3=../skill20191022/PATCH_AnimaTriangle_WindList SkillSystem Version.txt
-EDIT_PATCH:4=../skill20191022/PATCH_Escape_Quote_SkillSystems Version.txt
-EDIT_PATCH:5=../skill20191022/PATCH_Leadership Skillsystems Version.txt
-EDIT_PATCH:6=../ClassLevelMax/PATCH_ClassLevelMax.txt
-EDIT_PATCH:7=../skill20200211/PATCH_PersonalData Skillsystems Version.txt
-EDIT_PATCH:8=../skill20200211/PATCH_Mag Char Editor.txt
-EDIT_PATCH:9=../skill20200211/PATCH_Mag Class Editor.txt
-EDIT_PATCH:18=../ArmorMarchList/PATCH_ArmorMarchList.txt
+EDIT_PATCH:1=../skill_20191022/PATCH_AnimaTriangle_FireList SkillSystem Version.txt
+EDIT_PATCH:2=../skill_20191022/PATCH_AnimaTriangle_ThunderList SkillSystem Version.txt
+EDIT_PATCH:3=../skill_20191022/PATCH_AnimaTriangle_WindList SkillSystem Version.txt
+EDIT_PATCH:4=../skill_20191022/PATCH_Escape_Quote_SkillSystems Version.txt
+EDIT_PATCH:5=../skill_20191022/PATCH_Leadership Skillsystems Version.txt
+EDIT_PATCH:6=../../../../10_Growth_Class_Stats/ClassLevelMax/PATCH_ClassLevelMax.txt
+EDIT_PATCH:7=PATCH_PersonalData Skillsystems Version.txt
+EDIT_PATCH:8=PATCH_Mag Char Editor.txt
+EDIT_PATCH:9=PATCH_Mag Class Editor.txt
+EDIT_PATCH:18=../../../../11_Map_Movement/ArmorMarchList/PATCH_ArmorMarchList.txt
 
 SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM
