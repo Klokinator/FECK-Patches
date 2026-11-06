@@ -1,0 +1,37 @@
+NAME=太陽パッチ
+NAME.en=Sun skill
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0xE487D0=0xE8 0x6D 0x00 0xF0 0xA5 0xF8 0x8B 0xE0 0x00 0x28 0x07 0xD0 0x40 0x00 0x40 0x18
+
+BIN:0x02B666=2B666.bin
+BIN:0x0531D8=531D8.bin
+BIN:0x059423=59423.bin
+BIN:0x05942A=5942A.bin
+BIN:0x059456=59456.bin
+BIN:0x05948B=5948B.bin
+BIN:0x0594BC=594BC.bin
+BIN:0xE487C0=E487C0.bin
+BIN:0xE487D0=E487D0.bin
+BIN:0xE488F0=E488F0.bin
+BIN:0xE48920=E48920.bin
+BIN:0xE48930=E48930.bin
+BIN:0xE48940=E48940.bin
+BIN:0xE48980=E48980.bin
+BIN:0xE48990=E48990.bin
+BIN:0xE489BF=E489BF.bin
+BIN:0xE489F0=E489F0.bin
+BIN:0xE48A00=E48A00.bin
+BIN:0xE48A30=E48A30.bin
+BIN:0xE48A40=E48A40.bin
+BIN:0xE48AA0=E48AA0.bin
+BIN:0xE48AAA=E48AAA.bin
+BIN:0xE48AE0=E48AE0.bin
+BIN:0xE48B00=E48B00.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 25)
+VERSION=20261105
+
+INFO=Adds the Sun skill (triggers on skill %), lets HP-drain weapons work for items other than Nosferatu, and fixes the skipped skill-activation check for drain weapons. Uses 0xE487C0-0xE48B0F and 0x203AB20.
+INFO.en=Adds the Sun skill (triggers on skill %), lets HP-drain weapons work for items other than Nosferatu, and fixes the skipped skill-activation check for drain weapons. Uses 0xE487C0-0xE48B0F and 0x203AB20.

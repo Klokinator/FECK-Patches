@@ -1,0 +1,16 @@
+NAME=盗みパッチ
+NAME.en=Steal any weapon
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0xE56E39=0x22 0x02 0x23 0x1B 0x02 0xD2 0x18 0x0A 0x40 0x00 0x2A 0x10 0xD0 0x00 0x22 0x90
+
+BIN:0x016E14=16E14.bin
+BIN:0xE56E20=E56E20.bin
+BIN:0xE56E39=E56E39.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 7)
+VERSION=20261105
+
+INFO=Lets Thieves steal unequipped weapons, tomes and staffs. Equipped status is guessed from the item order. Steal lists are editable.
+INFO.en=Lets Thieves steal unequipped weapons, tomes and staffs. Equipped status is guessed from the item order. Steal lists are editable.

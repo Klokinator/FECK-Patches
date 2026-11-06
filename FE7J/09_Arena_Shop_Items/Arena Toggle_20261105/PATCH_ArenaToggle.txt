@@ -1,0 +1,18 @@
+NAME=闘技場使用設定
+NAME.en=Arena on/off setting
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x023388=0x00 0x49 0x8F 0x46
+
+BIN:0x023388=23388.bin
+BIN:0x02338D=2338D.bin
+BIN:0x02E490=2E490.bin
+BIN:0x032AA1=32AA1.bin
+BIN:0x1000000=ArenaToggle.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 149)
+VERSION=20261105
+
+INFO=Adds an arena setting (off at start) so players who want no arena can lock it out. Costs the subtitle help; code is placed at 0x1000000 in the expanded ROM and pointed to from 0x2338C.
+INFO.en=Adds an arena setting (off at start) so players who want no arena can lock it out. Costs the subtitle help; code is placed at 0x1000000 in the expanded ROM and pointed to from 0x2338C.

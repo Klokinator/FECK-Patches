@@ -1,0 +1,14 @@
+NAME=危険範囲パッチ
+NAME.en=Danger zone display
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x01C7E4=0x69 0xF0 0x4A 0xFF 0x05 0xF0 0x30 0xF9 0x02 0x4A 0x91 0x69 0x50 0x69 0x02 0x4B
+
+BIN:0x01C7E4=1C7E4.bin
+
+AUTHOR=Nowel (New_Romhack_Haul; byline from the author contact in the readme)
+VERSION=20261105
+
+INFO=Select shows the enemy danger range; A toggles between attack and staff range.
+INFO.en=Select shows the enemy danger range; A toggles between attack and staff range.

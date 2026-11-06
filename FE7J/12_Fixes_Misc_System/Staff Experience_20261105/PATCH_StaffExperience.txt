@@ -1,0 +1,16 @@
+NAME=杖経験値
+NAME.en=Staff experience
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x02A4D8=0x2B 0xF9 0x61 0x68 0x29 0x31 0x09 0x78 0xC9 0x07 0x02 0xD0 0x40 0x10 0x00 0x04
+
+BIN:0x02A4D8=2A4D8.bin
+BIN:0x02A4F2=2A4F2.bin
+BIN:0x02A501=2A501.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 7)
+VERSION=20261105
+
+INFO=Gives experience for using staffs; the crit value is used as the EXP. FE8 patch ported to FE7.
+INFO.en=Gives experience for using staffs; the crit value is used as the EXP. FE8 patch ported to FE7.

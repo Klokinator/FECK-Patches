@@ -1,0 +1,22 @@
+NAME=必殺補正拡張
+NAME.en=Crit bonus per class
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x0C6A05=0x28 0x23 0xD0 0x10 0x1C 0x06 0xB4 0x61 0x68 0x09 0x79 0x10 0x29 0x01 0xD0 0x11
+
+BIN:0x0291D8=291D8.bin
+BIN:0x0291DD=291DD.bin
+BIN:0x0C6A00=C6A00.bin
+BIN:0x0C6A05=C6A05.bin
+BIN:0x0C6A17=C6A17.bin
+BIN:0x0C6A21=C6A21.bin
+BIN:0x0C6A27=C6A27.bin
+BIN:0x0C6A4C=C6A4C.bin
+BIN:0x0C6A51=C6A51.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 7)
+VERSION=20261105
+
+INFO=Adds a crit bonus for Swordmaster (+20), Sniper (+10) and Berserker (+10). Uses 0x80C6A00-0x80C6A5F.
+INFO.en=Adds a crit bonus for Swordmaster (+20), Sniper (+10) and Berserker (+10). Uses 0x80C6A00-0x80C6A5F.

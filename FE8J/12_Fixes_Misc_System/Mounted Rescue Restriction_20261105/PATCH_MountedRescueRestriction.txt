@@ -1,0 +1,18 @@
+NAME=騎馬系救出制限
+NAME.en=Mounted rescue restriction
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x018048=0xA1 0x7E 0x52 0x18 0x00 0x49 0x8F 0x46 0x30 0xFC 0xFF 0x08 0x00 0x1C
+
+BIN:0x018048=18048.bin
+BIN:0xFFFC30=FFFC30.bin
+BIN:0xFFFC3F=FFFC3F.bin
+BIN:0xFFFC49=FFFC49.bin
+BIN:0xFFFC50=FFFC50.bin
+
+AUTHOR=Unknown (New_Romhack_Haul)
+VERSION=20261105
+
+INFO=Classes with the horse, pegasus or dragon rescue flag cannot be rescued. Free space 0x8FFFC30.
+INFO.en=Classes with the horse, pegasus or dragon rescue flag cannot be rescued. Free space 0x8FFFC30.

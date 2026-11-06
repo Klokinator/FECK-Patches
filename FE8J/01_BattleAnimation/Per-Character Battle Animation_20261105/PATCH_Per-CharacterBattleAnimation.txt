@@ -1,0 +1,25 @@
+NAME=個別アニメパッチ
+NAME.en=Per-character battle animation
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0xE471FB=0xF7 0xD1 0xFF 0x00 0x29 0x03 0xD0 0x08 0x1C 0x0A 0xBC 0x07 0x90 0x03 0xE0 0x0A
+
+BIN:0x05815C=5815C.bin
+BIN:0x058168=58168.bin
+BIN:0x8582DF=8582DF.bin
+BIN:0xE47190=E47190.bin
+BIN:0xE471A0=E471A0.bin
+BIN:0xE471BE=E471BE.bin
+BIN:0xE471E0=E471E0.bin
+BIN:0xE471FB=E471FB.bin
+BIN:0xE47230=E47230.bin
+BIN:0xE47249=E47249.bin
+BIN:0xE47290=E47290.bin
+BIN:0xE472A0=E472A0.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 22)
+VERSION=20261105
+
+INFO=Lets a specific unit use a different battle animation than its class (set flag at unit byte 0x23, list at 0xE472A0).
+INFO.en=Lets a specific unit use a different battle animation than its class (set flag at unit byte 0x23, list at 0xE472A0).

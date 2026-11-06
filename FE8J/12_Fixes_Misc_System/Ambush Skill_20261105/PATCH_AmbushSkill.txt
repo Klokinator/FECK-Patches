@@ -1,0 +1,28 @@
+NAME=待ち伏せパッチ
+NAME.en=Ambush skill
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0xE494E0=0x00 0x4A 0x97 0x46 0x90 0xA4 0x02 0x08 0x97 0x90 0x90 0x94 0x94 0xBB 0x92 0xE8
+
+BIN:0x02A21E=2A21E.bin
+BIN:0x02C96E=2C96E.bin
+BIN:0x02C994=2C994.bin
+BIN:0x05729C=5729C.bin
+BIN:0x074BB2=74BB2.bin
+BIN:0xE49450=E49450.bin
+BIN:0xE49460=E49460.bin
+BIN:0xE494B0=E494B0.bin
+BIN:0xE494E0=E494E0.bin
+BIN:0xE49560=E49560.bin
+BIN:0xE495E0=E495E0.bin
+BIN:0xE49630=E49630.bin
+BIN:0xE49640=E49640.bin
+BIN:0xE496A0=E496A0.bin
+BIN:0xE496B0=E496B0.bin
+
+AUTHOR=stein_fekaizou (FE改造うｐろだ4 entry 75)
+VERSION=20261105
+
+INFO=Adds the Ambush skill, speed-% trigger, no skill effect shown. Uses 0xE49450-0xE496DF and 0x203AB40. Class list at 0xE49482.
+INFO.en=Adds the Ambush skill, speed-% trigger, no skill effect shown. Uses 0xE49450-0xE496DF and 0x203AB40. Class list at 0xE49482.

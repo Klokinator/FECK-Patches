@@ -1,0 +1,37 @@
+NAME=期待値ダメージ
+NAME.en=Fixed expected-damage combat
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x024D76=0x06 0xD1 0x3A 0x48 0x01 0x68 0x02 0x20 0x0A 0x88 0x10 0x43 0x08 0x80 0x2E 0xE0
+
+BIN:0x000E84=E84.bin
+BIN:0x024D64=24D64.bin
+BIN:0x024D76=24D76.bin
+BIN:0x0278DA=278DA.bin
+BIN:0x028ECB=28ECB.bin
+BIN:0x028EE8=28EE8.bin
+BIN:0x02D976=2D976.bin
+BIN:0x02D994=2D994.bin
+BIN:0x02D99C=2D99C.bin
+BIN:0x02D9AF=2D9AF.bin
+BIN:0x02D9BB=2D9BB.bin
+BIN:0x02D9FA=2D9FA.bin
+BIN:0x02DA02=2DA02.bin
+BIN:0x02DA0D=2DA0D.bin
+BIN:0x02DA18=2DA18.bin
+BIN:0x02EC77=2EC77.bin
+BIN:0x060E7A=60E7A.bin
+BIN:0x06F0CA=6F0CA.bin
+BIN:0x06F0E8=6F0E8.bin
+BIN:0x08874C=8874C.bin
+BIN:0x3196C4=3196C4.bin
+BIN:0x3196EC=3196EC.bin
+BIN:0x677AD6=677AD6.bin
+BIN:0x677AF2=677AF2.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 50)
+VERSION=20261105
+
+INFO=A 70% hit for 20 damage becomes a guaranteed 14. Staffs hit at 50+ and miss below. Hard mode unlocked from the start; extra fixed-growth patch bundled.
+INFO.en=A 70% hit for 20 damage becomes a guaranteed 14. Staffs hit at 50+ and miss below. Hard mode unlocked from the start; extra fixed-growth patch bundled.

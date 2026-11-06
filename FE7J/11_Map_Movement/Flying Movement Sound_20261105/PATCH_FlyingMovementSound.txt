@@ -1,0 +1,19 @@
+NAME=移動効果音
+NAME.en=Flying-unit movement sounds
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x0C69DD=0x4A 0x01 0xE0 0xFC 0x00 0x00 0x09 0x83 0x18 0x18 0x68 0x0C 0xBC 0x87 0x46 0xFF
+
+BIN:0x06D310=6D310.bin
+BIN:0x0C69D0=C69D0.bin
+BIN:0x0C69D5=C69D5.bin
+BIN:0x0C69DD=C69DD.bin
+BIN:0x0C69F5=C69F5.bin
+BIN:0x1000100=SoundPointerList.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 6)
+VERSION=20261105
+
+INFO=Lets you set the movement sound for horse, pegasus and dragon classes through a pointer list (placed at 0x1000100 in the expanded ROM; edit SoundPointerList.bin to change sounds).
+INFO.en=Lets you set the movement sound for horse, pegasus and dragon classes through a pointer list (placed at 0x1000100 in the expanded ROM; edit SoundPointerList.bin to change sounds).

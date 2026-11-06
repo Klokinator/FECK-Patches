@@ -1,0 +1,39 @@
+NAME=クラス上限突破
+NAME.en=Class cap break (doping)
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x017F12=0x1F 0x22 0x14 0x20 0x1F 0x20 0x3D 0x1C
+
+BIN:0x017F12=17F12.bin
+BIN:0x017F24=17F24.bin
+BIN:0x017F34=17F34.bin
+BIN:0x017F44=17F44.bin
+BIN:0x017F54=17F54.bin
+BIN:0x02BCE2=2BCE2.bin
+BIN:0x02BCE8=2BCE8.bin
+BIN:0x02BCFE=2BCFE.bin
+BIN:0x02BD04=2BD04.bin
+BIN:0x02BD1A=2BD1A.bin
+BIN:0x02BD20=2BD20.bin
+BIN:0x02BD36=2BD36.bin
+BIN:0x02BD3C=2BD3C.bin
+BIN:0x02BD52=2BD52.bin
+BIN:0x02BD58=2BD58.bin
+BIN:0x02BED4=2BED4.bin
+BIN:0x02BEF2=2BEF2.bin
+BIN:0x02BF10=2BF10.bin
+BIN:0x02BF2E=2BF2E.bin
+BIN:0x02BF4C=2BF4C.bin
+BIN:0x08937F=8937F.bin
+BIN:0x09497F=9497F.bin
+BIN:0x0949A9=949A9.bin
+BIN:0x0949D3=949D3.bin
+BIN:0x094A21=94A21.bin
+BIN:0x094A4B=94A4B.bin
+
+AUTHOR=Unknown (New_Romhack_Haul)
+VERSION=20261105
+
+INFO=Lets doping items push stats past the class cap; the cap in save data is 31.
+INFO.en=Lets doping items push stats past the class cap; the cap in save data is 31.

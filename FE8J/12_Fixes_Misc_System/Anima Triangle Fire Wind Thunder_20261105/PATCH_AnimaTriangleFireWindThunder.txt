@@ -1,0 +1,26 @@
+NAME=理3すくみ
+NAME.en=Fire-wind-thunder triangle
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0xFE6611=0xE7 0x11 0x78 0xFF 0x29 0x05 0xD0 0x88 0x42 0x01 0xD0 0x01 0x32 0xF8 0xE7 0x01
+
+BIN:0x02C700=2C700.bin
+BIN:0xFE6580=FE6580.bin
+BIN:0xFE6590=FE6590.bin
+BIN:0xFE65C7=FE65C7.bin
+BIN:0xFE6601=FE6601.bin
+BIN:0xFE6611=FE6611.bin
+BIN:0xFE6650=FE6650.bin
+BIN:0xFE6660=FE6660.bin
+BIN:0xFE6670=FE6670.bin
+BIN:0xFE6680=FE6680.bin
+BIN:0xFE668C=FE668C.bin
+BIN:0xFE6694=FE6694.bin
+BIN:0xFE6699=FE6699.bin
+
+AUTHOR=Unknown (FE改造うｐろだ4 entry 152)
+VERSION=20261105
+
+INFO=A three-way weapon triangle between fire, wind and thunder magic. Item ID lists and the correction table sit at 0xFE6650-0xFE6680; program at 0x8FE6590.
+INFO.en=A three-way weapon triangle between fire, wind and thunder magic. Item ID lists and the correction table sit at 0xFE6650-0xFE6680; program at 0x8FE6590.
